@@ -35,55 +35,52 @@ test("server-renders the Thinking Island shell", async () => {
   assert.doesNotMatch(html, /登录|注册|账号|密码/);
 });
 
-test("ships eight unlocked weeks, advanced challenges, and the complete voice library", async () => {
-  const [page, advancedText, manifestText, audioFiles] = await Promise.all([
+test("ships 120 image-first levels and the complete voice library", async () => {
+  const [page, levelsText, manifestText, audioFiles] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/advanced-lessons.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/visual-levels.json", import.meta.url), "utf8"),
     readFile(new URL("../public/audio/manifest.json", import.meta.url), "utf8"),
     readdir(new URL("../public/audio/", import.meta.url)),
   ]);
 
-  const lessons = [...page.matchAll(/^\s+id:\s*(\d+),\s*week:\s*(\d+),/gm)];
-  assert.equal(lessons.length, 24);
+  const levels = JSON.parse(levelsText);
+  assert.equal(levels.length, 120);
   assert.deepEqual(
-    lessons.map((match) => Number(match[1])),
-    Array.from({ length: 24 }, (_, index) => index + 1),
+    levels.map((level) => level.id),
+    Array.from({ length: 120 }, (_, index) => index + 1),
   );
-  assert.deepEqual(
-    [...new Set(lessons.map((match) => Number(match[2])))],
-    Array.from({ length: 8 }, (_, index) => index + 1),
-  );
-  assert.match(page, /八周，二十四次小探险/);
+  assert.equal(levels.at(-1).week, 20);
+  assert.match(page, /20周 · 120关/);
   assert.doesNotMatch(page, /signIn|signUp|login|logout/i);
   assert.doesNotMatch(page, /disabled=\{locked\}|继续前进后解锁/);
-
-  const advancedLessons = JSON.parse(advancedText);
-  assert.equal(advancedLessons.length, 12);
-  assert.deepEqual(
-    advancedLessons.map((lesson) => lesson.id),
-    Array.from({ length: 12 }, (_, index) => index + 13),
-  );
-  assert.ok(advancedLessons.every((lesson) => lesson.activities.length === 3));
   assert.ok(
-    advancedLessons
-      .flatMap((lesson) => lesson.activities)
+    levels
+      .flatMap((level) => level.activities)
+      .every((activity) => activity.visualOnly && activity.voicePrompt),
+  );
+  assert.ok(levels.every((level) => level.activities.length === 1));
+  assert.ok(
+    levels
+      .flatMap((level) => level.activities)
       .every((activity) => activity.options.length >= 4),
   );
   assert.ok(
-    advancedLessons
-      .flatMap((lesson) => lesson.activities)
+    levels
+      .flatMap((level) => level.activities)
       .every(
         (activity) =>
           Number.isInteger(activity.answer) &&
           activity.answer >= 0 &&
-          activity.answer < activity.options.length,
+          activity.answer < activity.options.length &&
+          activity.options.every((option) => option.emoji),
       ),
   );
 
   const manifest = JSON.parse(manifestText);
   const mp3Files = audioFiles.filter((file) => file.endsWith(".mp3"));
-  assert.equal(manifest.clip_count, 244);
-  assert.equal(manifest.clips.length, 244);
-  assert.equal(mp3Files.length, 244);
-  assert.ok(audioFiles.includes("lesson-24-intro.mp3"));
+  assert.equal(manifest.clip_count, 484);
+  assert.equal(manifest.clips.length, 484);
+  assert.equal(mp3Files.length, 484);
+  assert.ok(audioFiles.includes("lesson-120-intro.mp3"));
+  assert.ok(audioFiles.includes("lesson-120-step-01-prompt.mp3"));
 });

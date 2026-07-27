@@ -1,0 +1,4562 @@
+[
+  {
+    "id": 1,
+    "week": 1,
+    "title": "谁不同",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🍎 🍌 🍓 🚗",
+        "voicePrompt": "三个是水果，找出不是水果的一个。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "香蕉",
+            "emoji": "🍌"
+          },
+          {
+            "label": "草莓",
+            "emoji": "🍓"
+          },
+          {
+            "label": "汽车",
+            "emoji": "🚗"
+          }
+        ],
+        "answer": 3,
+        "hint": "能吃的放一组。",
+        "explain": "汽车不是水果。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "week": 1,
+    "title": "谁不同",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🐶 🐱 🐰 🌂",
+        "voicePrompt": "三个是动物，找出不是动物的一个。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "小狗",
+            "emoji": "🐶"
+          },
+          {
+            "label": "小猫",
+            "emoji": "🐱"
+          },
+          {
+            "label": "兔子",
+            "emoji": "🐰"
+          },
+          {
+            "label": "雨伞",
+            "emoji": "🌂"
+          }
+        ],
+        "answer": 3,
+        "hint": "谁不会自己长大？",
+        "explain": "雨伞不是动物。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "week": 1,
+    "title": "谁不同",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🔴 🔵 🟡 ⭐",
+        "voicePrompt": "三个是圆形，找出形状不同的一个。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "红圆",
+            "emoji": "🔴"
+          },
+          {
+            "label": "蓝圆",
+            "emoji": "🔵"
+          },
+          {
+            "label": "黄圆",
+            "emoji": "🟡"
+          },
+          {
+            "label": "星星",
+            "emoji": "⭐"
+          }
+        ],
+        "answer": 3,
+        "hint": "只看外面的形状。",
+        "explain": "星星不是圆形。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "week": 1,
+    "title": "谁同类",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🐟 → ?",
+        "voicePrompt": "给小鱼找一个同样生活在水里的伙伴。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "海豚",
+            "emoji": "🐬"
+          },
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          },
+          {
+            "label": "小狗",
+            "emoji": "🐶"
+          },
+          {
+            "label": "蜜蜂",
+            "emoji": "🐝"
+          }
+        ],
+        "answer": 0,
+        "hint": "想想谁也会游泳。",
+        "explain": "海豚也生活在水里。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "week": 1,
+    "title": "谁同类",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "✈️ → ?",
+        "voicePrompt": "给飞机找一个同样会飞、但不是动物的伙伴。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "火箭",
+            "emoji": "🚀"
+          },
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          },
+          {
+            "label": "蝴蝶",
+            "emoji": "🦋"
+          },
+          {
+            "label": "小鱼",
+            "emoji": "🐟"
+          }
+        ],
+        "answer": 0,
+        "hint": "还要满足不是动物。",
+        "explain": "火箭会飞，而且不是动物。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "week": 1,
+    "title": "两个条件",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🔴 + 🍴",
+        "voicePrompt": "找出既是红色、又可以吃的东西。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "消防车",
+            "emoji": "🚒"
+          },
+          {
+            "label": "香蕉",
+            "emoji": "🍌"
+          },
+          {
+            "label": "红心",
+            "emoji": "❤️"
+          }
+        ],
+        "answer": 0,
+        "hint": "两个条件都要满足。",
+        "explain": "苹果是红色的，也可以吃。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "week": 2,
+    "title": "两个条件",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🟢 + 🐾",
+        "voicePrompt": "找出绿色的动物。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "青蛙",
+            "emoji": "🐸"
+          },
+          {
+            "label": "树叶",
+            "emoji": "🍃"
+          },
+          {
+            "label": "小狗",
+            "emoji": "🐶"
+          },
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          }
+        ],
+        "answer": 0,
+        "hint": "先找动物，再看颜色。",
+        "explain": "青蛙既是动物，也常见绿色。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "week": 2,
+    "title": "换规则",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "🍎 🚒 🍓 ❤️",
+        "voicePrompt": "刚才按红色分，现在改成按能不能吃。谁和苹果一组？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "消防车",
+            "emoji": "🚒"
+          },
+          {
+            "label": "草莓",
+            "emoji": "🍓"
+          },
+          {
+            "label": "红心",
+            "emoji": "❤️"
+          },
+          {
+            "label": "红灯",
+            "emoji": "🔴"
+          }
+        ],
+        "answer": 1,
+        "hint": "不要再只看颜色。",
+        "explain": "草莓和苹果都可以吃。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "week": 2,
+    "title": "找集合",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "会飞 ∩ 动物",
+        "voicePrompt": "找出会飞的动物。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          },
+          {
+            "label": "飞机",
+            "emoji": "✈️"
+          },
+          {
+            "label": "汽车",
+            "emoji": "🚗"
+          },
+          {
+            "label": "小鱼",
+            "emoji": "🐟"
+          }
+        ],
+        "answer": 0,
+        "hint": "会飞和动物要同时满足。",
+        "explain": "小鸟是会飞的动物。"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "week": 2,
+    "title": "排除法",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "不是动物 · 会飞",
+        "voicePrompt": "它会飞，但不是动物。它是谁？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "飞机",
+            "emoji": "✈️"
+          },
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          },
+          {
+            "label": "蜜蜂",
+            "emoji": "🐝"
+          },
+          {
+            "label": "蝴蝶",
+            "emoji": "🦋"
+          }
+        ],
+        "answer": 0,
+        "hint": "先排除所有动物。",
+        "explain": "飞机会飞，但不是动物。"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "week": 2,
+    "title": "规则够吗",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "⭕ → ?",
+        "voicePrompt": "只知道它是圆的，能确定是哪一个吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "能确定",
+            "emoji": "✅"
+          },
+          {
+            "label": "不能确定",
+            "emoji": "❓"
+          },
+          {
+            "label": "一定是球",
+            "emoji": "⚽"
+          },
+          {
+            "label": "一定是饼干",
+            "emoji": "🍪"
+          }
+        ],
+        "answer": 1,
+        "hint": "圆的东西有很多种。",
+        "explain": "一条宽泛线索不能确定唯一答案。"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "week": 2,
+    "title": "双重排除",
+    "subtitle": "能力岛 1",
+    "icon": "🧺",
+    "color": "#ff8f70",
+    "skill": "分类与排除",
+    "activities": [
+      {
+        "prompt": "能吃 · 不甜",
+        "voicePrompt": "找出能吃、但通常不甜的东西。",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "胡萝卜",
+            "emoji": "🥕"
+          },
+          {
+            "label": "蛋糕",
+            "emoji": "🍰"
+          },
+          {
+            "label": "糖果",
+            "emoji": "🍬"
+          },
+          {
+            "label": "冰淇淋",
+            "emoji": "🍦"
+          }
+        ],
+        "answer": 0,
+        "hint": "先保留食物，再排除甜食。",
+        "explain": "胡萝卜能吃，通常不属于甜食。"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "week": 3,
+    "title": "接规律",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🔴 🔵 🔴 🔵 ?",
+        "voicePrompt": "红、蓝轮流出现，下一个是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "红",
+            "emoji": "🔴"
+          },
+          {
+            "label": "蓝",
+            "emoji": "🔵"
+          },
+          {
+            "label": "黄",
+            "emoji": "🟡"
+          },
+          {
+            "label": "绿",
+            "emoji": "🟢"
+          }
+        ],
+        "answer": 0,
+        "hint": "两个一组看。",
+        "explain": "红蓝重复，下一项是红。"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "week": 3,
+    "title": "接规律",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "⭐ 🌙 ⭐ 🌙 ?",
+        "voicePrompt": "星星、月亮轮流出现，下一个是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "星星",
+            "emoji": "⭐"
+          },
+          {
+            "label": "月亮",
+            "emoji": "🌙"
+          },
+          {
+            "label": "太阳",
+            "emoji": "☀️"
+          },
+          {
+            "label": "云",
+            "emoji": "☁️"
+          }
+        ],
+        "answer": 0,
+        "hint": "星月是一组。",
+        "explain": "新的一组从星星开始。"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "week": 3,
+    "title": "三步规律",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🔺 ⭕ ⭕ 🔺 ⭕ ⭕ ?",
+        "voicePrompt": "每组是一个三角、两个圆，下一个是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "三角",
+            "emoji": "🔺"
+          },
+          {
+            "label": "圆",
+            "emoji": "⭕"
+          },
+          {
+            "label": "方块",
+            "emoji": "🟦"
+          },
+          {
+            "label": "星星",
+            "emoji": "⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "三个一组圈起来。",
+        "explain": "一组结束后重新从三角开始。"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "week": 3,
+    "title": "三步规律",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🍎 🍌 🍓 🍎 🍌 ?",
+        "voicePrompt": "苹果、香蕉、草莓重复，缺少什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "香蕉",
+            "emoji": "🍌"
+          },
+          {
+            "label": "草莓",
+            "emoji": "🍓"
+          },
+          {
+            "label": "梨",
+            "emoji": "🍐"
+          }
+        ],
+        "answer": 2,
+        "hint": "完整一组有三种水果。",
+        "explain": "第三个位置是草莓。"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "week": 3,
+    "title": "找错误",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🔴 🔵 🔴 🟡 🔴 🔵",
+        "voicePrompt": "本来应该红蓝交替，哪一个放错了？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "第2个",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "第3个",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "第4个",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "第6个",
+            "emoji": "6️⃣"
+          }
+        ],
+        "answer": 2,
+        "hint": "第4个本来应该是什么颜色？",
+        "explain": "第4个应该是蓝色。"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "week": 3,
+    "title": "找错误",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "⭐ 🌙 🌙 ⭐ ☀️ 🌙",
+        "voicePrompt": "每组应该是星、月、月。哪一个放错了？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "第2个",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "第4个",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "第5个",
+            "emoji": "5️⃣"
+          },
+          {
+            "label": "第6个",
+            "emoji": "6️⃣"
+          }
+        ],
+        "answer": 2,
+        "hint": "看第二组三个图。",
+        "explain": "第二组中间应该是月亮，第5个放错了。"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "week": 4,
+    "title": "同一规律",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "👏 🦶 👏 🦶",
+        "voicePrompt": "哪一列和拍手、跺脚的交替规律一样？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "圆方交替",
+            "emoji": "⭕ 🟦 ⭕ 🟦"
+          },
+          {
+            "label": "两个圆两个方",
+            "emoji": "⭕ ⭕ 🟦 🟦"
+          },
+          {
+            "label": "圆方方圆",
+            "emoji": "⭕ 🟦 🟦 ⭕"
+          },
+          {
+            "label": "全是圆",
+            "emoji": "⭕ ⭕ ⭕ ⭕"
+          }
+        ],
+        "answer": 0,
+        "hint": "找两个动作轮流出现的结构。",
+        "explain": "圆方交替与拍手跺脚的结构相同。"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "week": 4,
+    "title": "变材料",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🔴 🔴 🔵 | ?",
+        "voicePrompt": "哪一列也是两个一样、一个不同？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "拍拍拍跺",
+            "emoji": "👏 👏 🦶"
+          },
+          {
+            "label": "拍跺拍",
+            "emoji": "👏 🦶 👏"
+          },
+          {
+            "label": "跺拍拍",
+            "emoji": "🦶 👏 👏"
+          },
+          {
+            "label": "拍拍拍",
+            "emoji": "👏 👏 👏"
+          }
+        ],
+        "answer": 0,
+        "hint": "位置顺序也要一样。",
+        "explain": "两个拍手再一个跺脚，结构完全相同。"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "week": 4,
+    "title": "越来越多",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "⭐ | ⭐⭐ | ⭐⭐⭐ | ?",
+        "voicePrompt": "每次增加一颗星，下一组是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "两颗",
+            "emoji": "⭐⭐"
+          },
+          {
+            "label": "三颗",
+            "emoji": "⭐⭐⭐"
+          },
+          {
+            "label": "四颗",
+            "emoji": "⭐⭐⭐⭐"
+          },
+          {
+            "label": "五颗",
+            "emoji": "⭐⭐⭐⭐⭐"
+          }
+        ],
+        "answer": 2,
+        "hint": "一、二、三，接下来是几？",
+        "explain": "下一组应该有四颗星。"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "week": 4,
+    "title": "越来越少",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🍎🍎🍎🍎 | 🍎🍎🍎 | 🍎🍎 | ?",
+        "voicePrompt": "每次少一个苹果，下一组是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "一个",
+            "emoji": "🍎"
+          },
+          {
+            "label": "两个",
+            "emoji": "🍎🍎"
+          },
+          {
+            "label": "三个",
+            "emoji": "🍎🍎🍎"
+          },
+          {
+            "label": "没有",
+            "emoji": "0️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "四、三、二，接下来是一。",
+        "explain": "每次少一个，下一组剩一个苹果。"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "week": 4,
+    "title": "双规律",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🔴⭐ 🔵🌙 🔴⭐ ?",
+        "voicePrompt": "颜色和图形都在交替，下一对是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "蓝月",
+            "emoji": "🔵🌙"
+          },
+          {
+            "label": "红月",
+            "emoji": "🔴🌙"
+          },
+          {
+            "label": "蓝星",
+            "emoji": "🔵⭐"
+          },
+          {
+            "label": "黄星",
+            "emoji": "🟡⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "同时检查颜色和图案。",
+        "explain": "红星、蓝月成组重复，下一对是蓝月。"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "week": 4,
+    "title": "循环位置",
+    "subtitle": "能力岛 2",
+    "icon": "🚂",
+    "color": "#f4b64a",
+    "skill": "规律与纠错",
+    "activities": [
+      {
+        "prompt": "🐶 🐱 🐰 | 🐱 🐰 🐶 | ?",
+        "voicePrompt": "每次把最前面的动物移到最后，下一排是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "兔狗猫",
+            "emoji": "🐰 🐶 🐱"
+          },
+          {
+            "label": "狗猫兔",
+            "emoji": "🐶 🐱 🐰"
+          },
+          {
+            "label": "猫狗兔",
+            "emoji": "🐱 🐶 🐰"
+          },
+          {
+            "label": "兔猫狗",
+            "emoji": "🐰 🐱 🐶"
+          }
+        ],
+        "answer": 0,
+        "hint": "第二排最前面的猫要移到最后。",
+        "explain": "继续轮换后是兔子、小狗、小猫。"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "week": 5,
+    "title": "找关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🐣 → 🐔 · 🐶 → ?",
+        "voicePrompt": "小鸡长大会变成母鸡，小狗长大会变成什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "大狗",
+            "emoji": "🐕"
+          },
+          {
+            "label": "小猫",
+            "emoji": "🐱"
+          },
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          },
+          {
+            "label": "小鱼",
+            "emoji": "🐟"
+          }
+        ],
+        "answer": 0,
+        "hint": "前后是小时候和长大后的关系。",
+        "explain": "小狗长大会成为大狗。"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "week": 5,
+    "title": "找关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🌱 → 🌳 · 🐛 → ?",
+        "voicePrompt": "幼苗长成大树，毛毛虫会变成什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "蝴蝶",
+            "emoji": "🦋"
+          },
+          {
+            "label": "小鱼",
+            "emoji": "🐟"
+          },
+          {
+            "label": "蜜蜂",
+            "emoji": "🐝"
+          },
+          {
+            "label": "蜗牛",
+            "emoji": "🐌"
+          }
+        ],
+        "answer": 0,
+        "hint": "想想毛毛虫长大后的变化。",
+        "explain": "毛毛虫会变成蝴蝶。"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "week": 5,
+    "title": "找关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🔒 → 🔑 · ✉️ → ?",
+        "voicePrompt": "锁需要钥匙打开，信封需要什么打开？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "剪刀",
+            "emoji": "✂️"
+          },
+          {
+            "label": "帽子",
+            "emoji": "🧢"
+          },
+          {
+            "label": "鞋子",
+            "emoji": "👟"
+          },
+          {
+            "label": "杯子",
+            "emoji": "🥤"
+          }
+        ],
+        "answer": 0,
+        "hint": "找能完成同样打开动作的工具。",
+        "explain": "剪刀可以帮助打开信封。"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "week": 5,
+    "title": "找关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "☀️ → 🕶️ · 🌧️ → ?",
+        "voicePrompt": "太阳出来戴墨镜，下雨时需要什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "雨伞",
+            "emoji": "🌂"
+          },
+          {
+            "label": "手套",
+            "emoji": "🧤"
+          },
+          {
+            "label": "风筝",
+            "emoji": "🪁"
+          },
+          {
+            "label": "球",
+            "emoji": "⚽"
+          }
+        ],
+        "answer": 0,
+        "hint": "找应对下雨的物品。",
+        "explain": "下雨时需要雨伞。"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "week": 5,
+    "title": "找关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🐟 → 🌊 · 🐦 → ?",
+        "voicePrompt": "鱼生活在水里，小鸟常生活在哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "天空",
+            "emoji": "☁️"
+          },
+          {
+            "label": "锅里",
+            "emoji": "🍲"
+          },
+          {
+            "label": "书里",
+            "emoji": "📖"
+          },
+          {
+            "label": "盒里",
+            "emoji": "📦"
+          }
+        ],
+        "answer": 0,
+        "hint": "想想小鸟飞行的位置。",
+        "explain": "小鸟常在天空飞翔。"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "week": 5,
+    "title": "找关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "👂 → 🔊 · 👃 → ?",
+        "voicePrompt": "耳朵用来听声音，鼻子用来感受什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "气味",
+            "emoji": "🌸"
+          },
+          {
+            "label": "颜色",
+            "emoji": "🎨"
+          },
+          {
+            "label": "声音",
+            "emoji": "🔔"
+          },
+          {
+            "label": "形状",
+            "emoji": "🔺"
+          }
+        ],
+        "answer": 0,
+        "hint": "鼻子闻什么？",
+        "explain": "鼻子用来闻气味。"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "week": 6,
+    "title": "部分整体",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🚗 → 🛞 · 🏠 → ?",
+        "voicePrompt": "车有轮子，房子有什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "门",
+            "emoji": "🚪"
+          },
+          {
+            "label": "鱼鳍",
+            "emoji": "🐟"
+          },
+          {
+            "label": "翅膀",
+            "emoji": "🪽"
+          },
+          {
+            "label": "船桨",
+            "emoji": "🛶"
+          }
+        ],
+        "answer": 0,
+        "hint": "找房子的一部分。",
+        "explain": "门是房子的一部分。"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "week": 6,
+    "title": "工具用途",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "✏️ → 📝 · ✂️ → ?",
+        "voicePrompt": "铅笔用来写，剪刀用来做什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "剪",
+            "emoji": "✂️📄"
+          },
+          {
+            "label": "喝水",
+            "emoji": "🥤"
+          },
+          {
+            "label": "走路",
+            "emoji": "👟"
+          },
+          {
+            "label": "照明",
+            "emoji": "💡"
+          }
+        ],
+        "answer": 0,
+        "hint": "想想剪刀最常完成的动作。",
+        "explain": "剪刀用来剪东西。"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "week": 6,
+    "title": "相反关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "⬆️ → ⬇️ · ⬅️ → ?",
+        "voicePrompt": "上和下相反，左和什么相反？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "右",
+            "emoji": "➡️"
+          },
+          {
+            "label": "上",
+            "emoji": "⬆️"
+          },
+          {
+            "label": "下",
+            "emoji": "⬇️"
+          },
+          {
+            "label": "左",
+            "emoji": "⬅️"
+          }
+        ],
+        "answer": 0,
+        "hint": "找左的相反方向。",
+        "explain": "左和右互为相反方向。"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "week": 6,
+    "title": "先后关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🌰 → 🌱 · 🥚 → ?",
+        "voicePrompt": "种子先变成幼苗，蛋接着会变成什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "小鸡",
+            "emoji": "🐣"
+          },
+          {
+            "label": "母鸡",
+            "emoji": "🐔"
+          },
+          {
+            "label": "树",
+            "emoji": "🌳"
+          },
+          {
+            "label": "花",
+            "emoji": "🌸"
+          }
+        ],
+        "answer": 0,
+        "hint": "想蛋孵化后的第一阶段。",
+        "explain": "蛋孵化后先出现小鸡。"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "week": 6,
+    "title": "容器关系",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🥛 → 🥤 · 🍲 → ?",
+        "voicePrompt": "牛奶装进杯子，汤应该装进什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "碗",
+            "emoji": "🥣"
+          },
+          {
+            "label": "鞋",
+            "emoji": "👟"
+          },
+          {
+            "label": "帽子",
+            "emoji": "🧢"
+          },
+          {
+            "label": "书",
+            "emoji": "📕"
+          }
+        ],
+        "answer": 0,
+        "hint": "找适合盛汤的容器。",
+        "explain": "碗适合盛汤。"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "week": 6,
+    "title": "多步类比",
+    "subtitle": "能力岛 3",
+    "icon": "🔗",
+    "color": "#56b89f",
+    "skill": "类比与关系",
+    "activities": [
+      {
+        "prompt": "🐝 → 🌸 → 🍯 · 🐄 → 🌿 → ?",
+        "voicePrompt": "蜜蜂采花得到蜂蜜，奶牛吃草能给我们什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "牛奶",
+            "emoji": "🥛"
+          },
+          {
+            "label": "蜂蜜",
+            "emoji": "🍯"
+          },
+          {
+            "label": "鸡蛋",
+            "emoji": "🥚"
+          },
+          {
+            "label": "面包",
+            "emoji": "🍞"
+          }
+        ],
+        "answer": 0,
+        "hint": "跟着动物、食物、产物的关系想。",
+        "explain": "奶牛吃草，能产出牛奶。"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "week": 7,
+    "title": "排队",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🐭 < 🐰 < 🐘",
+        "voicePrompt": "按从小到大，谁在最后？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "老鼠",
+            "emoji": "🐭"
+          },
+          {
+            "label": "兔子",
+            "emoji": "🐰"
+          },
+          {
+            "label": "大象",
+            "emoji": "🐘"
+          },
+          {
+            "label": "小猫",
+            "emoji": "🐱"
+          }
+        ],
+        "answer": 2,
+        "hint": "最后应该是最大的。",
+        "explain": "大象最大，排在最后。"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "week": 7,
+    "title": "排队",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🌱 < 🌻 < 🌳",
+        "voicePrompt": "按从矮到高，谁在中间？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "幼苗",
+            "emoji": "🌱"
+          },
+          {
+            "label": "向日葵",
+            "emoji": "🌻"
+          },
+          {
+            "label": "大树",
+            "emoji": "🌳"
+          },
+          {
+            "label": "蘑菇",
+            "emoji": "🍄"
+          }
+        ],
+        "answer": 1,
+        "hint": "中间要比幼苗高、比大树矮。",
+        "explain": "向日葵位于两者之间。"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "week": 7,
+    "title": "传递比较",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🔵 > 🟠 > 🟢",
+        "voicePrompt": "蓝比橙长，橙比绿长。谁最短？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "蓝",
+            "emoji": "🔵"
+          },
+          {
+            "label": "橙",
+            "emoji": "🟠"
+          },
+          {
+            "label": "绿",
+            "emoji": "🟢"
+          },
+          {
+            "label": "一样长",
+            "emoji": "🟰"
+          }
+        ],
+        "answer": 2,
+        "hint": "把两次比较连起来。",
+        "explain": "绿比橙短，也比蓝短。"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "week": 7,
+    "title": "插入位置",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🐭 ＿ 🐘",
+        "voicePrompt": "兔子比老鼠大、比大象小，应该放哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "中间",
+            "emoji": "🐭🐰🐘"
+          },
+          {
+            "label": "最前",
+            "emoji": "🐰🐭🐘"
+          },
+          {
+            "label": "最后",
+            "emoji": "🐭🐘🐰"
+          },
+          {
+            "label": "任意",
+            "emoji": "❓"
+          }
+        ],
+        "answer": 0,
+        "hint": "同时满足前后两个条件。",
+        "explain": "兔子正好在老鼠和大象之间。"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "week": 7,
+    "title": "前后关系",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🐻 → 🦊 → 🐰",
+        "voicePrompt": "小熊在狐狸前，狐狸在兔子前。谁最后？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "小熊",
+            "emoji": "🐻"
+          },
+          {
+            "label": "狐狸",
+            "emoji": "🦊"
+          },
+          {
+            "label": "兔子",
+            "emoji": "🐰"
+          },
+          {
+            "label": "不能确定",
+            "emoji": "❓"
+          }
+        ],
+        "answer": 2,
+        "hint": "沿着箭头走到最后。",
+        "explain": "兔子在狐狸后面，所以排最后。"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "week": 7,
+    "title": "名次推理",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🐰 ? 🦌 ? 🐻",
+        "voicePrompt": "兔子在小鹿前，小熊在小鹿后。谁第一？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "兔子",
+            "emoji": "🐰"
+          },
+          {
+            "label": "小鹿",
+            "emoji": "🦌"
+          },
+          {
+            "label": "小熊",
+            "emoji": "🐻"
+          },
+          {
+            "label": "并列",
+            "emoji": "🟰"
+          }
+        ],
+        "answer": 0,
+        "hint": "小鹿前面只有兔子。",
+        "explain": "兔子第一，小鹿第二，小熊第三。"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "week": 8,
+    "title": "重量排序",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🪶 < 🍎 < 🪨",
+        "voicePrompt": "从轻到重，谁在中间？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "羽毛",
+            "emoji": "🪶"
+          },
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "石头",
+            "emoji": "🪨"
+          },
+          {
+            "label": "无法比较",
+            "emoji": "❓"
+          }
+        ],
+        "answer": 1,
+        "hint": "苹果比羽毛重、比石头轻。",
+        "explain": "苹果处在中间。"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "week": 8,
+    "title": "位置计算",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣",
+        "voicePrompt": "西西在第3位，东东紧挨在她前面。东东第几位？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "第一",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "第二",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "第三",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "第四",
+            "emoji": "4️⃣"
+          }
+        ],
+        "answer": 1,
+        "hint": "第三格的前一格。",
+        "explain": "紧挨第三位前面的是第二位。"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "week": 8,
+    "title": "反向排序",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🐘 🐰 🐭",
+        "voicePrompt": "现在从大到小排，谁在中间？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "大象",
+            "emoji": "🐘"
+          },
+          {
+            "label": "兔子",
+            "emoji": "🐰"
+          },
+          {
+            "label": "老鼠",
+            "emoji": "🐭"
+          },
+          {
+            "label": "小猫",
+            "emoji": "🐱"
+          }
+        ],
+        "answer": 1,
+        "hint": "规则换成从大到小。",
+        "explain": "兔子仍在大小之间。"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "week": 8,
+    "title": "找矛盾",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🔴 > 🔵 · 🔵 > 🟢 · 🟢 > 🔴",
+        "voicePrompt": "三条比较能同时成立吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "能",
+            "emoji": "✅"
+          },
+          {
+            "label": "不能",
+            "emoji": "❌"
+          },
+          {
+            "label": "都一样",
+            "emoji": "🟰"
+          },
+          {
+            "label": "缺颜色",
+            "emoji": "🎨"
+          }
+        ],
+        "answer": 1,
+        "hint": "如果红比蓝长、蓝比绿长，绿还能比红长吗？",
+        "explain": "三条关系绕成矛盾，不能同时成立。"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "week": 8,
+    "title": "信息够吗",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "A > B",
+        "voicePrompt": "只知道A比B高，能知道C排第几吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "能",
+            "emoji": "✅"
+          },
+          {
+            "label": "不能",
+            "emoji": "❓"
+          },
+          {
+            "label": "第一",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "最后",
+            "emoji": "3️⃣"
+          }
+        ],
+        "answer": 1,
+        "hint": "题目没有比较C。",
+        "explain": "缺少C与A、B的关系，无法确定。"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "week": 8,
+    "title": "四项排序",
+    "subtitle": "能力岛 4",
+    "icon": "📏",
+    "color": "#4ba6d8",
+    "skill": "比较与排序",
+    "activities": [
+      {
+        "prompt": "🟢最短 · 🔴>🔵 · 🔴<🟡",
+        "voicePrompt": "从短到长选哪一排？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "绿蓝红黄",
+            "emoji": "🟢🔵🔴🟡"
+          },
+          {
+            "label": "绿红蓝黄",
+            "emoji": "🟢🔴🔵🟡"
+          },
+          {
+            "label": "蓝绿红黄",
+            "emoji": "🔵🟢🔴🟡"
+          },
+          {
+            "label": "绿蓝黄红",
+            "emoji": "🟢🔵🟡🔴"
+          }
+        ],
+        "answer": 0,
+        "hint": "红在蓝后、黄前，绿最前。",
+        "explain": "正确顺序是绿、蓝、红、黄。"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "week": 9,
+    "title": "走一格",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "● ➡️",
+        "voicePrompt": "小球从中间向右一格，到了哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "右",
+            "emoji": "➡️"
+          },
+          {
+            "label": "左",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "上",
+            "emoji": "⬆️"
+          },
+          {
+            "label": "下",
+            "emoji": "⬇️"
+          }
+        ],
+        "answer": 0,
+        "hint": "跟着箭头走。",
+        "explain": "向右移动后在右边。"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "week": 9,
+    "title": "走两格",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "● ➡️ ⬆️",
+        "voicePrompt": "先向右，再向上，最后在哪个方向？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "右上",
+            "emoji": "↗️"
+          },
+          {
+            "label": "左上",
+            "emoji": "↖️"
+          },
+          {
+            "label": "右下",
+            "emoji": "↘️"
+          },
+          {
+            "label": "左下",
+            "emoji": "↙️"
+          }
+        ],
+        "answer": 0,
+        "hint": "把两次移动连起来。",
+        "explain": "右移再上移，最后在右上方。"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "week": 9,
+    "title": "走两格",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "● ⬅️ ⬇️",
+        "voicePrompt": "先向左，再向下，最后在哪个方向？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "左下",
+            "emoji": "↙️"
+          },
+          {
+            "label": "左上",
+            "emoji": "↖️"
+          },
+          {
+            "label": "右下",
+            "emoji": "↘️"
+          },
+          {
+            "label": "右上",
+            "emoji": "↗️"
+          }
+        ],
+        "answer": 0,
+        "hint": "先左后下。",
+        "explain": "最后位置在左下方。"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "week": 9,
+    "title": "回到原位",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "● ➡️ ⬅️",
+        "voicePrompt": "先向右一格，再向左一格，最后在哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "原位",
+            "emoji": "⏺️"
+          },
+          {
+            "label": "右边",
+            "emoji": "➡️"
+          },
+          {
+            "label": "左边",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "上面",
+            "emoji": "⬆️"
+          }
+        ],
+        "answer": 0,
+        "hint": "两次方向相反、距离相同。",
+        "explain": "右一步再左一步会回到原位。"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "week": 9,
+    "title": "转方向",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "⬆️ ↪️",
+        "voicePrompt": "面向上，向右转后面向哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "右",
+            "emoji": "➡️"
+          },
+          {
+            "label": "左",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "下",
+            "emoji": "⬇️"
+          },
+          {
+            "label": "上",
+            "emoji": "⬆️"
+          }
+        ],
+        "answer": 0,
+        "hint": "想象身体向右转四分之一圈。",
+        "explain": "向右转后面向右方。"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "week": 9,
+    "title": "转两次",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "⬆️ ↪️ ↪️",
+        "voicePrompt": "面向上，连续右转两次后面向哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "下",
+            "emoji": "⬇️"
+          },
+          {
+            "label": "右",
+            "emoji": "➡️"
+          },
+          {
+            "label": "左",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "上",
+            "emoji": "⬆️"
+          }
+        ],
+        "answer": 0,
+        "hint": "第一次向右，第二次再向右。",
+        "explain": "连续两个右转等于转半圈，面向下。"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "week": 10,
+    "title": "镜面对面",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "🐱 ↔️ 🙂",
+        "voicePrompt": "小猫面对你抬左爪，你看到画面的哪边抬起？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "画面右边",
+            "emoji": "➡️"
+          },
+          {
+            "label": "画面左边",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "上面",
+            "emoji": "⬆️"
+          },
+          {
+            "label": "下面",
+            "emoji": "⬇️"
+          }
+        ],
+        "answer": 0,
+        "hint": "面对面时左右相反。",
+        "explain": "小猫的左侧出现在你的右侧。"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "week": 10,
+    "title": "藏杯子",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "🎁 🥤 ↔️ 🥤",
+        "voicePrompt": "礼物在左杯下，两只杯交换。礼物到哪边？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "右边",
+            "emoji": "➡️"
+          },
+          {
+            "label": "左边",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "中间",
+            "emoji": "⏺️"
+          },
+          {
+            "label": "消失",
+            "emoji": "💨"
+          }
+        ],
+        "answer": 0,
+        "hint": "礼物跟着杯子移动。",
+        "explain": "左杯换到右边，礼物也到右边。"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "week": 10,
+    "title": "两次交换",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "🎁 1️⃣↔️2️⃣ · 2️⃣↔️3️⃣",
+        "voicePrompt": "礼物先随1号杯到中间，再交换到哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "右边",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "中间",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "左边",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "消失",
+            "emoji": "💨"
+          }
+        ],
+        "answer": 0,
+        "hint": "第一次到2号位，第二次再到3号位。",
+        "explain": "两次交换后礼物在右边3号位。"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "week": 10,
+    "title": "折纸洞",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "◻️ ↔️ 🕳️",
+        "voicePrompt": "纸对折后打一个洞，展开会看到几个对称的洞？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "两个",
+            "emoji": "🕳️ 🕳️"
+          },
+          {
+            "label": "一个",
+            "emoji": "🕳️"
+          },
+          {
+            "label": "三个",
+            "emoji": "🕳️🕳️🕳️"
+          },
+          {
+            "label": "没有",
+            "emoji": "0️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "对折让两层纸同时被打穿。",
+        "explain": "展开后会出现两个对称的洞。"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "week": 10,
+    "title": "旋转图形",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "🔺 🔄",
+        "voicePrompt": "三角形转半圈后，它还有几个角？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "三个",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "两个",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "四个",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "没有",
+            "emoji": "0️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "旋转不会长出新角。",
+        "explain": "三角形方向变了，仍有三个角。"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "week": 10,
+    "title": "路径规划",
+    "subtitle": "能力岛 5",
+    "icon": "🧭",
+    "color": "#8678d8",
+    "skill": "空间与路径",
+    "activities": [
+      {
+        "prompt": "🐭 ⬆️➡️➡️ 🍎",
+        "voicePrompt": "哪组箭头能让小鼠先上一步、再右两步到苹果？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "上右右",
+            "emoji": "⬆️➡️➡️"
+          },
+          {
+            "label": "右上左",
+            "emoji": "➡️⬆️⬅️"
+          },
+          {
+            "label": "上左左",
+            "emoji": "⬆️⬅️⬅️"
+          },
+          {
+            "label": "下右右",
+            "emoji": "⬇️➡️➡️"
+          }
+        ],
+        "answer": 0,
+        "hint": "动作顺序也不能改变。",
+        "explain": "上、右、右与目标路径完全一致。"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "week": 11,
+    "title": "一眼看数",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "⚫⚫ · ⚫⚫⚫",
+        "voicePrompt": "两点和三点合起来有几个？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          },
+          {
+            "label": "四",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          },
+          {
+            "label": "三",
+            "emoji": "3️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "二和三合起来。",
+        "explain": "二加三等于五。"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "week": 11,
+    "title": "五加几",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "⚫⚫⚫⚫⚫ + ⚫⚫",
+        "voicePrompt": "五个点再加两个点，一共有几个？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "七",
+            "emoji": "7️⃣"
+          },
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          },
+          {
+            "label": "八",
+            "emoji": "8️⃣"
+          },
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "从五继续数两个。",
+        "explain": "五加二等于七。"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "week": 11,
+    "title": "十格框",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "6️⃣ + ? = 🔟",
+        "voicePrompt": "已经有六个，还差几个到十？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "四",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "三",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          },
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "从六数到十。",
+        "explain": "六再加四就是十。"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "week": 11,
+    "title": "一样多",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "4️⃣+3️⃣ ? 5️⃣+2️⃣",
+        "voicePrompt": "左右两边谁更多？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "一样多",
+            "emoji": "🟰"
+          },
+          {
+            "label": "左边",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "右边",
+            "emoji": "➡️"
+          },
+          {
+            "label": "不能算",
+            "emoji": "❓"
+          }
+        ],
+        "answer": 0,
+        "hint": "两边分别合起来。",
+        "explain": "四加三和五加二都等于七。"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "week": 11,
+    "title": "数量守恒",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "⚫⚫⚫⚫⚫ → ⭕",
+        "voicePrompt": "五个点排成一圈后有几个？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          },
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          },
+          {
+            "label": "四",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "零",
+            "emoji": "0️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "只换位置，没有拿走。",
+        "explain": "排列改变，总数仍然是五。"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "week": 11,
+    "title": "全部拿走",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "5️⃣ - 5️⃣",
+        "voicePrompt": "五个全部拿走，还剩几个？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "零",
+            "emoji": "0️⃣"
+          },
+          {
+            "label": "一",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "四",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "全部表示一个也不剩。",
+        "explain": "五减五等于零。"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "week": 12,
+    "title": "两组相同",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "4️⃣ + 4️⃣",
+        "voicePrompt": "两盘各四块，一共有几块？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "八",
+            "emoji": "8️⃣"
+          },
+          {
+            "label": "四",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          },
+          {
+            "label": "十",
+            "emoji": "🔟"
+          }
+        ],
+        "answer": 0,
+        "hint": "把两个四合起来。",
+        "explain": "四加四等于八。"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "week": 12,
+    "title": "分解八",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "8️⃣ = 5️⃣ + ?",
+        "voicePrompt": "八可以分成五和几？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "三",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "二",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "四",
+            "emoji": "4️⃣"
+          },
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "五再添几个到八？",
+        "explain": "五和三合起来是八。"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "week": 12,
+    "title": "另一种分法",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "8️⃣ = ?",
+        "voicePrompt": "哪两组也能合成八？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "四和四",
+            "emoji": "4️⃣+4️⃣"
+          },
+          {
+            "label": "五和二",
+            "emoji": "5️⃣+2️⃣"
+          },
+          {
+            "label": "六和三",
+            "emoji": "6️⃣+3️⃣"
+          },
+          {
+            "label": "四和三",
+            "emoji": "4️⃣+3️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "两边加起来要正好是八。",
+        "explain": "四加四等于八。"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "week": 12,
+    "title": "中间数字",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "6️⃣ < ? < 8️⃣",
+        "voicePrompt": "比六大、比八小的是谁？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "七",
+            "emoji": "7️⃣"
+          },
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          },
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          },
+          {
+            "label": "八",
+            "emoji": "8️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "看六和八中间。",
+        "explain": "七在六和八之间。"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "week": 12,
+    "title": "多一少一",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "🐰🐰🐰 · 🥕🥕",
+        "voicePrompt": "三只兔子、两根胡萝卜，会怎样？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "少一根",
+            "emoji": "➖1️⃣"
+          },
+          {
+            "label": "刚刚好",
+            "emoji": "🟰"
+          },
+          {
+            "label": "多一根",
+            "emoji": "➕1️⃣"
+          },
+          {
+            "label": "少两根",
+            "emoji": "➖2️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "一只兔子配一根。",
+        "explain": "三只兔子只有两根胡萝卜，少一根。"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "week": 12,
+    "title": "估算检查",
+    "subtitle": "能力岛 6",
+    "icon": "🎲",
+    "color": "#ff8f70",
+    "skill": "数量与数感",
+    "activities": [
+      {
+        "prompt": "⭐⭐⭐ + ⭐⭐⭐",
+        "voicePrompt": "不用逐个数，两组三颗合起来是多少？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "六",
+            "emoji": "6️⃣"
+          },
+          {
+            "label": "五",
+            "emoji": "5️⃣"
+          },
+          {
+            "label": "七",
+            "emoji": "7️⃣"
+          },
+          {
+            "label": "八",
+            "emoji": "8️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "三和三是熟悉的双倍。",
+        "explain": "三加三等于六。"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "week": 13,
+    "title": "认图形",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "3️⃣边 + 3️⃣角",
+        "voicePrompt": "哪个图形有三条边和三个角？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "三角形",
+            "emoji": "🔺"
+          },
+          {
+            "label": "圆形",
+            "emoji": "⭕"
+          },
+          {
+            "label": "正方形",
+            "emoji": "🟦"
+          },
+          {
+            "label": "星形",
+            "emoji": "⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "数一数尖角。",
+        "explain": "三角形有三条边和三个角。"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "week": 13,
+    "title": "认图形",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "0️⃣角",
+        "voicePrompt": "哪个图形没有角？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "圆形",
+            "emoji": "⭕"
+          },
+          {
+            "label": "三角形",
+            "emoji": "🔺"
+          },
+          {
+            "label": "正方形",
+            "emoji": "🟦"
+          },
+          {
+            "label": "菱形",
+            "emoji": "🔶"
+          }
+        ],
+        "answer": 0,
+        "hint": "找边缘一直弯曲的。",
+        "explain": "圆形没有角。"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "week": 13,
+    "title": "切一刀",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🟦 ╱",
+        "voicePrompt": "正方形沿对角线剪开会得到什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "两个三角",
+            "emoji": "🔺🔺"
+          },
+          {
+            "label": "两个圆",
+            "emoji": "⭕⭕"
+          },
+          {
+            "label": "四个方块",
+            "emoji": "🟦🟦🟦🟦"
+          },
+          {
+            "label": "一颗星",
+            "emoji": "⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "从一个角剪到对角。",
+        "explain": "会得到两个相同的三角形。"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "week": 13,
+    "title": "拼一拼",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🔺 + 🔺",
+        "voicePrompt": "两个相同直角三角形沿斜边贴合能拼成什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "正方形",
+            "emoji": "🟦"
+          },
+          {
+            "label": "圆形",
+            "emoji": "⭕"
+          },
+          {
+            "label": "星形",
+            "emoji": "⭐"
+          },
+          {
+            "label": "心形",
+            "emoji": "❤️"
+          }
+        ],
+        "answer": 0,
+        "hint": "两条最长的斜边贴在一起。",
+        "explain": "外轮廓可以成为正方形。"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "week": 13,
+    "title": "四块拼图",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🟦🟦🟦🟦",
+        "voicePrompt": "四个小正方形怎样拼成大正方形？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "两行两列",
+            "emoji": "🟦🟦\n🟦🟦"
+          },
+          {
+            "label": "一长行",
+            "emoji": "🟦🟦🟦🟦"
+          },
+          {
+            "label": "分开",
+            "emoji": "🟦  🟦  🟦  🟦"
+          },
+          {
+            "label": "重叠",
+            "emoji": "🔷"
+          }
+        ],
+        "answer": 0,
+        "hint": "长和宽都要一样。",
+        "explain": "两行两列能组成大正方形。"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "week": 13,
+    "title": "共用边",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🟦🟦",
+        "voicePrompt": "两个正方形共用一条边，外轮廓是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "长方形",
+            "emoji": "▭"
+          },
+          {
+            "label": "圆形",
+            "emoji": "⭕"
+          },
+          {
+            "label": "三角形",
+            "emoji": "🔺"
+          },
+          {
+            "label": "星形",
+            "emoji": "⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "共用的边藏在里面。",
+        "explain": "外面看起来是长方形。"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "week": 14,
+    "title": "旋转不变",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🔺 🔄",
+        "voicePrompt": "三角形旋转后变成别的图形了吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "没有",
+            "emoji": "✅"
+          },
+          {
+            "label": "变圆",
+            "emoji": "⭕"
+          },
+          {
+            "label": "变方",
+            "emoji": "🟦"
+          },
+          {
+            "label": "消失",
+            "emoji": "💨"
+          }
+        ],
+        "answer": 0,
+        "hint": "方向变了，边角没变。",
+        "explain": "旋转不会改变图形种类。"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "week": 14,
+    "title": "拆分图形",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🟦 → ?",
+        "voicePrompt": "正方形沿中线竖着切开，会得到什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "两个长方形",
+            "emoji": "▯▯"
+          },
+          {
+            "label": "两个圆",
+            "emoji": "⭕⭕"
+          },
+          {
+            "label": "两个星",
+            "emoji": "⭐⭐"
+          },
+          {
+            "label": "三个三角",
+            "emoji": "🔺🔺🔺"
+          }
+        ],
+        "answer": 0,
+        "hint": "从中间直直切下去。",
+        "explain": "会得到两个相同的长方形。"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "week": 14,
+    "title": "补全图形",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "◐ + ?",
+        "voicePrompt": "半圆还需要哪个图形才能拼成圆？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "另一个半圆",
+            "emoji": "◑"
+          },
+          {
+            "label": "三角形",
+            "emoji": "🔺"
+          },
+          {
+            "label": "正方形",
+            "emoji": "🟦"
+          },
+          {
+            "label": "星形",
+            "emoji": "⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "找能补齐另一半的。",
+        "explain": "两个匹配的半圆能拼成完整圆。"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "week": 14,
+    "title": "内部变化",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🏠 = 🔺 + 🟦",
+        "voicePrompt": "保持房子外轮廓，怎样做出另一种拼法？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "大三角换两个小三角",
+            "emoji": "🔺→🔺🔺"
+          },
+          {
+            "label": "只换颜色",
+            "emoji": "🎨"
+          },
+          {
+            "label": "拿走屋顶",
+            "emoji": "💨"
+          },
+          {
+            "label": "全部重叠",
+            "emoji": "🔷"
+          }
+        ],
+        "answer": 0,
+        "hint": "组成方法要变，外轮廓不变。",
+        "explain": "把大块拆成小块能得到新拼法。"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "week": 14,
+    "title": "判断完成",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "🧩 → ?",
+        "voicePrompt": "怎样判断拼图完成了？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "无洞无重叠",
+            "emoji": "✅"
+          },
+          {
+            "label": "颜色一样",
+            "emoji": "🎨"
+          },
+          {
+            "label": "图块最多",
+            "emoji": "➕"
+          },
+          {
+            "label": "随便放",
+            "emoji": "🎲"
+          }
+        ],
+        "answer": 0,
+        "hint": "检查边界和空洞。",
+        "explain": "完整覆盖且不重叠才算完成。"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "week": 14,
+    "title": "多种答案",
+    "subtitle": "能力岛 7",
+    "icon": "🧩",
+    "color": "#f4b64a",
+    "skill": "图形与组合",
+    "activities": [
+      {
+        "prompt": "4️⃣个🟦 → 长方形",
+        "voicePrompt": "哪两种排法都能得到四边形？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "一行四个和两行两个",
+            "emoji": "▭ + 🟦"
+          },
+          {
+            "label": "圆圈和星星",
+            "emoji": "⭕ + ⭐"
+          },
+          {
+            "label": "重叠和分散",
+            "emoji": "🔷 + 💨"
+          },
+          {
+            "label": "只有一种",
+            "emoji": "1️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "比较拼好后的外轮廓。",
+        "explain": "一行四个和两行两个都能形成四边外轮廓。"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "week": 15,
+    "title": "记顺序",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "👏 🙆 🦶",
+        "voicePrompt": "记住拍手、摸头、跺脚。第二个动作是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "摸头",
+            "emoji": "🙆"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "转圈",
+            "emoji": "🔄"
+          }
+        ],
+        "answer": 0,
+        "hint": "它在拍手和跺脚中间。",
+        "explain": "第二个动作是摸头。"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "week": 15,
+    "title": "记顺序",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🍎 🍌 🍐",
+        "voicePrompt": "记住苹果、香蕉、梨。最后一个是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "梨",
+            "emoji": "🍐"
+          },
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "香蕉",
+            "emoji": "🍌"
+          },
+          {
+            "label": "草莓",
+            "emoji": "🍓"
+          }
+        ],
+        "answer": 0,
+        "hint": "回想队伍最右边。",
+        "explain": "最后一个是梨。"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "week": 15,
+    "title": "倒着说",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🍎 🍌 🍐 ↩️",
+        "voicePrompt": "把三种水果倒着说，第一个是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "梨",
+            "emoji": "🍐"
+          },
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "香蕉",
+            "emoji": "🍌"
+          },
+          {
+            "label": "草莓",
+            "emoji": "🍓"
+          }
+        ],
+        "answer": 0,
+        "hint": "倒序从原来的最后一个开始。",
+        "explain": "倒着说先说梨。"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "week": 15,
+    "title": "交换顺序",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🔴 → 🟦 · 🔔",
+        "voicePrompt": "原来先红球再方块，铃响后交换。先拿什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "方块",
+            "emoji": "🟦"
+          },
+          {
+            "label": "红球",
+            "emoji": "🔴"
+          },
+          {
+            "label": "一起",
+            "emoji": "👐"
+          },
+          {
+            "label": "都不拿",
+            "emoji": "❌"
+          }
+        ],
+        "answer": 0,
+        "hint": "原来的第二个变成第一个。",
+        "explain": "交换后先拿方块。"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "week": 15,
+    "title": "记位置",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "1️⃣🍎 2️⃣🍌 3️⃣🍐",
+        "voicePrompt": "香蕉在第几个位置？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "第二",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "第一",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "第三",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "第四",
+            "emoji": "4️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "看中间的位置。",
+        "explain": "香蕉在第二位。"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "week": 15,
+    "title": "少了谁",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🐶 🐱 🐰 → 🐶 ❓ 🐰",
+        "voicePrompt": "刚才中间是谁？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "小猫",
+            "emoji": "🐱"
+          },
+          {
+            "label": "小狗",
+            "emoji": "🐶"
+          },
+          {
+            "label": "兔子",
+            "emoji": "🐰"
+          },
+          {
+            "label": "小熊",
+            "emoji": "🐻"
+          }
+        ],
+        "answer": 0,
+        "hint": "回想三只动物的顺序。",
+        "explain": "中间是小猫。"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "week": 16,
+    "title": "三步任务",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🍎 → 📦 → 🚪",
+        "voicePrompt": "先拿苹果，放进盒子，再关门。第二步是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "放进盒子",
+            "emoji": "📦"
+          },
+          {
+            "label": "拿苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "关门",
+            "emoji": "🚪"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          }
+        ],
+        "answer": 0,
+        "hint": "第二步在拿苹果之后。",
+        "explain": "第二步是把苹果放进盒子。"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "week": 16,
+    "title": "规则后延",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🔴=👏 · 🔵=🦶 · 🔵",
+        "voicePrompt": "记住规则后看到蓝色，应该做什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "摸头",
+            "emoji": "🙆"
+          },
+          {
+            "label": "不动",
+            "emoji": "⏸️"
+          }
+        ],
+        "answer": 0,
+        "hint": "蓝色对应第二个动作。",
+        "explain": "蓝色对应跺脚。"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "week": 16,
+    "title": "双重记忆",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🔺=👏 · ⭕=🦶 · 🔺⭕",
+        "voicePrompt": "按顺序看到三角和圆，做哪两个动作？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "拍手跺脚",
+            "emoji": "👏🦶"
+          },
+          {
+            "label": "跺脚拍手",
+            "emoji": "🦶👏"
+          },
+          {
+            "label": "只拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "只跺脚",
+            "emoji": "🦶"
+          }
+        ],
+        "answer": 0,
+        "hint": "逐个翻译两个图形。",
+        "explain": "三角对应拍手，圆对应跺脚。"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "week": 16,
+    "title": "更新记忆",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🍎在1️⃣ → 移到3️⃣",
+        "voicePrompt": "苹果原来在1号位，后来移到3号位。现在在哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "3号",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "1号",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "2号",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "不见了",
+            "emoji": "💨"
+          }
+        ],
+        "answer": 0,
+        "hint": "回答最新位置。",
+        "explain": "移动后苹果在3号位。"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "week": 16,
+    "title": "四项记忆",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "🐶 🐱 🐰 🐻",
+        "voicePrompt": "记住四只动物。谁在兔子后面？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "小熊",
+            "emoji": "🐻"
+          },
+          {
+            "label": "小猫",
+            "emoji": "🐱"
+          },
+          {
+            "label": "小狗",
+            "emoji": "🐶"
+          },
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          }
+        ],
+        "answer": 0,
+        "hint": "兔子后面紧跟着谁？",
+        "explain": "兔子后面是小熊。"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "week": 16,
+    "title": "逆序动作",
+    "subtitle": "能力岛 8",
+    "icon": "📦",
+    "color": "#56b89f",
+    "skill": "工作记忆",
+    "activities": [
+      {
+        "prompt": "👏 🙆 🦶 ↩️",
+        "voicePrompt": "把三个动作倒过来做，第一步是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "摸头",
+            "emoji": "🙆"
+          },
+          {
+            "label": "转圈",
+            "emoji": "🔄"
+          }
+        ],
+        "answer": 0,
+        "hint": "倒序从原来的最后一步开始。",
+        "explain": "倒过来先跺脚。"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "week": 17,
+    "title": "听规则",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "🟢 = ▶️",
+        "voicePrompt": "看到绿灯应该前进还是停下？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "前进",
+            "emoji": "▶️"
+          },
+          {
+            "label": "停下",
+            "emoji": "⏹️"
+          },
+          {
+            "label": "转圈",
+            "emoji": "🔄"
+          },
+          {
+            "label": "睡觉",
+            "emoji": "😴"
+          }
+        ],
+        "answer": 0,
+        "hint": "绿灯表示可以走。",
+        "explain": "看到绿灯应该前进。"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "week": 17,
+    "title": "相反日",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "🔴 = ▶️",
+        "voicePrompt": "今天规则相反，红灯表示前进。看到红灯做什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "前进",
+            "emoji": "▶️"
+          },
+          {
+            "label": "停下",
+            "emoji": "⏹️"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "闭眼",
+            "emoji": "🙈"
+          }
+        ],
+        "answer": 0,
+        "hint": "使用新规则，不用旧规则。",
+        "explain": "相反规则下红灯表示前进。"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "week": 17,
+    "title": "颜色规则",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "🔴=👏 · 🔵",
+        "voicePrompt": "只有红色才拍手。看到蓝色怎样做？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "不拍手",
+            "emoji": "⏸️"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "转圈",
+            "emoji": "🔄"
+          }
+        ],
+        "answer": 0,
+        "hint": "蓝色不满足红色条件。",
+        "explain": "蓝色出现时不拍手。"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "week": 17,
+    "title": "形状规则",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "⭕=🦶 · 🔺",
+        "voicePrompt": "只有圆形才跺脚。看到三角形怎样做？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "不跺脚",
+            "emoji": "⏸️"
+          },
+          {
+            "label": "跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "跳高",
+            "emoji": "⬆️"
+          }
+        ],
+        "answer": 0,
+        "hint": "三角形不是圆形。",
+        "explain": "三角形不触发跺脚规则。"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "week": 17,
+    "title": "两条规则",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "🔴=👏 · ⭕=🦶 · 🔴⭕",
+        "voicePrompt": "红色圆形同时出现，应该怎样？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "拍手再跺脚",
+            "emoji": "👏🦶"
+          },
+          {
+            "label": "只拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "只跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "不动",
+            "emoji": "⏸️"
+          }
+        ],
+        "answer": 0,
+        "hint": "颜色和形状都要检查。",
+        "explain": "它同时触发两条规则。"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "week": 17,
+    "title": "规则切换",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "水果=👏 → 非水果=👏 · 🚗",
+        "voicePrompt": "铃响后改成不是水果才拍手。看到汽车怎样做？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "不拍",
+            "emoji": "⏸️"
+          },
+          {
+            "label": "跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "摸头",
+            "emoji": "🙆"
+          }
+        ],
+        "answer": 0,
+        "hint": "汽车不是水果。",
+        "explain": "汽车满足新规则，所以拍手。"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "week": 18,
+    "title": "延迟行动",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "🙆 · 🔵=👏 · 🔵",
+        "voicePrompt": "先摸头，再按颜色规则。看到蓝色的完整动作是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "摸头拍手",
+            "emoji": "🙆👏"
+          },
+          {
+            "label": "拍手摸头",
+            "emoji": "👏🙆"
+          },
+          {
+            "label": "只摸头",
+            "emoji": "🙆"
+          },
+          {
+            "label": "只拍手",
+            "emoji": "👏"
+          }
+        ],
+        "answer": 0,
+        "hint": "固定动作最先完成。",
+        "explain": "先摸头，再因蓝色拍手。"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "week": 18,
+    "title": "不被干扰",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "只看形状 · 🔴⭕",
+        "voicePrompt": "规则说只看形状。红色圆形应该选什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "圆形动作",
+            "emoji": "⭕"
+          },
+          {
+            "label": "红色动作",
+            "emoji": "🔴"
+          },
+          {
+            "label": "两个都选",
+            "emoji": "👐"
+          },
+          {
+            "label": "不选",
+            "emoji": "❌"
+          }
+        ],
+        "answer": 0,
+        "hint": "红色是干扰信息。",
+        "explain": "当前只看形状，所以选择圆形。"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "week": 18,
+    "title": "如果那么",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "如果🌧️ → 🌂 · ☀️",
+        "voicePrompt": "如果下雨就拿伞。现在出太阳，需要拿伞吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "不需要",
+            "emoji": "❌🌂"
+          },
+          {
+            "label": "需要",
+            "emoji": "🌂"
+          },
+          {
+            "label": "拿两把",
+            "emoji": "🌂🌂"
+          },
+          {
+            "label": "不能判断",
+            "emoji": "❓"
+          }
+        ],
+        "answer": 0,
+        "hint": "条件没有发生。",
+        "explain": "没有下雨，不触发拿伞规则。"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "week": 18,
+    "title": "除非规则",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "除非🔴，否则⏸️ · 🔵",
+        "voicePrompt": "除非看到红色才行动。现在是蓝色，怎样做？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "不动",
+            "emoji": "⏸️"
+          },
+          {
+            "label": "行动",
+            "emoji": "▶️"
+          },
+          {
+            "label": "拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "转圈",
+            "emoji": "🔄"
+          }
+        ],
+        "answer": 0,
+        "hint": "只有红色是例外。",
+        "explain": "蓝色不是红色，所以保持不动。"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "week": 18,
+    "title": "先后规则",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "👏 → 🦶 → 🙆",
+        "voicePrompt": "必须按拍手、跺脚、摸头的顺序。哪一个正确？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "拍跺摸",
+            "emoji": "👏🦶🙆"
+          },
+          {
+            "label": "摸拍跺",
+            "emoji": "🙆👏🦶"
+          },
+          {
+            "label": "跺拍拍",
+            "emoji": "🦶👏👏"
+          },
+          {
+            "label": "拍摸跺",
+            "emoji": "👏🙆🦶"
+          }
+        ],
+        "answer": 0,
+        "hint": "动作不能调换。",
+        "explain": "第一组选项顺序完全一致。"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "week": 18,
+    "title": "规则冲突",
+    "subtitle": "能力岛 9",
+    "icon": "🚦",
+    "color": "#4ba6d8",
+    "skill": "规则与控制",
+    "activities": [
+      {
+        "prompt": "🔴=👏 · 水果=🦶 · 🍎",
+        "voicePrompt": "苹果既是红色又是水果，应该做什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "拍手和跺脚",
+            "emoji": "👏🦶"
+          },
+          {
+            "label": "只拍手",
+            "emoji": "👏"
+          },
+          {
+            "label": "只跺脚",
+            "emoji": "🦶"
+          },
+          {
+            "label": "不动",
+            "emoji": "⏸️"
+          }
+        ],
+        "answer": 0,
+        "hint": "苹果满足两个条件。",
+        "explain": "两个规则都被触发。"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "week": 19,
+    "title": "找答案",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "红色 · 能吃",
+        "voicePrompt": "它是红色的，而且能吃。它是谁？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "苹果",
+            "emoji": "🍎"
+          },
+          {
+            "label": "消防车",
+            "emoji": "🚒"
+          },
+          {
+            "label": "红心",
+            "emoji": "❤️"
+          },
+          {
+            "label": "红灯",
+            "emoji": "🔴"
+          }
+        ],
+        "answer": 0,
+        "hint": "两条线索都要成立。",
+        "explain": "苹果是红色而且能吃。"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "week": 19,
+    "title": "找答案",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "会飞 · 不是动物",
+        "voicePrompt": "它会飞，但不是动物。它是谁？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "飞机",
+            "emoji": "✈️"
+          },
+          {
+            "label": "小鸟",
+            "emoji": "🐦"
+          },
+          {
+            "label": "蜜蜂",
+            "emoji": "🐝"
+          },
+          {
+            "label": "蝴蝶",
+            "emoji": "🦋"
+          }
+        ],
+        "answer": 0,
+        "hint": "排除所有动物。",
+        "explain": "飞机会飞但不是动物。"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "week": 19,
+    "title": "谁说真话",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "🐰: 🍎在1️⃣ · 🐻: 🍎不在1️⃣",
+        "voicePrompt": "两句话只有一句是真的。苹果能同时在两个位置吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "不能",
+            "emoji": "❌"
+          },
+          {
+            "label": "能",
+            "emoji": "✅"
+          },
+          {
+            "label": "一定在1号",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "一定在2号",
+            "emoji": "2️⃣"
+          }
+        ],
+        "answer": 0,
+        "hint": "同一个苹果只有一个位置。",
+        "explain": "两句互相相反，只能有一句为真。"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "week": 19,
+    "title": "排除位置",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "🎁不在1️⃣ · 不在2️⃣",
+        "voicePrompt": "三个盒子里，礼物不在1号也不在2号。在哪里？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "3号",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "1号",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "2号",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "没有",
+            "emoji": "💨"
+          }
+        ],
+        "answer": 0,
+        "hint": "把不可能的位置划掉。",
+        "explain": "排除1号和2号，只剩3号。"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "week": 19,
+    "title": "两步计划",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "🐭 → 🧀 · 中间有🧱",
+        "voicePrompt": "直路被挡住，小鼠应该选择哪条路？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "绕开墙",
+            "emoji": "↗️➡️↘️"
+          },
+          {
+            "label": "撞墙",
+            "emoji": "➡️🧱"
+          },
+          {
+            "label": "后退",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "不动",
+            "emoji": "⏸️"
+          }
+        ],
+        "answer": 0,
+        "hint": "目标是到奶酪，还要避开障碍。",
+        "explain": "绕开墙才能安全到达。"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "week": 19,
+    "title": "最少动作",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "● 距离🎯两格",
+        "voicePrompt": "小球离目标正好两格，哪条路径最短？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "两步直走",
+            "emoji": "➡️➡️"
+          },
+          {
+            "label": "三步绕行",
+            "emoji": "⬆️➡️⬇️"
+          },
+          {
+            "label": "四步一圈",
+            "emoji": "🔄"
+          },
+          {
+            "label": "原地不动",
+            "emoji": "⏸️"
+          }
+        ],
+        "answer": 0,
+        "hint": "最短路径用的箭头最少。",
+        "explain": "两步直走是最短路线。"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "week": 20,
+    "title": "条件选择",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "大玩具 → 大盒 · 重玩具 → 结实盒",
+        "voicePrompt": "玩具又大又重，需要什么盒子？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "大而结实",
+            "emoji": "📦💪"
+          },
+          {
+            "label": "只大",
+            "emoji": "📦"
+          },
+          {
+            "label": "只轻",
+            "emoji": "🪶"
+          },
+          {
+            "label": "小盒",
+            "emoji": "▫️"
+          }
+        ],
+        "answer": 0,
+        "hint": "两个需要都要满足。",
+        "explain": "盒子必须同时够大、够结实。"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "week": 20,
+    "title": "信息不足",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "甲比乙重",
+        "voicePrompt": "只知道甲比乙重，能知道谁更大吗？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "不能确定",
+            "emoji": "❓"
+          },
+          {
+            "label": "甲更大",
+            "emoji": "⬆️"
+          },
+          {
+            "label": "乙更大",
+            "emoji": "⬇️"
+          },
+          {
+            "label": "一样大",
+            "emoji": "🟰"
+          }
+        ],
+        "answer": 0,
+        "hint": "重量和大小不是同一属性。",
+        "explain": "重量关系不能推出大小关系。"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "week": 20,
+    "title": "反事实",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "如果没有🌧️，地面会？",
+        "voicePrompt": "下雨让地面变湿。如果没有下雨，最可能怎样？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "保持干",
+            "emoji": "☀️"
+          },
+          {
+            "label": "更湿",
+            "emoji": "💧"
+          },
+          {
+            "label": "结冰",
+            "emoji": "🧊"
+          },
+          {
+            "label": "长翅膀",
+            "emoji": "🪽"
+          }
+        ],
+        "answer": 0,
+        "hint": "去掉造成湿地的原因。",
+        "explain": "没有下雨时，地面更可能保持干燥。"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "week": 20,
+    "title": "真假线索",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "盒1:不在我这 · 盒2:在盒3",
+        "voicePrompt": "礼物只能在一个盒里，盒2说在盒3。若盒2说真话，礼物在哪？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "盒3",
+            "emoji": "3️⃣"
+          },
+          {
+            "label": "盒2",
+            "emoji": "2️⃣"
+          },
+          {
+            "label": "盒1",
+            "emoji": "1️⃣"
+          },
+          {
+            "label": "两个盒",
+            "emoji": "👐"
+          }
+        ],
+        "answer": 0,
+        "hint": "直接使用盒2的真线索。",
+        "explain": "盒2说真话时，礼物就在盒3。"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "week": 20,
+    "title": "综合规律",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "🔴⭐ 🔵🌙 🔴⭐ ?",
+        "voicePrompt": "同时追踪颜色和图案，下一对是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "蓝月",
+            "emoji": "🔵🌙"
+          },
+          {
+            "label": "红月",
+            "emoji": "🔴🌙"
+          },
+          {
+            "label": "蓝星",
+            "emoji": "🔵⭐"
+          },
+          {
+            "label": "黄星",
+            "emoji": "🟡⭐"
+          }
+        ],
+        "answer": 0,
+        "hint": "两种属性一起重复。",
+        "explain": "红星与蓝月交替，下一对是蓝月。"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "week": 20,
+    "title": "终极挑战",
+    "subtitle": "能力岛 10",
+    "icon": "🧠",
+    "color": "#8678d8",
+    "skill": "综合逻辑",
+    "activities": [
+      {
+        "prompt": "先🙆 · 🔴=👏 · ⭕=🦶 · 🔴⭕",
+        "voicePrompt": "先摸头，再执行颜色和形状规则。完整动作是什么？",
+        "instruction": "🔊",
+        "visualOnly": true,
+        "options": [
+          {
+            "label": "摸头拍手跺脚",
+            "emoji": "🙆👏🦶"
+          },
+          {
+            "label": "拍手跺脚摸头",
+            "emoji": "👏🦶🙆"
+          },
+          {
+            "label": "只摸头",
+            "emoji": "🙆"
+          },
+          {
+            "label": "只拍手",
+            "emoji": "👏"
+          }
+        ],
+        "answer": 0,
+        "hint": "固定动作先做，再检查两个条件。",
+        "explain": "正确顺序是摸头、拍手、跺脚。"
+      }
+    ]
+  }
+]

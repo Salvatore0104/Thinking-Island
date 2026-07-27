@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import advancedLessons from "./advanced-lessons.json";
+import visualLevels from "./visual-levels.json";
 
 type Screen = "home" | "lesson" | "parent" | "report";
 type Lesson = {
@@ -16,7 +16,9 @@ type Lesson = {
 };
 type Activity = {
   prompt: string;
+  voicePrompt?: string;
   instruction: string;
+  visualOnly?: boolean;
   options: { label: string; emoji?: string }[];
   answer: number;
   hint: string;
@@ -247,10 +249,9 @@ const BASE_LESSONS: Lesson[] = [
   },
 ];
 
-const LESSONS: Lesson[] = BASE_LESSONS.map((lesson) => {
-  const advanced = advancedLessons.find((item) => item.id === lesson.id);
-  return advanced ? { ...lesson, activities: advanced.activities as Activity[] } : lesson;
-});
+const LESSONS: Lesson[] = visualLevels.length
+  ? visualLevels as Lesson[]
+  : BASE_LESSONS;
 
 const initialProgress: Progress = { completed: [], stars: 0, attempts: {} };
 
@@ -356,7 +357,7 @@ export default function Home() {
     setProgress((current) => ({
       ...current,
       completed: firstCompletion ? [...current.completed, activeLesson.id] : current.completed,
-      stars: firstCompletion ? current.stars + 3 : current.stars,
+      stars: firstCompletion ? current.stars + 1 : current.stars,
     }));
     playFiles(["lesson-complete.mp3"]);
     setScreen("home");
@@ -467,12 +468,12 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
         <div className="hero-copy">
           <div className="eyebrow"><span /> 今日探险</div>
           <h1>嗨，小船长！<br /><em>新的思维任务</em>已经准备好</h1>
-          <p>今天我们会观察、动手，还要把你的好办法说出来。</p>
+          <p>看图、听声音、动脑筋。</p>
           <button className="primary-button" onClick={() => startLesson(nextLesson)}>
             <span>开始第 {nextLesson.id} 课</span><b>→</b>
           </button>
           <button className="welcome-audio" onClick={replayWelcome}>🔊 听一听今天的任务</button>
-          <div className="time-note">◷ 约 15 分钟 · 全程柔和语音引导 · 完成后休息眼睛</div>
+          <div className="time-note">◷ 每关约 2 分钟 · 全程语音引导</div>
         </div>
         <div className="hero-scene" aria-hidden="true">
           <div className="sun" />
@@ -491,7 +492,7 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
       <section className="progress-strip">
         <div>
           <span className="mini-icon coral">✓</span>
-          <p><strong>{progress.completed.length}</strong><small>已完成课程</small></p>
+          <p><strong>{progress.completed.length}</strong><small>已完成关卡</small></p>
         </div>
         <div>
           <span className="mini-icon gold">★</span>
@@ -506,32 +507,37 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
 
       <section className="map-section">
         <div className="section-heading">
-          <div><span>阶段课程地图</span><h2>八周，二十四次小探险</h2></div>
-          <p>全部关卡已开放 · 第5周起进入进阶挑战</p>
+          <div><span>逻辑思维课程地图</span><h2>20周 · 120关</h2></div>
+          <p>全部开放 · 每周建议6关</p>
         </div>
-        <div className="lesson-grid">
-          {LESSONS.map((lesson) => {
-            const done = progress.completed.includes(lesson.id);
-            return (
-              <button
-                key={lesson.id}
-                className={`lesson-card ${done ? "done" : ""} ${lesson.id === nextLesson.id ? "current" : ""}`}
-                onClick={() => startLesson(lesson)}
-                style={{ "--lesson-color": lesson.color } as React.CSSProperties}
-              >
-                <span className="lesson-number">{done ? "✓" : lesson.id}</span>
-                <span className="lesson-emoji">{lesson.icon}</span>
-                <small>
-                  第{lesson.week}周 · 第{((lesson.id - 1) % 3) + 1}课
-                  {lesson.id >= 13 ? " · 进阶" : ""}
-                </small>
-                <strong>{lesson.title}</strong>
-                <em>{lesson.subtitle}</em>
-                <i>{done ? "再玩一次" : "开始探索"} →</i>
-              </button>
-            );
-          })}
-        </div>
+        {Array.from(new Set(LESSONS.map((lesson) => lesson.skill))).map((skill, moduleIndex) => (
+          <section className="module-block" key={skill}>
+            <div className="module-heading">
+              <span>{LESSONS[moduleIndex * 12]?.icon}</span>
+              <div><small>能力岛 {moduleIndex + 1}</small><h3>{skill}</h3></div>
+              <b>12关</b>
+            </div>
+            <div className="lesson-grid">
+              {LESSONS.filter((lesson) => lesson.skill === skill).map((lesson) => {
+                const done = progress.completed.includes(lesson.id);
+                return (
+                  <button
+                    key={lesson.id}
+                    className={`lesson-card ${done ? "done" : ""} ${lesson.id === nextLesson.id ? "current" : ""}`}
+                    onClick={() => startLesson(lesson)}
+                    style={{ "--lesson-color": lesson.color } as React.CSSProperties}
+                  >
+                    <span className="lesson-number">{done ? "✓" : lesson.id}</span>
+                    <span className="lesson-emoji">{lesson.icon}</span>
+                    <small>第{lesson.week}周 · {((lesson.id - 1) % 6) + 1}</small>
+                    <strong>{lesson.title}</strong>
+                    <i>{done ? "↻" : "▶"}</i>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        ))}
       </section>
 
       <section className="offline-card">
@@ -563,10 +569,10 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
       <section className="activity-card">
         <div className="guide-row">
           <div className="guide-avatar">🦊</div>
-          <div className="speech-bubble">
-            <small>听听任务</small>
+          <div className={`speech-bubble ${activity.visualOnly ? "visual-task" : ""}`}>
+            <small>🔊 听任务</small>
             <h2>{activity.prompt}</h2>
-            <p>{activity.instruction}</p>
+            {!activity.visualOnly && <p>{activity.instruction}</p>}
             <button
               className="replay-button"
               onClick={() => playFiles([
@@ -584,11 +590,12 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
             <button
               key={option.label}
               onClick={() => answer(index)}
-              className={`option-card ${selected === index ? "selected" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
+              aria-label={option.label}
+              className={`option-card ${activity.visualOnly ? "visual-option" : ""} ${selected === index ? "selected" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
             >
               {option.emoji && <span>{option.emoji}</span>}
-              <strong>{option.label}</strong>
-              <i>{String.fromCharCode(65 + index)}</i>
+              <strong className={activity.visualOnly ? "sr-only" : ""}>{option.label}</strong>
+              {!activity.visualOnly && <i>{String.fromCharCode(65 + index)}</i>}
             </button>
           ))}
         </div>
@@ -602,19 +609,28 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
                 `lesson-${String(lesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-hint.mp3`,
               ]);
             }
-          }}>💡 给我一点提示</button>
-          <span>先想一想，再轻轻点答案</span>
+          }}>💡 提示</button>
+          <span>听完再点图片</span>
         </div>
-        {hintOpen && <div className="hint-panel"><b>小提示</b>{activity.hint}</div>}
+        {hintOpen && (
+          <div className="hint-panel">
+            <b>{activity.visualOnly ? "🔊" : "小提示"}</b>
+            {activity.visualOnly ? "听一听" : activity.hint}
+          </div>
+        )}
 
         {feedback && (
           <div className={`feedback-panel ${feedback}`}>
             <div className="feedback-icon">{feedback === "correct" ? "✓" : "↻"}</div>
             <div>
-              <small>{feedback === "correct" ? "发现得真仔细！" : "好办法还藏着呢"}</small>
-              <strong>{feedback === "correct" ? activity.explain : "再看一看线索，或者打开提示试试。"}</strong>
+              <small>{feedback === "correct" ? "✓" : "↻"}</small>
+              <strong>
+                {activity.visualOnly
+                  ? feedback === "correct" ? "太棒啦！" : "再听一遍"
+                  : feedback === "correct" ? activity.explain : "再看一看线索，或者打开提示试试。"}
+              </strong>
             </div>
-            {feedback === "correct" && <button onClick={advance}>{step === lesson.activities.length - 1 ? "完成课程" : "下一关"} →</button>}
+            {feedback === "correct" && <button onClick={advance}>{step === lesson.activities.length - 1 ? "完成" : "下一关"} →</button>}
           </div>
         )}
       </section>
@@ -637,7 +653,7 @@ function ParentScreen({ progress, completion, resetProgress, openReport }: {
       </section>
       <section className="parent-stats">
         <article><small>阶段进度</small><strong>{completion}%</strong><div className="progress-track"><i style={{width:`${completion}%`}} /></div></article>
-        <article><small>已完成课程</small><strong>{progress.completed.length}<em>/ {LESSONS.length}</em></strong><p>每周建议3节</p></article>
+        <article><small>已完成关卡</small><strong>{progress.completed.length}<em>/ {LESSONS.length}</em></strong><p>每周建议6关</p></article>
         <article><small>累计思考星</small><strong>{progress.stars} ★</strong><p>只奖励完成和坚持</p></article>
       </section>
       <div className="parent-columns">
@@ -673,12 +689,18 @@ function ParentScreen({ progress, completion, resetProgress, openReport }: {
 
 function ReportScreen({ progress, back }: { progress: Progress; back: () => void }) {
   const domains = useMemo(() => {
-    const count = progress.completed.length;
+    const completedIn = (ranges: [number, number][]) => {
+      const total = ranges.reduce((sum, [start, end]) => sum + end - start + 1, 0);
+      const completed = progress.completed.filter((id) =>
+        ranges.some(([start, end]) => id >= start && id <= end)
+      ).length;
+      return Math.round(10 + (completed / total) * 80);
+    };
     return [
-      { name: "分类与规则", value: Math.min(92, 18 + count * 7), color: "#ff8f70" },
-      { name: "模式与关系", value: Math.min(88, 12 + Math.max(0, count - 3) * 10), color: "#f4b64a" },
-      { name: "数感与比较", value: Math.min(84, 10 + Math.max(0, count - 6) * 13), color: "#56b89f" },
-      { name: "注意与切换", value: Math.min(80, 15 + Math.max(0, count - 8) * 16), color: "#8678d8" },
+      { name: "分类与规则", value: completedIn([[1, 24], [97, 108]]), color: "#ff8f70" },
+      { name: "关系与推理", value: completedIn([[25, 48], [109, 120]]), color: "#f4b64a" },
+      { name: "空间与数感", value: completedIn([[49, 72]]), color: "#56b89f" },
+      { name: "图形与记忆", value: completedIn([[73, 96]]), color: "#8678d8" },
     ];
   }, [progress.completed.length]);
   return (
@@ -686,11 +708,11 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
       <button className="back-link" onClick={back}>← 返回家长中心</button>
       <section className="report-header">
         <div><span>阶段成长记录</span><h1>小船长的思考证据</h1><p>下面显示的是本课程中的学习表现，不是智力测评或同龄排名。</p></div>
-        <div className="report-badge"><strong>{progress.completed.length}</strong><span>完成课程</span></div>
+        <div className="report-badge"><strong>{progress.completed.length}</strong><span>完成关卡</span></div>
       </section>
       <div className="report-layout">
         <section className="report-card">
-          <div className="report-title"><h2>能力探索进度</h2><small>根据已完成课程估算</small></div>
+          <div className="report-title"><h2>能力探索进度</h2><small>根据已完成关卡估算</small></div>
           <div className="domain-bars">
             {domains.map((domain) => <div key={domain.name}><p><strong>{domain.name}</strong><span>{domain.value}%</span></p><div><i style={{width:`${domain.value}%`, background:domain.color}} /></div></div>)}
           </div>
@@ -705,7 +727,7 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
       </div>
       <section className="milestone-card">
         <div><small>本阶段里程碑</small><h2>观察与关系岛</h2></div>
-        {[6,12,18,24].map((point) => <div key={point} className={progress.completed.length >= point ? "reached" : ""}><span>{progress.completed.length >= point ? "✓" : point}</span><p><strong>完成 {point} 课</strong><small>{point === 6 ? "分类与模式" : point === 12 ? "数量与规则切换" : point === 18 ? "排序与图形组合" : "数感与工作记忆"}</small></p></div>)}
+        {[30,60,90,120].map((point) => <div key={point} className={progress.completed.length >= point ? "reached" : ""}><span>{progress.completed.length >= point ? "✓" : point}</span><p><strong>完成 {point} 关</strong><small>{point === 30 ? "分类、规律与类比" : point === 60 ? "排序与空间推理" : point === 90 ? "数量、图形与记忆" : "规则控制与综合逻辑"}</small></p></div>)}
       </section>
     </div>
   );
