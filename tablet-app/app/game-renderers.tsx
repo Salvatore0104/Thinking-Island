@@ -19,6 +19,11 @@ export type GameItem = {
 };
 export type GameActivity = {
   type?: GameType;
+  concept?: string;
+  reasoningSteps?: number;
+  contentSignature?: string;
+  memoryPreview?: string;
+  memoryPreviewMs?: number;
   prompt: string;
   voicePrompt?: string;
   instruction: string;
@@ -61,6 +66,22 @@ const visualClass = (emoji = "") => {
 };
 
 function ChoiceGame({ activity, selected, feedback, disabled, onChoice }: RendererProps) {
+  const [previewing, setPreviewing] = useState(Boolean(activity.memoryPreview));
+  useEffect(() => {
+    if (!activity.memoryPreview) return;
+    const timer = window.setTimeout(() => setPreviewing(false), activity.memoryPreviewMs ?? 3500);
+    return () => window.clearTimeout(timer);
+  }, [activity.memoryPreview, activity.memoryPreviewMs]);
+
+  if (previewing) {
+    return (
+      <div className="memory-preview" aria-label="请记住这些图片">
+        <small>👀 记一记</small>
+        <strong>{activity.memoryPreview}</strong>
+        <span>马上会盖起来</span>
+      </div>
+    );
+  }
   return (
     <div className="options-grid">
       {(activity.options ?? []).map((option, index) => (
@@ -165,6 +186,12 @@ function DragOrderGame({ activity, disabled, onComplete, onWrong, onProgress }: 
   const [placed, setPlaced] = useState<(string | null)[]>(() => answerOrder.map(() => null));
   const [picked, setPicked] = useState<string | null>(null);
   const [drag, setDrag] = useState<DragState>(null);
+  const [previewing, setPreviewing] = useState(Boolean(activity.memoryPreviewMs));
+  useEffect(() => {
+    if (!activity.memoryPreviewMs) return;
+    const timer = window.setTimeout(() => setPreviewing(false), activity.memoryPreviewMs);
+    return () => window.clearTimeout(timer);
+  }, [activity.memoryPreviewMs]);
 
   const put = (itemId: string, slot: number) => {
     if (disabled || placed.includes(itemId)) return;
@@ -192,7 +219,9 @@ function DragOrderGame({ activity, disabled, onComplete, onWrong, onProgress }: 
 
   return (
     <div className="order-game">
-      <div className="pattern-model" aria-label="需要复制的规律">{activity.prompt}</div>
+      <div className={`pattern-model ${activity.memoryPreviewMs && !previewing ? "memory-covered" : ""}`} aria-label="需要复制的规律">
+        {activity.memoryPreviewMs && !previewing ? "🙈  ?  ?  ?" : (activity.memoryPreview ?? activity.prompt)}
+      </div>
       <div className="order-slots">
         {answerOrder.map((_, slot) => {
           const item = items.find((candidate) => candidate.id === placed[slot]);

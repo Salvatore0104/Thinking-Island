@@ -85,12 +85,13 @@ def build_clips(levels: list[dict]) -> list[Clip]:
 async def synthesize(
     clip: Clip,
     output_dir: Path,
+    temporary_dir: Path,
     semaphore: asyncio.Semaphore,
     force: bool,
     force_from: int | None,
 ) -> None:
     destination = output_dir / clip.file
-    temporary = destination.with_suffix(".part")
+    temporary = temporary_dir / f"{clip.file}.part"
     should_refresh = force or (
         force_from is not None
         and clip.lesson is not None
@@ -135,6 +136,8 @@ async def run(
 
     clips = build_clips(levels)
     output_dir.mkdir(parents=True, exist_ok=True)
+    temporary_dir = Path(".voice-tmp")
+    temporary_dir.mkdir(parents=True, exist_ok=True)
     if prune:
         expected = {clip.file for clip in clips}
         for stale in output_dir.glob("*.mp3"):
@@ -143,7 +146,7 @@ async def run(
     semaphore = asyncio.Semaphore(6)
     await asyncio.gather(
         *(
-            synthesize(clip, output_dir, semaphore, force, force_from)
+            synthesize(clip, output_dir, temporary_dir, semaphore, force, force_from)
             for clip in clips
         )
     )

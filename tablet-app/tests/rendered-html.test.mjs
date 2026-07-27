@@ -71,7 +71,7 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.match(page, /browseLesson\(-1\)/);
   assert.match(page, /browseLesson\(1\)/);
   assert.match(page, /关卡总览/);
-  assert.match(page, /800-v3/);
+  assert.match(page, /800-v4/);
   assert.match(page, /CHALLENGE_LENGTH = 20/);
   assert.match(page, /randomChallenge/);
   assert.match(page, /随机闯关/);
@@ -100,13 +100,19 @@ test("ships ten categories with 80 image-first questions each", async () => {
       .every((activity) => activity.visualOnly && activity.voicePrompt),
   );
   assert.ok(levels.every((level) => level.activities.length === 1));
-  const expectedTypes = { choice: 32, dragSort: 12, dragOrder: 8, match: 10, path: 8, jigsaw: 10 };
+  const allActivities = levels.flatMap((level) => level.activities);
+  assert.equal(new Set(allActivities.map((activity) => activity.contentSignature)).size, 800);
+  assert.ok(allActivities.every((activity, index) => activity.reasoningSteps === Math.floor(index % 80 / 20) + 1));
+  const expectedTypes = { choice: 34, dragSort: 14, dragOrder: 10, match: 10, path: 8, jigsaw: 4 };
   for (const skill of new Set(levels.map((level) => level.skill))) {
-    const typeCounts = levels
-      .filter((level) => level.skill === skill)
+    const skillLevels = levels.filter((level) => level.skill === skill);
+    const skillActivities = skillLevels.map((level) => level.activities[0]);
+    const typeCounts = skillLevels
       .map((level) => level.activities[0].type)
       .reduce((counts, type) => ({ ...counts, [type]: (counts[type] ?? 0) + 1 }), {});
     assert.deepEqual(typeCounts, expectedTypes);
+    assert.ok(new Set(skillActivities.map((activity) => activity.concept)).size >= 16);
+    assert.ok(new Set(skillActivities.map((activity) => activity.voicePrompt)).size >= 16);
   }
   for (const activity of levels.flatMap((level) => level.activities)) {
     if (activity.type === "choice") {
@@ -114,7 +120,7 @@ test("ships ten categories with 80 image-first questions each", async () => {
       assert.ok(Number.isInteger(activity.answer) && activity.answer >= 0 && activity.answer < 4);
       assert.equal(new Set(activity.options.map((option) => option.emoji)).size, activity.options.length);
     } else if (activity.type === "dragSort") {
-      assert.ok(activity.items.length >= 4 && activity.zones.length === 2);
+      assert.ok(activity.items.length >= 4 && [2, 3].includes(activity.zones.length));
       assert.ok(activity.items.every((item) => activity.zones.some((zone) => zone.id === item.target)));
       assert.ok(activity.zones.every((zone) => zone.emoji !== "🟣"));
     } else if (activity.type === "dragOrder") {
@@ -126,7 +132,9 @@ test("ships ten categories with 80 image-first questions each", async () => {
       assert.equal(new Set(activity.right.map((item) => item.emoji)).size, activity.right.length);
       const leftById = new Map(activity.left.map((item) => [item.id, item]));
       const rightById = new Map(activity.right.map((item) => [item.id, item]));
-      assert.ok(activity.pairs.every(([leftId, rightId]) => leftById.get(leftId)?.emoji === rightById.get(rightId)?.emoji));
+      assert.ok(activity.pairs.every(([leftId, rightId]) => leftById.has(leftId) && rightById.has(rightId)));
+      assert.equal(new Set(activity.pairs.map(([leftId]) => leftId)).size, activity.left.length);
+      assert.equal(new Set(activity.pairs.map(([, rightId]) => rightId)).size, activity.right.length);
     } else if (activity.type === "path") {
       assert.ok(!activity.blocked.includes(activity.start) && !activity.blocked.includes(activity.goal));
       assert.ok(activity.solution.every((cell) => !activity.blocked.includes(cell)));

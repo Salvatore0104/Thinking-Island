@@ -284,7 +284,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const curriculumVersion = "800-v3";
+    const curriculumVersion = "800-v4";
     const savedVersion = window.localStorage.getItem("thinking-island-curriculum-version");
     const saved = window.localStorage.getItem("thinking-island-progress");
     if (saved && savedVersion === curriculumVersion) {
@@ -765,7 +765,7 @@ function LessonScreen({
             >
               {voiceOn ? "🔊 再听一遍" : "🔇 请先开启语音"}
             </button>
-            <div className="play-mode">{typeNames[gameType]}</div>
+            <div className="play-mode">{activity.concept ? `🧠 ${activity.concept}` : typeNames[gameType]}</div>
           </div>
         </div>
 
