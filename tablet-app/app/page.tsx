@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Screen = "home" | "lesson" | "parent" | "report";
 type Lesson = {
@@ -149,19 +149,50 @@ export default function Home() {
   const [feedback, setFeedback] = useState<"correct" | "try" | null>(null);
   const [hintOpen, setHintOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [voiceOn, setVoiceOn] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("thinking-island-progress");
     if (saved) {
       try { setProgress(JSON.parse(saved)); } catch { /* keep clean state */ }
     }
+    const savedVoice = window.localStorage.getItem("thinking-island-voice");
+    if (savedVoice !== null) setVoiceOn(savedVoice === "on");
     setLoaded(true);
   }, []);
 
   useEffect(() => {
     if (loaded) window.localStorage.setItem("thinking-island-progress", JSON.stringify(progress));
   }, [progress, loaded]);
+
+  const playFiles = (files: string[], playWhenMuted = false) => {
+    if (!voiceOn && !playWhenMuted) return;
+    audioRef.current?.pause();
+    let index = 0;
+    const playNext = () => {
+      if (index >= files.length) return;
+      const audio = new Audio(`/audio/${files[index]}`);
+      index += 1;
+      audio.volume = 0.88;
+      audioRef.current = audio;
+      audio.onended = playNext;
+      audio.play().catch(() => { /* A visible replay button remains available. */ });
+    };
+    playNext();
+  };
+
+  const toggleVoice = () => {
+    const next = !voiceOn;
+    setVoiceOn(next);
+    window.localStorage.setItem("thinking-island-voice", next ? "on" : "off");
+    if (!next) {
+      audioRef.current?.pause();
+    } else {
+      playFiles(["welcome.mp3"], true);
+    }
+  };
 
   const nextLesson = LESSONS.find((lesson) => !progress.completed.includes(lesson.id)) ?? LESSONS[11];
   const completion = Math.round((progress.completed.length / LESSONS.length) * 100);
@@ -174,6 +205,10 @@ export default function Home() {
     setHintOpen(false);
     setScreen("lesson");
     window.scrollTo(0, 0);
+    playFiles([
+      `lesson-${String(lesson.id).padStart(2, "0")}-intro.mp3`,
+      `lesson-${String(lesson.id).padStart(2, "0")}-step-01-prompt.mp3`,
+    ]);
   };
 
   const answer = (index: number) => {
@@ -181,6 +216,11 @@ export default function Home() {
     setSelected(index);
     const isCorrect = index === activeLesson.activities[step].answer;
     setFeedback(isCorrect ? "correct" : "try");
+    playFiles([
+      isCorrect
+        ? `lesson-${String(activeLesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-correct.mp3`
+        : "try-again.mp3",
+    ]);
     setProgress((current) => ({
       ...current,
       attempts: { ...current.attempts, [activeLesson.id]: (current.attempts[activeLesson.id] ?? 0) + 1 },
@@ -193,6 +233,9 @@ export default function Home() {
       setSelected(null);
       setFeedback(null);
       setHintOpen(false);
+      playFiles([
+        `lesson-${String(activeLesson.id).padStart(2, "0")}-step-${String(step + 2).padStart(2, "0")}-prompt.mp3`,
+      ]);
       return;
     }
     const firstCompletion = !progress.completed.includes(activeLesson.id);
@@ -201,6 +244,7 @@ export default function Home() {
       completed: firstCompletion ? [...current.completed, activeLesson.id] : current.completed,
       stars: firstCompletion ? current.stars + 3 : current.stars,
     }));
+    playFiles(["lesson-complete.mp3"]);
     setScreen("home");
   };
 
@@ -216,9 +260,11 @@ export default function Home() {
       <TopBar
         screen={screen}
         stars={progress.stars}
+        voiceOn={voiceOn}
+        toggleVoice={toggleVoice}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        goHome={() => { setScreen("home"); setMenuOpen(false); }}
+        goHome={() => { audioRef.current?.pause(); setScreen("home"); setMenuOpen(false); }}
         goParent={() => { setScreen("parent"); setMenuOpen(false); }}
         goReport={() => { setScreen("report"); setMenuOpen(false); }}
       />
@@ -230,6 +276,7 @@ export default function Home() {
           completion={completion}
           startLesson={startLesson}
           openReport={() => setScreen("report")}
+          replayWelcome={() => playFiles(["welcome.mp3"])}
         />
       )}
 
@@ -243,7 +290,9 @@ export default function Home() {
           setHintOpen={setHintOpen}
           answer={answer}
           advance={advance}
-          exit={() => setScreen("home")}
+          exit={() => { audioRef.current?.pause(); setScreen("home"); }}
+          voiceOn={voiceOn}
+          playFiles={playFiles}
         />
       )}
 
@@ -263,8 +312,9 @@ export default function Home() {
   );
 }
 
-function TopBar({ screen, stars, menuOpen, setMenuOpen, goHome, goParent, goReport }: {
-  screen: Screen; stars: number; menuOpen: boolean; setMenuOpen: (value: boolean) => void;
+function TopBar({ screen, stars, voiceOn, toggleVoice, menuOpen, setMenuOpen, goHome, goParent, goReport }: {
+  screen: Screen; stars: number; voiceOn: boolean; toggleVoice: () => void;
+  menuOpen: boolean; setMenuOpen: (value: boolean) => void;
   goHome: () => void; goParent: () => void; goReport: () => void;
 }) {
   return (
@@ -274,6 +324,9 @@ function TopBar({ screen, stars, menuOpen, setMenuOpen, goHome, goParent, goRepo
         <span><strong>思维岛</strong><small>每天想一点，办法多一点</small></span>
       </button>
       <div className="top-actions">
+        <button className={`voice-toggle ${voiceOn ? "on" : ""}`} onClick={toggleVoice} aria-label={voiceOn ? "关闭语音引导" : "开启语音引导"}>
+          <span>{voiceOn ? "🔊" : "🔇"}</span><b>{voiceOn ? "语音开" : "语音关"}</b>
+        </button>
         {screen !== "lesson" && <div className="star-pill" aria-label={`拥有${stars}颗星`}>★ {stars}</div>}
         <button className="avatar-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>
           <span>🧒🏻</span><i />
@@ -290,9 +343,9 @@ function TopBar({ screen, stars, menuOpen, setMenuOpen, goHome, goParent, goRepo
   );
 }
 
-function HomeScreen({ nextLesson, progress, completion, startLesson, openReport }: {
+function HomeScreen({ nextLesson, progress, completion, startLesson, openReport, replayWelcome }: {
   nextLesson: Lesson; progress: Progress; completion: number;
-  startLesson: (lesson: Lesson) => void; openReport: () => void;
+  startLesson: (lesson: Lesson) => void; openReport: () => void; replayWelcome: () => void;
 }) {
   return (
     <div className="home-screen">
@@ -304,7 +357,8 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport 
           <button className="primary-button" onClick={() => startLesson(nextLesson)}>
             <span>开始第 {nextLesson.id} 课</span><b>→</b>
           </button>
-          <div className="time-note">◷ 约 15 分钟 · 完成后休息眼睛</div>
+          <button className="welcome-audio" onClick={replayWelcome}>🔊 听一听今天的任务</button>
+          <div className="time-note">◷ 约 15 分钟 · 全程柔和语音引导 · 完成后休息眼睛</div>
         </div>
         <div className="hero-scene" aria-hidden="true">
           <div className="sun" />
@@ -374,10 +428,10 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport 
   );
 }
 
-function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, advance, exit }: {
+function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, advance, exit, voiceOn, playFiles }: {
   lesson: Lesson; step: number; selected: number | null; feedback: "correct" | "try" | null;
   hintOpen: boolean; setHintOpen: (value: boolean) => void; answer: (index: number) => void;
-  advance: () => void; exit: () => void;
+  advance: () => void; exit: () => void; voiceOn: boolean; playFiles: (files: string[]) => void;
 }) {
   const activity = lesson.activities[step];
   return (
@@ -398,6 +452,15 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
             <small>听听任务</small>
             <h2>{activity.prompt}</h2>
             <p>{activity.instruction}</p>
+            <button
+              className="replay-button"
+              onClick={() => playFiles([
+                `lesson-${String(lesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-prompt.mp3`,
+              ])}
+              aria-label="重新播放任务语音"
+            >
+              {voiceOn ? "🔊 再听一遍" : "🔇 请先开启语音"}
+            </button>
           </div>
         </div>
 
@@ -416,7 +479,15 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
         </div>
 
         <div className="activity-footer">
-          <button className="hint-button" onClick={() => setHintOpen(!hintOpen)}>💡 给我一点提示</button>
+          <button className="hint-button" onClick={() => {
+            const opening = !hintOpen;
+            setHintOpen(opening);
+            if (opening) {
+              playFiles([
+                `lesson-${String(lesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-hint.mp3`,
+              ]);
+            }
+          }}>💡 给我一点提示</button>
           <span>先想一想，再轻轻点答案</span>
         </div>
         {hintOpen && <div className="hint-panel"><b>小提示</b>{activity.hint}</div>}

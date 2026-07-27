@@ -44,6 +44,9 @@ button:focus-visible { outline: 4px solid rgba(30, 135, 123, .25); outline-offse
 .brand strong { display: block; font-size: 20px; letter-spacing: .06em; }
 .brand small { display: block; color: #829091; margin-top: 2px; font-size: 11px; }
 .top-actions { display: flex; align-items: center; gap: 12px; position: relative; }
+.voice-toggle { min-height: 42px; padding: 8px 13px; border-radius: 99px; border: 1px solid #dfe6df; background: white; color: #7a8986; display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 13px; }
+.voice-toggle.on { background: #e7f5f1; color: var(--teal); border-color: #cde5df; }
+.voice-toggle b { font-size: 11px; }
 .star-pill { padding: 9px 15px; border-radius: 99px; background: #fff4ce; color: #9a6b00; font-weight: 800; }
 .avatar-button { width: 46px; height: 46px; border-radius: 50%; background: #e9f4ed; border: 2px solid white; box-shadow: 0 3px 12px #d8ddd4; cursor: pointer; position: relative; font-size: 23px; }
 .avatar-button i { width: 9px; height: 9px; border-radius: 50%; position: absolute; right: 0; bottom: 2px; background: #45ad6f; border: 2px solid white; }
@@ -63,6 +66,7 @@ button:focus-visible { outline: 4px solid rgba(30, 135, 123, .25); outline-offse
 .primary-button { margin-top: 18px; min-width: 230px; height: 59px; padding: 0 8px 0 24px; border: 0; border-radius: 18px; color: white; background: var(--coral); display: inline-flex; align-items: center; justify-content: space-between; gap: 20px; font-weight: 900; box-shadow: 0 12px 25px rgba(226, 102, 77, .25); cursor: pointer; transition: transform .2s, box-shadow .2s; }
 .primary-button:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(226, 102, 77, .32); }
 .primary-button b { width: 43px; height: 43px; display: grid; place-items: center; background: rgba(255,255,255,.2); border-radius: 13px; font-size: 24px; }
+.welcome-audio { margin: 18px 0 0 12px; border: 0; background: transparent; color: var(--teal); font-weight: 900; font-size: 12px; cursor: pointer; padding: 10px; }
 .time-note { margin: 16px 0 0 3px; color: #809392; font-size: 12px; }
 .hero-scene { position: relative; min-height: 430px; overflow: hidden; }
 .sun { width: 76px; height: 76px; border-radius: 50%; background: #ffd779; position: absolute; right: 55px; top: 55px; box-shadow: 0 0 0 14px rgba(255,215,121,.13); }
@@ -105,6 +109,7 @@ button:focus-visible { outline: 4px solid rgba(30, 135, 123, .25); outline-offse
 .skill-tag { padding:11px 15px;border-radius:99px;background:white;border:1px solid var(--line);font-weight:800;font-size:12px; }
 .activity-card { min-height:610px;background:white;border-radius:30px;border:1px solid #ebece5;box-shadow:0 18px 50px rgba(39,65,55,.08);padding:30px;position:relative; }
 .guide-row { display:flex;gap:18px;align-items:flex-start;max-width:760px;margin:0 auto 28px; }.guide-avatar{width:74px;height:74px;border-radius:24px;background:#fff0d0;display:grid;place-items:center;font-size:42px;flex:none}.speech-bubble{background:#f2f6f2;border-radius:8px 22px 22px 22px;padding:18px 24px;flex:1;position:relative}.speech-bubble small{color:var(--lesson-color);font-weight:900;font-size:10px;letter-spacing:.1em}.speech-bubble h2{font-size:25px;margin:5px 0}.speech-bubble p{margin:0;color:#71817f;font-size:13px}
+.replay-button { margin-top: 13px; padding: 9px 13px; border: 1px solid #dce8e2; border-radius: 11px; background: white; color: var(--teal); font-size: 11px; font-weight: 900; cursor: pointer; }
 .options-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:800px;margin:0 auto;align-items:stretch; }
 .option-card { min-height:190px;border:2px solid #e8ebe4;border-radius:22px;background:#fff;padding:22px 16px;position:relative;cursor:pointer;color:var(--ink);transition:.18s; }
 .option-card:hover { transform:translateY(-3px);border-color:color-mix(in srgb,var(--lesson-color) 55%,#e8ebe4); }.option-card>span{display:block;font-size:58px;margin-bottom:13px}.option-card>strong{font-size:16px}.option-card>i{position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:9px;background:#f0f2ed;display:grid;place-items:center;font-size:10px;font-style:normal;color:#788482}
@@ -132,7 +137,7 @@ button:focus-visible { outline: 4px solid rgba(30, 135, 123, .25); outline-offse
   .parent-columns,.report-layout{grid-template-columns:1fr}.milestone-card{grid-template-columns:1fr 1fr}
 }
 @media (max-width: 640px) {
-  .topbar{height:70px;padding:0 16px}.brand small,.star-pill{display:none}.home-screen,.parent-screen,.report-screen,.lesson-screen{padding-left:15px;padding-right:15px}
+  .topbar{height:70px;padding:0 16px}.brand small,.star-pill,.voice-toggle b{display:none}.voice-toggle{width:42px;height:42px;justify-content:center;padding:0}.home-screen,.parent-screen,.report-screen,.lesson-screen{padding-left:15px;padding-right:15px}
   .hero-copy{padding:32px 24px 10px}.hero h1{font-size:34px}.hero-scene{min-height:300px}.island{transform:translate(-50%,-50%) scale(.86) rotate(-3deg)}
   .progress-strip{margin-top:-15px;grid-template-columns:1fr 1fr;padding:15px}.lesson-grid{grid-template-columns:1fr 1fr;gap:11px}.lesson-card{min-height:215px;padding:17px}.section-heading{align-items:start}.section-heading p{display:none}.offline-card{grid-template-columns:1fr;padding:19px}.offline-illustration{padding:18px}
   .lesson-toolbar{grid-template-columns:45px 1fr}.skill-tag{display:none}.activity-card{padding:20px 14px;min-height:600px}.guide-avatar{width:55px;height:55px;font-size:32px;border-radius:18px}.guide-row{gap:10px}.speech-bubble{padding:14px}.speech-bubble h2{font-size:20px}.options-grid{grid-template-columns:1fr}.option-card{min-height:92px;display:flex;align-items:center;justify-content:center;gap:15px}.option-card>span{font-size:42px;margin:0}.activity-footer>span{display:none}.feedback-panel{grid-template-columns:40px 1fr}.feedback-panel button{grid-column:1/-1}.parent-hero,.report-header{padding:25px;display:block}.parent-hero button{margin-top:18px}.parent-stats{grid-template-columns:1fr}.settings-card{display:block}.settings-card>button{margin-top:15px}.milestone-card{grid-template-columns:1fr}.report-badge{margin-top:18px}
