@@ -31,6 +31,7 @@ type Progress = {
   stars: number;
   attempts: Record<number, number>;
 };
+type InteractionMode = "choice" | "drag" | "connect";
 
 const BASE_LESSONS: Lesson[] = [
   {
@@ -256,6 +257,18 @@ const LESSONS: Lesson[] = visualLevels.length
   : BASE_LESSONS;
 
 const initialProgress: Progress = { completed: [], stars: 0, attempts: {} };
+const getInteractionMode = (lesson: Lesson): InteractionMode => {
+  const questionNumber = lesson.questionIndex ?? lesson.id;
+  return questionNumber % 3 === 2 ? "drag" : questionNumber % 3 === 0 ? "connect" : "choice";
+};
+const getInteractionGuidance = (lesson: Lesson) => {
+  const mode = getInteractionMode(lesson);
+  return mode === "drag"
+    ? "把正确图片拖进答案篮，也可以先点图片再点答案篮。"
+    : mode === "connect"
+      ? "从线索出发，点选正确图片完成连线。"
+      : "想好以后，点一下图片。";
+};
 
 export default function Home() {
   const [screen, setScreen] = useState<Screen>("home");
@@ -269,6 +282,14 @@ export default function Home() {
   const [voiceOn, setVoiceOn] = useState(true);
   const [loaded, setLoaded] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const autoAdvanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelAutoAdvance = () => {
+    if (autoAdvanceRef.current) {
+      clearTimeout(autoAdvanceRef.current);
+      autoAdvanceRef.current = null;
+    }
+  };
 
   useEffect(() => {
     const curriculumVersion = "800-v1";
@@ -288,6 +309,8 @@ export default function Home() {
   useEffect(() => {
     if (loaded) window.localStorage.setItem("thinking-island-progress", JSON.stringify(progress));
   }, [progress, loaded]);
+
+  useEffect(() => () => cancelAutoAdvance(), []);
 
   const playFiles = (files: string[], playWhenMuted = false) => {
     if (!voiceOn && !playWhenMuted) return;
@@ -337,6 +360,7 @@ export default function Home() {
   const completion = Math.round((progress.completed.length / LESSONS.length) * 100);
 
   const startLesson = (lesson: Lesson) => {
+    cancelAutoAdvance();
     setActiveLesson(lesson);
     setStep(0);
     setSelected(null);
@@ -346,7 +370,7 @@ export default function Home() {
     window.scrollTo(0, 0);
     const activity = lesson.activities[0];
     speakText(
-      `第${lesson.questionIndex ?? lesson.id}题。${activity.voicePrompt ?? activity.prompt}。想好以后，点一下图片。`
+      `第${lesson.questionIndex ?? lesson.id}题。${activity.voicePrompt ?? activity.prompt}。${getInteractionGuidance(lesson)}`
     );
   };
 
@@ -357,13 +381,20 @@ export default function Home() {
     setFeedback(isCorrect ? "correct" : "try");
     speakText(
       isCorrect
-        ? `${activeLesson.activities[step].explain}。你想得很仔细。`
+        ? `恭喜答对了！${activeLesson.activities[step].explain}。马上进入下一关。`
         : "没关系，先停一下，再听听规则或打开提示。"
     );
     setProgress((current) => ({
       ...current,
       attempts: { ...current.attempts, [activeLesson.id]: (current.attempts[activeLesson.id] ?? 0) + 1 },
     }));
+    if (isCorrect) {
+      cancelAutoAdvance();
+      autoAdvanceRef.current = setTimeout(() => {
+        autoAdvanceRef.current = null;
+        advance();
+      }, 1500);
+    }
   };
 
   const advance = () => {
@@ -402,7 +433,7 @@ export default function Home() {
     window.scrollTo(0, 0);
     const nextActivity = next.activities[0];
     speakText(
-      `答对了。下一题。${nextActivity.voicePrompt ?? nextActivity.prompt}。想好以后，点一下图片。`
+      `下一题。${nextActivity.voicePrompt ?? nextActivity.prompt}。${getInteractionGuidance(next)}`
     );
   };
 
@@ -410,6 +441,17 @@ export default function Home() {
     setProgress(initialProgress);
     window.localStorage.removeItem("thinking-island-progress");
   };
+
+  const browseLesson = (offset: -1 | 1) => {
+    cancelAutoAdvance();
+    const categoryLevels = LESSONS.filter((lesson) => lesson.skill === activeLesson.skill);
+    const currentIndex = categoryLevels.findIndex((lesson) => lesson.id === activeLesson.id);
+    const target = categoryLevels[currentIndex + offset];
+    if (target) startLesson(target);
+  };
+
+  const activeCategoryLevels = LESSONS.filter((lesson) => lesson.skill === activeLesson.skill);
+  const activeCategoryPosition = activeCategoryLevels.findIndex((lesson) => lesson.id === activeLesson.id);
 
   if (!loaded) return <div className="loading-screen">正在铺好思维岛的小路…</div>;
 
@@ -422,9 +464,9 @@ export default function Home() {
         toggleVoice={toggleVoice}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        goHome={() => { audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); setMenuOpen(false); }}
-        goParent={() => { setScreen("parent"); setMenuOpen(false); }}
-        goReport={() => { setScreen("report"); setMenuOpen(false); }}
+        goHome={() => { cancelAutoAdvance(); audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); setMenuOpen(false); }}
+        goParent={() => { cancelAutoAdvance(); setScreen("parent"); setMenuOpen(false); }}
+        goReport={() => { cancelAutoAdvance(); setScreen("report"); setMenuOpen(false); }}
       />
 
       {screen === "home" && (
@@ -448,7 +490,10 @@ export default function Home() {
           setHintOpen={setHintOpen}
           answer={answer}
           advance={advance}
-          exit={() => { audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); }}
+          browseLesson={browseLesson}
+          canGoPrevious={activeCategoryPosition > 0}
+          canGoNext={activeCategoryPosition < activeCategoryLevels.length - 1}
+          exit={() => { cancelAutoAdvance(); audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); }}
           voiceOn={voiceOn}
           speakText={speakText}
         />
@@ -592,19 +637,35 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
   );
 }
 
-function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, advance, exit, voiceOn, speakText }: {
+function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, browseLesson, canGoPrevious, canGoNext, exit, voiceOn, speakText }: {
   lesson: Lesson; step: number; selected: number | null; feedback: "correct" | "try" | null;
   hintOpen: boolean; setHintOpen: (value: boolean) => void; answer: (index: number) => void;
-  advance: () => void; exit: () => void; voiceOn: boolean; speakText: (text: string) => void;
+  browseLesson: (offset: -1 | 1) => void; canGoPrevious: boolean; canGoNext: boolean;
+  exit: () => void; voiceOn: boolean; speakText: (text: string) => void;
 }) {
   const activity = lesson.activities[step];
+  const questionNumber = lesson.questionIndex ?? lesson.id;
+  const interactionMode = getInteractionMode(lesson);
+  const [pickedIndex, setPickedIndex] = useState<number | null>(null);
+
+  useEffect(() => setPickedIndex(null), [lesson.id, step]);
+
+  const visualClass = (emoji?: string) => {
+    const length = Array.from(emoji ?? "").length;
+    return length > 8 ? "tiny" : length > 4 ? "compact" : "";
+  };
+
   return (
     <div className="lesson-screen" style={{ "--lesson-color": lesson.color } as React.CSSProperties}>
       <div className="lesson-toolbar">
         <button className="round-button" onClick={exit} aria-label="退出课程">×</button>
         <div className="lesson-progress">
-          <small>{lesson.title} · 第 {step + 1} 关</small>
-          <div>{lesson.activities.map((_, index) => <i key={index} className={index <= step ? "active" : ""} />)}</div>
+          <small>{lesson.skill} · 第 {questionNumber} / 80 关</small>
+          <div className="lesson-progress-track"><i style={{ width: `${questionNumber / 80 * 100}%` }} /></div>
+        </div>
+        <div className="lesson-navigation" aria-label="浏览关卡">
+          <button disabled={!canGoPrevious} onClick={() => browseLesson(-1)}>← 上一关</button>
+          <button disabled={!canGoNext} onClick={() => browseLesson(1)}>下一关 →</button>
         </div>
         <div className="skill-tag">{lesson.icon} {lesson.skill}</div>
       </div>
@@ -625,23 +686,85 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
             >
               {voiceOn ? "🔊 再听一遍" : "🔇 请先开启语音"}
             </button>
+            <div className="play-mode">
+              {interactionMode === "choice" && "👆 点选玩法"}
+              {interactionMode === "drag" && "🖐️ 拖拽玩法"}
+              {interactionMode === "connect" && "〰️ 连线玩法"}
+            </div>
           </div>
         </div>
 
-        <div className="options-grid">
-          {activity.options.map((option, index) => (
+        {interactionMode === "choice" && (
+          <div className="options-grid">
+            {activity.options.map((option, index) => (
+              <button
+                key={option.label}
+                onClick={() => answer(index)}
+                aria-label={option.label}
+                className={`option-card ${activity.visualOnly ? "visual-option" : ""} ${selected === index ? "selected" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
+              >
+                {option.emoji && <span className={`option-visual ${visualClass(option.emoji)}`}>{option.emoji}</span>}
+                <strong className={activity.visualOnly ? "sr-only" : ""}>{option.label}</strong>
+                {!activity.visualOnly && <i>{String.fromCharCode(65 + index)}</i>}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {interactionMode === "drag" && (
+          <div className="drag-game">
+            <div className="drag-options" aria-label="可以拖动的图片">
+              {activity.options.map((option, index) => (
+                <button
+                  key={option.label}
+                  draggable
+                  onDragStart={(event) => {
+                    event.dataTransfer.setData("text/plain", String(index));
+                    setPickedIndex(index);
+                  }}
+                  onClick={() => setPickedIndex(index)}
+                  aria-label={`拖动${option.label}`}
+                  className={`drag-piece ${pickedIndex === index ? "picked" : ""} ${selected === index && feedback === "try" ? "wrong" : ""}`}
+                >
+                  <span className={`option-visual ${visualClass(option.emoji)}`}>{option.emoji}</span>
+                  <small>{pickedIndex === index ? "已拿起" : "拖一拖"}</small>
+                </button>
+              ))}
+            </div>
             <button
-              key={option.label}
-              onClick={() => answer(index)}
-              aria-label={option.label}
-              className={`option-card ${activity.visualOnly ? "visual-option" : ""} ${selected === index ? "selected" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
+              className={`drop-zone ${pickedIndex !== null ? "ready" : ""}`}
+              onDragOver={(event) => event.preventDefault()}
+              onDrop={(event) => {
+                event.preventDefault();
+                const index = Number(event.dataTransfer.getData("text/plain"));
+                if (Number.isInteger(index)) answer(index);
+              }}
+              onClick={() => pickedIndex !== null && answer(pickedIndex)}
             >
-              {option.emoji && <span>{option.emoji}</span>}
-              <strong className={activity.visualOnly ? "sr-only" : ""}>{option.label}</strong>
-              {!activity.visualOnly && <i>{String.fromCharCode(65 + index)}</i>}
+              <span>🧺</span>
+              <strong>{pickedIndex === null ? "把答案拖到这里" : "放进答案篮"}</strong>
+              <small>也可以先点图片，再点这里</small>
             </button>
-          ))}
-        </div>
+          </div>
+        )}
+
+        {interactionMode === "connect" && (
+          <div className="connect-game" aria-label="连线配对">
+            <div className="connect-instruction">从线索出发，连到正确图片</div>
+            {activity.options.map((option, index) => (
+              <button
+                key={option.label}
+                onClick={() => answer(index)}
+                className={`match-row ${selected === index ? "linked" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
+                aria-label={`把线索连接到${option.label}`}
+              >
+                <span className="clue-node">🧩</span>
+                <i><b /></i>
+                <span className={`match-picture option-visual ${visualClass(option.emoji)}`}>{option.emoji}</span>
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className="activity-footer">
           <button className="hint-button" onClick={() => {
@@ -660,22 +783,24 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
           </div>
         )}
 
-        {feedback && (
+        {feedback === "try" && (
           <div className={`feedback-panel ${feedback}`}>
-            <div className="feedback-icon">{feedback === "correct" ? "✓" : "↻"}</div>
+            <div className="feedback-icon">↻</div>
             <div>
-              <small>{feedback === "correct" ? "✓" : "↻"}</small>
-              <strong>
-                {activity.visualOnly
-                  ? feedback === "correct" ? "太棒啦！" : "再听一遍"
-                  : feedback === "correct" ? activity.explain : "再看一看线索，或者打开提示试试。"}
-              </strong>
+              <small>再试一次</small>
+              <strong>{activity.visualOnly ? "再听一遍" : "再看一看线索，或者打开提示试试。"}</strong>
             </div>
-            {feedback === "correct" && (
-              <button onClick={advance}>
-                {(lesson.questionIndex ?? 1) < 80 ? "下一题" : "完成本类"} →
-              </button>
-            )}
+          </div>
+        )}
+
+        {feedback === "correct" && (
+          <div className="celebration-backdrop" role="status" aria-live="assertive">
+            <div className="celebration-card">
+              <span>🌟</span>
+              <h2>恭喜答对了！</h2>
+              <p>{questionNumber < 80 ? "马上进入下一关…" : "这一类全部完成啦！"}</p>
+              <div><i /></div>
+            </div>
           </div>
         )}
       </section>

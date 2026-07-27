@@ -63,8 +63,21 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.doesNotMatch(page, /disabled=\{locked\}|继续前进后解锁/);
   assert.match(page, /const next = categoryLevels\[currentIndex \+ 1\]/);
   assert.match(page, /setActiveLesson\(next\)/);
-  assert.match(page, /lesson\.questionIndex \?\? 1\) < 80 \? "下一题" : "完成本类"/);
+  assert.match(page, /恭喜答对了/);
+  assert.match(page, /setTimeout\(\(\) =>/);
+  assert.match(page, /browseLesson\(-1\)/);
+  assert.match(page, /browseLesson\(1\)/);
+  assert.match(page, /draggable/);
+  assert.match(page, /onDrop/);
+  assert.match(page, /connect-game/);
+  assert.match(page, /interactionMode === "choice"/);
+  assert.match(page, /interactionMode === "drag"/);
+  assert.match(page, /interactionMode === "connect"/);
   assert.match(page, /window\.speechSynthesis\.speak\(utterance\)/);
+  assert.match(css, /celebration-backdrop/);
+  assert.match(css, /drag-game/);
+  assert.match(css, /match-row/);
+  assert.match(css, /option-visual\.compact/);
   assert.match(css, /grid-template-columns:minmax\(180px,220px\) minmax\(0,1fr\) 132px/);
   assert.ok(
     levels
