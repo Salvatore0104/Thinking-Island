@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import visualLevels from "./visual-levels.json";
+import { GameActivity, GameRenderer, GameType } from "./game-renderers";
 
 type Screen = "home" | "lesson" | "parent" | "report";
 type Lesson = {
@@ -16,24 +17,13 @@ type Lesson = {
   skill: string;
   activities: Activity[];
 };
-type Activity = {
-  prompt: string;
-  voicePrompt?: string;
-  instruction: string;
-  visualOnly?: boolean;
-  options: { label: string; emoji?: string }[];
-  answer: number;
-  hint: string;
-  explain: string;
-};
+type Activity = GameActivity;
 type Progress = {
   completed: number[];
   stars: number;
   attempts: Record<number, number>;
 };
-type InteractionMode = "choice" | "drag" | "connect";
-
-const BASE_LESSONS: Lesson[] = [
+const BASE_LESSONS = [
   {
     id: 1, week: 1, title: "分类侦探", subtitle: "找到住在一起的伙伴", icon: "🧺",
     color: "#ff8f70", skill: "分类与表达",
@@ -250,24 +240,24 @@ const BASE_LESSONS: Lesson[] = [
       { prompt: "先摸头，再看到圆形拍手。应该按什么顺序？", instruction: "同时记住动作顺序和条件", options: [{label:"摸头，再拍手"},{label:"拍手，再摸头"},{label:"只拍手"}], answer: 0, hint: "先完成固定动作，再执行圆形规则。", explain: "正确顺序是先摸头，看到圆形后再拍手。" },
     ],
   },
-];
+] as unknown as Lesson[];
 
 const LESSONS: Lesson[] = visualLevels.length
   ? visualLevels as Lesson[]
   : BASE_LESSONS;
 
 const initialProgress: Progress = { completed: [], stars: 0, attempts: {} };
-const getInteractionMode = (lesson: Lesson): InteractionMode => {
-  const questionNumber = lesson.questionIndex ?? lesson.id;
-  return questionNumber % 3 === 2 ? "drag" : questionNumber % 3 === 0 ? "connect" : "choice";
-};
 const getInteractionGuidance = (lesson: Lesson) => {
-  const mode = getInteractionMode(lesson);
-  return mode === "drag"
-    ? "把正确图片拖进答案篮，也可以先点图片再点答案篮。"
-    : mode === "connect"
-      ? "从线索出发，点选正确图片完成连线。"
-      : "想好以后，点一下图片。";
+  const mode = (lesson.activities[0].type ?? "choice") as GameType;
+  const guidance: Record<GameType, string> = {
+    choice: "想好以后，点一下正确图片。",
+    dragSort: "把每张图片拖进正确的篮子，也可以先点图片再点篮子。",
+    dragOrder: "观察规律，把图片拖到对应空位。",
+    match: "从左边拖线连接到右边的伙伴。",
+    path: "从起点沿着相邻格子走到终点。",
+    jigsaw: "把八块拼图拖回正确位置。",
+  };
+  return guidance[mode];
 };
 
 export default function Home() {
@@ -292,10 +282,12 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const curriculumVersion = "800-v1";
+    const curriculumVersion = "800-v2";
     const savedVersion = window.localStorage.getItem("thinking-island-curriculum-version");
     const saved = window.localStorage.getItem("thinking-island-progress");
     if (saved && savedVersion === curriculumVersion) {
+      // Loading device-local progress is the purpose of this one-time hydration effect.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       try { setProgress(JSON.parse(saved)); } catch { /* keep clean state */ }
     } else {
       window.localStorage.removeItem("thinking-island-progress");
@@ -374,10 +366,9 @@ export default function Home() {
     );
   };
 
-  const answer = (index: number) => {
+  const resolveResult = (isCorrect: boolean, index: number | null = null) => {
     if (feedback === "correct") return;
-    setSelected(index);
-    const isCorrect = index === activeLesson.activities[step].answer;
+    if (index !== null) setSelected(index);
     setFeedback(isCorrect ? "correct" : "try");
     speakText(
       isCorrect
@@ -396,6 +387,14 @@ export default function Home() {
       }, 1500);
     }
   };
+
+  const answer = (index: number) => {
+    const expected = activeLesson.activities[step].answer ?? -1;
+    resolveResult(index === expected, index);
+  };
+
+  const completeGame = () => resolveResult(true);
+  const registerWrong = () => resolveResult(false);
 
   const advance = () => {
     if (step < activeLesson.activities.length - 1) {
@@ -489,10 +488,14 @@ export default function Home() {
           hintOpen={hintOpen}
           setHintOpen={setHintOpen}
           answer={answer}
-          advance={advance}
+          completeGame={completeGame}
+          registerWrong={registerWrong}
           browseLesson={browseLesson}
           canGoPrevious={activeCategoryPosition > 0}
           canGoNext={activeCategoryPosition < activeCategoryLevels.length - 1}
+          categoryLevels={activeCategoryLevels}
+          progress={progress}
+          selectLesson={startLesson}
           exit={() => { cancelAutoAdvance(); audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); }}
           voiceOn={voiceOn}
           speakText={speakText}
@@ -637,35 +640,37 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
   );
 }
 
-function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, browseLesson, canGoPrevious, canGoNext, exit, voiceOn, speakText }: {
+function LessonScreen({
+  lesson, step, selected, feedback, hintOpen, setHintOpen, answer, completeGame, registerWrong,
+  browseLesson, canGoPrevious, canGoNext, categoryLevels, progress, selectLesson, exit, voiceOn, speakText,
+}: {
   lesson: Lesson; step: number; selected: number | null; feedback: "correct" | "try" | null;
   hintOpen: boolean; setHintOpen: (value: boolean) => void; answer: (index: number) => void;
+  completeGame: () => void; registerWrong: () => void;
   browseLesson: (offset: -1 | 1) => void; canGoPrevious: boolean; canGoNext: boolean;
+  categoryLevels: Lesson[]; progress: Progress; selectLesson: (lesson: Lesson) => void;
   exit: () => void; voiceOn: boolean; speakText: (text: string) => void;
 }) {
   const activity = lesson.activities[step];
   const questionNumber = lesson.questionIndex ?? lesson.id;
-  const interactionMode = getInteractionMode(lesson);
-  const [pickedIndex, setPickedIndex] = useState<number | null>(null);
-
-  useEffect(() => setPickedIndex(null), [lesson.id, step]);
-
-  const visualClass = (emoji?: string) => {
-    const length = Array.from(emoji ?? "").length;
-    return length > 8 ? "tiny" : length > 4 ? "compact" : "";
+  const [overviewOpen, setOverviewOpen] = useState(false);
+  const typeNames: Record<GameType, string> = {
+    choice: "👆 图片选择",
+    dragSort: "🧺 分类拖拽",
+    dragOrder: "🪄 规律排列",
+    match: "〰️ 配对连线",
+    path: "🧭 路径规划",
+    jigsaw: "🧩 八块拼图",
   };
+  const gameType = (activity.type ?? "choice") as GameType;
 
   return (
-    <div className="lesson-screen" style={{ "--lesson-color": lesson.color } as React.CSSProperties}>
+    <div className="lesson-screen with-bottom-nav" style={{ "--lesson-color": lesson.color } as React.CSSProperties}>
       <div className="lesson-toolbar">
         <button className="round-button" onClick={exit} aria-label="退出课程">×</button>
         <div className="lesson-progress">
           <small>{lesson.skill} · 第 {questionNumber} / 80 关</small>
           <div className="lesson-progress-track"><i style={{ width: `${questionNumber / 80 * 100}%` }} /></div>
-        </div>
-        <div className="lesson-navigation" aria-label="浏览关卡">
-          <button disabled={!canGoPrevious} onClick={() => browseLesson(-1)}>← 上一关</button>
-          <button disabled={!canGoNext} onClick={() => browseLesson(1)}>下一关 →</button>
         </div>
         <div className="skill-tag">{lesson.icon} {lesson.skill}</div>
       </div>
@@ -673,123 +678,45 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
       <section className="activity-card">
         <div className="guide-row">
           <div className="guide-avatar">🦊</div>
-          <div className={`speech-bubble ${activity.visualOnly ? "visual-task" : ""}`}>
+          <div className="speech-bubble visual-task">
             <small>🔊 听任务</small>
             <h2>{activity.prompt}</h2>
-            {!activity.visualOnly && <p>{activity.instruction}</p>}
             <button
               className="replay-button"
-              onClick={() => speakText(
-                activity.voicePrompt ?? activity.prompt
-              )}
+              onClick={() => speakText(`${activity.voicePrompt ?? activity.prompt}。${getInteractionGuidance(lesson)}`)}
               aria-label="重新播放任务语音"
             >
               {voiceOn ? "🔊 再听一遍" : "🔇 请先开启语音"}
             </button>
-            <div className="play-mode">
-              {interactionMode === "choice" && "👆 点选玩法"}
-              {interactionMode === "drag" && "🖐️ 拖拽玩法"}
-              {interactionMode === "connect" && "〰️ 连线玩法"}
-            </div>
+            <div className="play-mode">{typeNames[gameType]}</div>
           </div>
         </div>
 
-        {interactionMode === "choice" && (
-          <div className="options-grid">
-            {activity.options.map((option, index) => (
-              <button
-                key={option.label}
-                onClick={() => answer(index)}
-                aria-label={option.label}
-                className={`option-card ${activity.visualOnly ? "visual-option" : ""} ${selected === index ? "selected" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
-              >
-                {option.emoji && <span className={`option-visual ${visualClass(option.emoji)}`}>{option.emoji}</span>}
-                <strong className={activity.visualOnly ? "sr-only" : ""}>{option.label}</strong>
-                {!activity.visualOnly && <i>{String.fromCharCode(65 + index)}</i>}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {interactionMode === "drag" && (
-          <div className="drag-game">
-            <div className="drag-options" aria-label="可以拖动的图片">
-              {activity.options.map((option, index) => (
-                <button
-                  key={option.label}
-                  draggable
-                  onDragStart={(event) => {
-                    event.dataTransfer.setData("text/plain", String(index));
-                    setPickedIndex(index);
-                  }}
-                  onClick={() => setPickedIndex(index)}
-                  aria-label={`拖动${option.label}`}
-                  className={`drag-piece ${pickedIndex === index ? "picked" : ""} ${selected === index && feedback === "try" ? "wrong" : ""}`}
-                >
-                  <span className={`option-visual ${visualClass(option.emoji)}`}>{option.emoji}</span>
-                  <small>{pickedIndex === index ? "已拿起" : "拖一拖"}</small>
-                </button>
-              ))}
-            </div>
-            <button
-              className={`drop-zone ${pickedIndex !== null ? "ready" : ""}`}
-              onDragOver={(event) => event.preventDefault()}
-              onDrop={(event) => {
-                event.preventDefault();
-                const index = Number(event.dataTransfer.getData("text/plain"));
-                if (Number.isInteger(index)) answer(index);
-              }}
-              onClick={() => pickedIndex !== null && answer(pickedIndex)}
-            >
-              <span>🧺</span>
-              <strong>{pickedIndex === null ? "把答案拖到这里" : "放进答案篮"}</strong>
-              <small>也可以先点图片，再点这里</small>
-            </button>
-          </div>
-        )}
-
-        {interactionMode === "connect" && (
-          <div className="connect-game" aria-label="连线配对">
-            <div className="connect-instruction">从线索出发，连到正确图片</div>
-            {activity.options.map((option, index) => (
-              <button
-                key={option.label}
-                onClick={() => answer(index)}
-                className={`match-row ${selected === index ? "linked" : ""} ${feedback === "correct" && index === activity.answer ? "correct" : ""} ${feedback === "try" && selected === index ? "wrong" : ""}`}
-                aria-label={`把线索连接到${option.label}`}
-              >
-                <span className="clue-node">🧩</span>
-                <i><b /></i>
-                <span className={`match-picture option-visual ${visualClass(option.emoji)}`}>{option.emoji}</span>
-              </button>
-            ))}
-          </div>
-        )}
+        <GameRenderer
+          key={`${lesson.id}-${step}`}
+          activity={activity}
+          selected={selected}
+          feedback={feedback}
+          disabled={feedback === "correct"}
+          onChoice={answer}
+          onComplete={completeGame}
+          onWrong={registerWrong}
+        />
 
         <div className="activity-footer">
           <button className="hint-button" onClick={() => {
             const opening = !hintOpen;
             setHintOpen(opening);
-            if (opening) {
-              speakText(activity.hint);
-            }
+            if (opening) speakText(activity.hint);
           }}>💡 提示</button>
-          <span>听完再点图片</span>
+          <span>先听任务，再动手试一试</span>
         </div>
-        {hintOpen && (
-          <div className="hint-panel">
-            <b>{activity.visualOnly ? "🔊" : "小提示"}</b>
-            {activity.visualOnly ? "听一听" : activity.hint}
-          </div>
-        )}
+        {hintOpen && <div className="hint-panel"><b>🔊</b>听一听狐狸的提示</div>}
 
         {feedback === "try" && (
-          <div className={`feedback-panel ${feedback}`}>
+          <div className="feedback-panel try">
             <div className="feedback-icon">↻</div>
-            <div>
-              <small>再试一次</small>
-              <strong>{activity.visualOnly ? "再听一遍" : "再看一看线索，或者打开提示试试。"}</strong>
-            </div>
+            <div><small>再试一次</small><strong>换一种办法，或者打开提示听一听。</strong></div>
           </div>
         )}
 
@@ -804,6 +731,48 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
           </div>
         )}
       </section>
+
+      <nav className="fixed-level-nav" aria-label="关卡导航">
+        <button disabled={!canGoPrevious} onClick={() => browseLesson(-1)}>← <span>上一关</span></button>
+        <button className="overview-button" onClick={() => setOverviewOpen(true)}>
+          <span>关卡总览</span><strong>{questionNumber} / 80</strong>
+        </button>
+        <button disabled={!canGoNext} onClick={() => browseLesson(1)}><span>下一关</span> →</button>
+      </nav>
+
+      {overviewOpen && (
+        <div className="level-overview-backdrop" role="dialog" aria-modal="true" aria-label="关卡总览">
+          <section className="level-overview">
+            <header>
+              <div><small>{lesson.icon} {lesson.skill}</small><h2>80个关卡</h2></div>
+              <button onClick={() => setOverviewOpen(false)} aria-label="关闭关卡总览">×</button>
+            </header>
+            <div className="level-overview-legend">
+              <span><i className="current" />当前</span>
+              <span><i className="done" />完成</span>
+              <span><i className="tried" />尝试过</span>
+            </div>
+            <div className="level-overview-grid">
+              {categoryLevels.map((candidate) => {
+                const isCurrent = candidate.id === lesson.id;
+                const isDone = progress.completed.includes(candidate.id);
+                const isTried = Boolean(progress.attempts[candidate.id]);
+                return (
+                  <button
+                    key={candidate.id}
+                    className={`${isCurrent ? "current" : ""} ${isDone ? "done" : ""} ${!isDone && isTried ? "tried" : ""}`}
+                    onClick={() => { setOverviewOpen(false); selectLesson(candidate); }}
+                  >
+                    <span>{candidate.questionIndex}</span>
+                    {candidate.activities[0].type === "jigsaw" && <b>🧩</b>}
+                    {isDone && <i>✓</i>}
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }
@@ -872,7 +841,7 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
       { name: "空间与数感", value: completedIn([[321, 480]]), color: "#56b89f" },
       { name: "图形与记忆", value: completedIn([[481, 640]]), color: "#8678d8" },
     ];
-  }, [progress.completed.length]);
+  }, [progress.completed]);
   return (
     <div className="report-screen">
       <button className="back-link" onClick={back}>← 返回家长中心</button>

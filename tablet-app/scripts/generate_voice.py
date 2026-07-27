@@ -1,4 +1,4 @@
-"""Generate static Mandarin guidance audio for the 120 visual levels."""
+"""Generate static Mandarin guidance audio for the 800 six-mode levels."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ def build_clips(levels: list[dict]) -> list[Clip]:
     clips = [
         Clip(
             "welcome.mp3",
-            "嗨，小船长！一百二十个逻辑思维关卡已经全部开放。看图片，听规则，再轻轻点答案。",
+            "嗨，小船长！十个能力岛、八百个逻辑思维关卡已经全部开放。看图片，听规则，再动手试一试。",
             "global",
         ),
         Clip(
@@ -49,6 +49,14 @@ def build_clips(levels: list[dict]) -> list[Clip]:
     for level in levels:
         level_id = level["id"]
         activity = level["activities"][0]
+        guidance = {
+            "choice": "想好以后，点一下正确图片。",
+            "dragSort": "把每张图片拖进正确的篮子。",
+            "dragOrder": "观察规律，把图片拖到对应空位。",
+            "match": "从左边拖线连接到右边的伙伴。",
+            "path": "从起点沿着相邻格子走到终点。",
+            "jigsaw": "把八块拼图拖回正确位置。",
+        }.get(activity.get("type"), "动手试一试。")
         prefix = f"lesson-{level_id:02d}-step-01"
         clips.extend(
             [
@@ -60,7 +68,7 @@ def build_clips(levels: list[dict]) -> list[Clip]:
                 ),
                 Clip(
                     f"{prefix}-prompt.mp3",
-                    f"{activity.get('voicePrompt', activity['prompt'])} 想好以后，点一下图片。",
+                    f"{activity.get('voicePrompt', activity['prompt'])} {guidance}",
                     "prompt",
                     level_id,
                     1,

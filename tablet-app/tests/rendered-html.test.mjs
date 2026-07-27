@@ -36,12 +36,14 @@ test("server-renders the Thinking Island shell", async () => {
 });
 
 test("ships ten categories with 80 image-first questions each", async () => {
-  const [page, css, levelsText, manifestText, audioFiles] = await Promise.all([
+  const [page, games, css, levelsText, manifestText, audioFiles, sceneFiles] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/game-renderers.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/visual-levels.json", import.meta.url), "utf8"),
     readFile(new URL("../public/audio/manifest.json", import.meta.url), "utf8"),
     readdir(new URL("../public/audio/", import.meta.url)),
+    readdir(new URL("../public/game-scenes/", import.meta.url)),
   ]);
 
   const levels = JSON.parse(levelsText);
@@ -67,40 +69,54 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.match(page, /setTimeout\(\(\) =>/);
   assert.match(page, /browseLesson\(-1\)/);
   assert.match(page, /browseLesson\(1\)/);
-  assert.match(page, /draggable/);
-  assert.match(page, /onDrop/);
-  assert.match(page, /connect-game/);
-  assert.match(page, /interactionMode === "choice"/);
-  assert.match(page, /interactionMode === "drag"/);
-  assert.match(page, /interactionMode === "connect"/);
+  assert.match(page, /关卡总览/);
+  assert.match(page, /800-v2/);
+  assert.match(page, /<GameRenderer/);
   assert.match(page, /window\.speechSynthesis\.speak\(utterance\)/);
+  assert.match(games, /type GameType = "choice" \| "dragSort" \| "dragOrder" \| "match" \| "path" \| "jigsaw"/);
+  assert.match(games, /onPointerDown/);
+  assert.match(games, /setPointerCapture/);
+  assert.match(games, /function JigsawGame/);
+  assert.match(games, /function MatchGame/);
   assert.match(css, /celebration-backdrop/);
-  assert.match(css, /drag-game/);
-  assert.match(css, /match-row/);
+  assert.match(css, /fixed-level-nav/);
+  assert.match(css, /jigsaw-board/);
+  assert.match(css, /match-lines-canvas/);
   assert.match(css, /option-visual\.compact/);
-  assert.match(css, /grid-template-columns:minmax\(180px,220px\) minmax\(0,1fr\) 132px/);
   assert.ok(
     levels
       .flatMap((level) => level.activities)
       .every((activity) => activity.visualOnly && activity.voicePrompt),
   );
   assert.ok(levels.every((level) => level.activities.length === 1));
-  assert.ok(
-    levels
-      .flatMap((level) => level.activities)
-      .every((activity) => activity.options.length >= 4),
-  );
-  assert.ok(
-    levels
-      .flatMap((level) => level.activities)
-      .every(
-        (activity) =>
-          Number.isInteger(activity.answer) &&
-          activity.answer >= 0 &&
-          activity.answer < activity.options.length &&
-          activity.options.every((option) => option.emoji),
-      ),
-  );
+  const expectedTypes = { choice: 32, dragSort: 12, dragOrder: 8, match: 10, path: 8, jigsaw: 10 };
+  for (const skill of new Set(levels.map((level) => level.skill))) {
+    const typeCounts = levels
+      .filter((level) => level.skill === skill)
+      .map((level) => level.activities[0].type)
+      .reduce((counts, type) => ({ ...counts, [type]: (counts[type] ?? 0) + 1 }), {});
+    assert.deepEqual(typeCounts, expectedTypes);
+  }
+  for (const activity of levels.flatMap((level) => level.activities)) {
+    if (activity.type === "choice") {
+      assert.ok(activity.options.length === 4);
+      assert.ok(Number.isInteger(activity.answer) && activity.answer >= 0 && activity.answer < 4);
+    } else if (activity.type === "dragSort") {
+      assert.ok(activity.items.length >= 4 && activity.zones.length === 2);
+      assert.ok(activity.items.every((item) => activity.zones.some((zone) => zone.id === item.target)));
+    } else if (activity.type === "dragOrder") {
+      assert.deepEqual(new Set(activity.items.map((item) => item.id)), new Set(activity.answerOrder));
+    } else if (activity.type === "match") {
+      assert.equal(activity.left.length, activity.right.length);
+      assert.equal(activity.pairs.length, activity.left.length);
+    } else if (activity.type === "path") {
+      assert.ok(!activity.blocked.includes(activity.start) && !activity.blocked.includes(activity.goal));
+    } else if (activity.type === "jigsaw") {
+      assert.equal(activity.rows * activity.columns, 8);
+      assert.deepEqual([...activity.order].sort((a, b) => a - b), [0,1,2,3,4,5,6,7]);
+    }
+  }
+  assert.equal(sceneFiles.filter((file) => /^scene-\d+-\d+\.webp$/.test(file)).length, 30);
 
   const manifest = JSON.parse(manifestText);
   const mp3Files = audioFiles.filter((file) => file.endsWith(".mp3"));
