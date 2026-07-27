@@ -70,7 +70,10 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.match(page, /browseLesson\(-1\)/);
   assert.match(page, /browseLesson\(1\)/);
   assert.match(page, /关卡总览/);
-  assert.match(page, /800-v2/);
+  assert.match(page, /800-v3/);
+  assert.match(page, /CHALLENGE_LENGTH = 20/);
+  assert.match(page, /randomChallenge/);
+  assert.match(page, /随机闯关/);
   assert.match(page, /<GameRenderer/);
   assert.match(page, /window\.speechSynthesis\.speak\(utterance\)/);
   assert.match(games, /type GameType = "choice" \| "dragSort" \| "dragOrder" \| "match" \| "path" \| "jigsaw"/);
@@ -78,6 +81,9 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.match(games, /setPointerCapture/);
   assert.match(games, /function JigsawGame/);
   assert.match(games, /function MatchGame/);
+  assert.match(games, /item\.emoji !== expected\.emoji/);
+  assert.match(games, /ResizeObserver/);
+  assert.match(games, /puzzlePath/);
   assert.match(css, /celebration-backdrop/);
   assert.match(css, /fixed-level-nav/);
   assert.match(css, /jigsaw-board/);
@@ -101,19 +107,36 @@ test("ships ten categories with 80 image-first questions each", async () => {
     if (activity.type === "choice") {
       assert.ok(activity.options.length === 4);
       assert.ok(Number.isInteger(activity.answer) && activity.answer >= 0 && activity.answer < 4);
+      assert.equal(new Set(activity.options.map((option) => option.emoji)).size, activity.options.length);
     } else if (activity.type === "dragSort") {
       assert.ok(activity.items.length >= 4 && activity.zones.length === 2);
       assert.ok(activity.items.every((item) => activity.zones.some((zone) => zone.id === item.target)));
+      assert.ok(activity.zones.every((zone) => zone.emoji !== "🟣"));
     } else if (activity.type === "dragOrder") {
       assert.deepEqual(new Set(activity.items.map((item) => item.id)), new Set(activity.answerOrder));
     } else if (activity.type === "match") {
       assert.equal(activity.left.length, activity.right.length);
       assert.equal(activity.pairs.length, activity.left.length);
+      assert.equal(new Set(activity.left.map((item) => item.emoji)).size, activity.left.length);
+      assert.equal(new Set(activity.right.map((item) => item.emoji)).size, activity.right.length);
+      const leftById = new Map(activity.left.map((item) => [item.id, item]));
+      const rightById = new Map(activity.right.map((item) => [item.id, item]));
+      assert.ok(activity.pairs.every(([leftId, rightId]) => leftById.get(leftId)?.emoji === rightById.get(rightId)?.emoji));
     } else if (activity.type === "path") {
       assert.ok(!activity.blocked.includes(activity.start) && !activity.blocked.includes(activity.goal));
+      assert.ok(activity.solution.every((cell) => !activity.blocked.includes(cell)));
+      assert.ok(activity.solution.slice(1).every((cell, index) => {
+        const previous = activity.solution[index];
+        return Math.abs(Math.floor(cell / activity.size) - Math.floor(previous / activity.size))
+          + Math.abs((cell % activity.size) - (previous % activity.size)) === 1;
+      }));
     } else if (activity.type === "jigsaw") {
-      assert.equal(activity.rows * activity.columns, 8);
-      assert.deepEqual([...activity.order].sort((a, b) => a - b), [0,1,2,3,4,5,6,7]);
+      const pieceCount = activity.rows * activity.columns;
+      assert.ok(pieceCount === 4 || pieceCount === 9);
+      assert.deepEqual(
+        [...activity.order].sort((a, b) => a - b),
+        Array.from({ length: pieceCount }, (_, index) => index),
+      );
     }
   }
   assert.equal(sceneFiles.filter((file) => /^scene-\d+-\d+\.webp$/.test(file)).length, 30);

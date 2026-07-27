@@ -93,12 +93,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -410,7 +410,7 @@
   {
     "id": 9,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第9题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -421,25 +421,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          3,
-          0,
-          6,
           1,
-          7,
-          4,
           2,
-          5
+          3,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -491,12 +487,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -598,12 +594,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -915,7 +911,7 @@
   {
     "id": 19,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第19题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -926,25 +922,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
+          3,
           2,
-          7,
-          0,
-          4,
           1,
-          6,
-          3
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -996,12 +988,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -1115,12 +1107,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -1433,7 +1425,7 @@
   {
     "id": 29,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第29题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -1444,25 +1436,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
-          3,
-          7,
           0,
-          5,
+          1,
           2,
-          4
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -1526,12 +1514,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -1645,12 +1633,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -1963,7 +1951,7 @@
   {
     "id": 39,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第39题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -1974,25 +1962,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
-          0,
-          5,
           2,
-          7,
-          3,
-          1
+          1,
+          0,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -2056,12 +2040,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -2175,12 +2159,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -2514,7 +2498,7 @@
   {
     "id": 49,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第49题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -2525,25 +2509,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
-          1,
           6,
+          7,
+          8,
+          0,
+          1,
+          2,
           3,
-          5,
-          0
+          4,
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -2738,12 +2723,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -3077,7 +3062,7 @@
   {
     "id": 59,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第59题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -3088,25 +3073,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
+          8,
           7,
-          3,
-          1,
           6,
           5,
-          0,
           4,
-          2
+          3,
+          2,
+          1,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -3301,12 +3287,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -3640,7 +3626,7 @@
   {
     "id": 69,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第69题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -3651,32 +3637,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
           4,
-          1,
           5,
-          2,
-          0,
           6,
-          3,
-          7
+          7,
+          8,
+          0,
+          1,
+          2,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 70,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第70题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -3687,25 +3674,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
+          6,
           5,
-          2,
           4,
-          7,
           3,
+          2,
           1,
-          6
+          0,
+          8,
+          7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -3815,12 +3803,12 @@
           {
             "id": "zone-a",
             "label": "水果",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "交通工具",
-            "emoji": "🟣"
+            "emoji": "🚗"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -4154,7 +4142,7 @@
   {
     "id": 79,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第79题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -4165,32 +4153,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
+          1,
           2,
-          5,
-          0,
           3,
-          7,
           4,
-          1
+          5,
+          6,
+          7,
+          8,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 80,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 1 · 第80题",
     "icon": "🧺",
     "color": "#ff8f70",
@@ -4201,25 +4190,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-1-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
-          7,
           3,
+          2,
           1,
-          5,
           0,
-          6
+          8,
+          7,
+          6,
+          5,
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -4317,12 +4307,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -4634,7 +4624,7 @@
   {
     "id": 89,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第9题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -4645,25 +4635,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
+          2,
           3,
           0,
-          6,
-          1,
-          7,
-          4,
-          2,
-          5
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -4715,12 +4701,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -4822,12 +4808,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -5139,7 +5125,7 @@
   {
     "id": 99,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第19题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -5150,25 +5136,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
-          2,
-          7,
           0,
-          4,
-          1,
-          6,
-          3
+          3,
+          2,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -5220,12 +5202,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -5339,12 +5321,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -5657,7 +5639,7 @@
   {
     "id": 109,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第29题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -5668,25 +5650,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
           1,
-          6,
-          3,
-          7,
-          0,
-          5,
           2,
-          4
+          3,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -5750,12 +5728,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -5869,12 +5847,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -6187,7 +6165,7 @@
   {
     "id": 119,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第39题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -6198,25 +6176,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
-          0,
-          5,
-          2,
-          7,
           3,
-          1
+          2,
+          1,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -6280,12 +6254,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -6399,12 +6373,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -6738,7 +6712,7 @@
   {
     "id": 129,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第49题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -6749,25 +6723,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
           7,
-          4,
+          8,
+          0,
           1,
-          6,
+          2,
           3,
+          4,
           5,
-          0
+          6
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -6962,12 +6937,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -7301,7 +7276,7 @@
   {
     "id": 139,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第59题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -7312,25 +7287,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
+          0,
+          8,
           7,
-          3,
-          1,
           6,
           5,
-          0,
           4,
-          2
+          3,
+          2,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -7525,12 +7501,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -7864,7 +7840,7 @@
   {
     "id": 149,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第69题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -7875,32 +7851,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
           5,
-          2,
-          0,
           6,
+          7,
+          8,
+          0,
+          1,
+          2,
           3,
-          7
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 150,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第70题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -7911,25 +7888,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
-          5,
-          2,
-          4,
           7,
+          6,
+          5,
+          4,
           3,
+          2,
           1,
-          6
+          0,
+          8
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -8039,12 +8017,12 @@
           {
             "id": "zone-a",
             "label": "暖色图形",
-            "emoji": "🟢"
+            "emoji": "🔴"
           },
           {
             "id": "zone-b",
             "label": "冷色图形",
-            "emoji": "🟣"
+            "emoji": "🔵"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -8378,7 +8356,7 @@
   {
     "id": 159,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第79题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -8389,32 +8367,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
           2,
-          5,
-          0,
           3,
-          7,
           4,
+          5,
+          6,
+          7,
+          8,
+          0,
           1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 160,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 2 · 第80题",
     "icon": "🪄",
     "color": "#f4b64a",
@@ -8425,25 +8404,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-2-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
           4,
-          7,
           3,
+          2,
           1,
-          5,
           0,
-          6
+          8,
+          7,
+          6,
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -8541,12 +8521,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -8858,7 +8838,7 @@
   {
     "id": 169,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第9题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -8869,25 +8849,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
           3,
           0,
-          6,
           1,
-          7,
-          4,
-          2,
-          5
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -8939,12 +8915,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -9046,12 +9022,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -9363,7 +9339,7 @@
   {
     "id": 179,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第19题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -9374,25 +9350,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
-          2,
-          7,
-          0,
-          4,
           1,
-          6,
-          3
+          0,
+          3,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -9444,12 +9416,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -9563,12 +9535,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -9881,7 +9853,7 @@
   {
     "id": 189,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第29题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -9892,25 +9864,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
-          3,
-          7,
-          0,
-          5,
           2,
-          4
+          3,
+          0,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -9974,12 +9942,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -10093,12 +10061,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -10411,7 +10379,7 @@
   {
     "id": 199,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第39题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -10422,25 +10390,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
           0,
-          5,
-          2,
-          7,
           3,
+          2,
           1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -10504,12 +10468,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -10623,12 +10587,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -10962,7 +10926,7 @@
   {
     "id": 209,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第49题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -10973,25 +10937,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
+          8,
+          0,
           1,
-          6,
+          2,
           3,
+          4,
           5,
-          0
+          6,
+          7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -11186,12 +11151,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -11525,7 +11490,7 @@
   {
     "id": 219,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第59题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -11536,25 +11501,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          7,
-          3,
           1,
+          0,
+          8,
+          7,
           6,
           5,
-          0,
           4,
+          3,
           2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -11749,12 +11715,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -12088,7 +12054,7 @@
   {
     "id": 229,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第69题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -12099,32 +12065,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
-          5,
-          2,
-          0,
           6,
+          7,
+          8,
+          0,
+          1,
+          2,
           3,
-          7
+          4,
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 230,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第70题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -12135,25 +12102,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
-          5,
-          2,
-          4,
+          8,
           7,
+          6,
+          5,
+          4,
           3,
+          2,
           1,
-          6
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -12263,12 +12231,12 @@
           {
             "id": "zone-a",
             "label": "白天出现",
-            "emoji": "🟢"
+            "emoji": "☀️"
           },
           {
             "id": "zone-b",
             "label": "夜晚出现",
-            "emoji": "🟣"
+            "emoji": "🌙"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -12602,7 +12570,7 @@
   {
     "id": 239,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第79题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -12613,32 +12581,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
-          2,
-          5,
-          0,
           3,
-          7,
           4,
-          1
+          5,
+          6,
+          7,
+          8,
+          0,
+          1,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 240,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 3 · 第80题",
     "icon": "🔗",
     "color": "#56b89f",
@@ -12649,25 +12618,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-3-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
-          7,
-          3,
-          1,
           5,
+          4,
+          3,
+          2,
+          1,
           0,
+          8,
+          7,
           6
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -12765,12 +12735,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -13082,7 +13052,7 @@
   {
     "id": 249,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第9题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -13093,25 +13063,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          3,
           0,
-          6,
           1,
-          7,
-          4,
           2,
-          5
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -13163,12 +13129,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -13270,12 +13236,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -13587,7 +13553,7 @@
   {
     "id": 259,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第19题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -13598,25 +13564,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
           2,
-          7,
-          0,
-          4,
           1,
-          6,
+          0,
           3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -13668,12 +13630,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -13787,12 +13749,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -14105,7 +14067,7 @@
   {
     "id": 269,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第29题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -14116,25 +14078,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
           3,
-          7,
           0,
-          5,
-          2,
-          4
+          1,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -14198,12 +14156,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -14317,12 +14275,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -14635,7 +14593,7 @@
   {
     "id": 279,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第39题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -14646,25 +14604,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
+          1,
           0,
-          5,
-          2,
-          7,
           3,
-          1
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -14728,12 +14682,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -14847,12 +14801,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -15186,7 +15140,7 @@
   {
     "id": 289,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第49题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -15197,25 +15151,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
+          0,
           1,
-          6,
+          2,
           3,
+          4,
           5,
-          0
+          6,
+          7,
+          8
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -15410,12 +15365,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -15749,7 +15704,7 @@
   {
     "id": 299,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第59题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -15760,25 +15715,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          7,
-          3,
+          2,
           1,
+          0,
+          8,
+          7,
           6,
           5,
-          0,
           4,
-          2
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -15973,12 +15929,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -16312,7 +16268,7 @@
   {
     "id": 309,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第69题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -16323,32 +16279,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
-          5,
-          2,
+          7,
+          8,
           0,
-          6,
+          1,
+          2,
           3,
-          7
+          4,
+          5,
+          6
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 310,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第70题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -16359,25 +16316,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
           0,
-          5,
-          2,
-          4,
+          8,
           7,
+          6,
+          5,
+          4,
           3,
-          1,
-          6
+          2,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -16487,12 +16445,12 @@
           {
             "id": "zone-a",
             "label": "较小",
-            "emoji": "🟢"
+            "emoji": "🐜"
           },
           {
             "id": "zone-b",
             "label": "较大",
-            "emoji": "🟣"
+            "emoji": "🐘"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -16826,7 +16784,7 @@
   {
     "id": 319,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第79题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -16837,32 +16795,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
-          2,
-          5,
-          0,
-          3,
-          7,
           4,
-          1
+          5,
+          6,
+          7,
+          8,
+          0,
+          1,
+          2,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 320,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 4 · 第80题",
     "icon": "📏",
     "color": "#4ba6d8",
@@ -16873,25 +16832,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-4-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
-          7,
-          3,
-          1,
+          6,
           5,
+          4,
+          3,
+          2,
+          1,
           0,
-          6
+          8,
+          7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -16989,12 +16949,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -17306,7 +17266,7 @@
   {
     "id": 329,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第9题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -17317,25 +17277,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          3,
-          0,
-          6,
           1,
-          7,
-          4,
           2,
-          5
+          3,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -17387,12 +17343,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -17494,12 +17450,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -17811,7 +17767,7 @@
   {
     "id": 339,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第19题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -17822,25 +17778,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
+          3,
           2,
-          7,
-          0,
-          4,
           1,
-          6,
-          3
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -17892,12 +17844,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -18011,12 +17963,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -18329,7 +18281,7 @@
   {
     "id": 349,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第29题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -18340,25 +18292,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
-          3,
-          7,
           0,
-          5,
+          1,
           2,
-          4
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -18422,12 +18370,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -18541,12 +18489,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -18859,7 +18807,7 @@
   {
     "id": 359,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第39题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -18870,25 +18818,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
-          0,
-          5,
           2,
-          7,
-          3,
-          1
+          1,
+          0,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -18952,12 +18896,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -19071,12 +19015,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -19410,7 +19354,7 @@
   {
     "id": 369,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第49题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -19421,25 +19365,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
           1,
-          6,
+          2,
           3,
+          4,
           5,
+          6,
+          7,
+          8,
           0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -19634,12 +19579,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -19973,7 +19918,7 @@
   {
     "id": 379,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第59题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -19984,25 +19929,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          7,
           3,
+          2,
           1,
+          0,
+          8,
+          7,
           6,
           5,
-          0,
-          4,
-          2
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -20197,12 +20143,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -20536,7 +20482,7 @@
   {
     "id": 389,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第69题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -20547,32 +20493,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
-          5,
-          2,
+          8,
           0,
-          6,
+          1,
+          2,
           3,
+          4,
+          5,
+          6,
           7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 390,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第70题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -20583,25 +20530,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
-          5,
-          2,
-          4,
-          7,
-          3,
           1,
-          6
+          0,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -20711,12 +20659,12 @@
           {
             "id": "zone-a",
             "label": "地面",
-            "emoji": "🟢"
+            "emoji": "🏠"
           },
           {
             "id": "zone-b",
             "label": "天空",
-            "emoji": "🟣"
+            "emoji": "☁️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -21050,7 +20998,7 @@
   {
     "id": 399,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第79题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -21061,32 +21009,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
-          2,
           5,
-          0,
-          3,
+          6,
           7,
-          4,
-          1
+          8,
+          0,
+          1,
+          2,
+          3,
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 400,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 5 · 第80题",
     "icon": "🧭",
     "color": "#8678d8",
@@ -21097,25 +21046,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-5-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
           7,
-          3,
-          1,
+          6,
           5,
+          4,
+          3,
+          2,
+          1,
           0,
-          6
+          8
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -21213,12 +21163,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -21530,7 +21480,7 @@
   {
     "id": 409,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第9题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -21541,25 +21491,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
+          2,
           3,
           0,
-          6,
-          1,
-          7,
-          4,
-          2,
-          5
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -21611,12 +21557,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -21718,12 +21664,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -22035,7 +21981,7 @@
   {
     "id": 419,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第19题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -22046,25 +21992,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
-          2,
-          7,
           0,
-          4,
-          1,
-          6,
-          3
+          3,
+          2,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -22116,12 +22058,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -22235,12 +22177,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -22553,7 +22495,7 @@
   {
     "id": 429,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第29题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -22564,25 +22506,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
           1,
-          6,
-          3,
-          7,
-          0,
-          5,
           2,
-          4
+          3,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -22646,12 +22584,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -22765,12 +22703,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -23083,7 +23021,7 @@
   {
     "id": 439,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第39题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -23094,25 +23032,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
-          0,
-          5,
-          2,
-          7,
           3,
-          1
+          2,
+          1,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -23176,12 +23110,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -23295,12 +23229,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -23634,7 +23568,7 @@
   {
     "id": 449,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第49题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -23645,25 +23579,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
           2,
-          7,
-          4,
-          1,
-          6,
           3,
+          4,
           5,
-          0
+          6,
+          7,
+          8,
+          0,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -23858,12 +23793,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -24197,7 +24132,7 @@
   {
     "id": 459,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第59题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -24208,25 +24143,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          7,
-          3,
-          1,
-          6,
-          5,
-          0,
           4,
-          2
+          3,
+          2,
+          1,
+          0,
+          8,
+          7,
+          6,
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -24421,12 +24357,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -24760,7 +24696,7 @@
   {
     "id": 469,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第69题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -24771,32 +24707,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
-          5,
-          2,
           0,
-          6,
+          1,
+          2,
           3,
-          7
+          4,
+          5,
+          6,
+          7,
+          8
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 470,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第70题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -24807,25 +24744,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
-          5,
           2,
-          4,
-          7,
-          3,
           1,
-          6
+          0,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -24935,12 +24873,12 @@
           {
             "id": "zone-a",
             "label": "一到四",
-            "emoji": "🟢"
+            "emoji": "●"
           },
           {
             "id": "zone-b",
             "label": "五到八",
-            "emoji": "🟣"
+            "emoji": "★★★★★"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -25274,7 +25212,7 @@
   {
     "id": 479,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第79题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -25285,32 +25223,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
           6,
-          2,
-          5,
-          0,
-          3,
           7,
+          8,
+          0,
+          1,
+          2,
+          3,
           4,
-          1
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 480,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 6 · 第80题",
     "icon": "🔢",
     "color": "#ff8f70",
@@ -25321,25 +25260,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-6-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
+          8,
           7,
-          3,
-          1,
+          6,
           5,
-          0,
-          6
+          4,
+          3,
+          2,
+          1,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -25437,12 +25377,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -25754,7 +25694,7 @@
   {
     "id": 489,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第9题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -25765,25 +25705,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
           3,
           0,
-          6,
           1,
-          7,
-          4,
-          2,
-          5
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -25835,12 +25771,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -25942,12 +25878,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -26259,7 +26195,7 @@
   {
     "id": 499,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第19题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -26270,25 +26206,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
-          2,
-          7,
-          0,
-          4,
           1,
-          6,
-          3
+          0,
+          3,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -26340,12 +26272,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -26459,12 +26391,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -26777,7 +26709,7 @@
   {
     "id": 509,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第29题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -26788,25 +26720,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
-          3,
-          7,
-          0,
-          5,
           2,
-          4
+          3,
+          0,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -26870,12 +26798,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -26989,12 +26917,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -27307,7 +27235,7 @@
   {
     "id": 519,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第39题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -27318,25 +27246,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
           0,
-          5,
-          2,
-          7,
           3,
+          2,
           1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -27400,12 +27324,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -27519,12 +27443,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -27858,7 +27782,7 @@
   {
     "id": 529,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第49题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -27869,25 +27793,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
-          1,
-          6,
           3,
+          4,
           5,
-          0
+          6,
+          7,
+          8,
+          0,
+          1,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -28082,12 +28007,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -28421,7 +28346,7 @@
   {
     "id": 539,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第59题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -28432,25 +28357,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          7,
-          3,
-          1,
-          6,
           5,
-          0,
           4,
-          2
+          3,
+          2,
+          1,
+          0,
+          8,
+          7,
+          6
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -28645,12 +28571,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -28984,7 +28910,7 @@
   {
     "id": 549,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第69题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -28995,32 +28921,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
           1,
-          5,
           2,
-          0,
-          6,
           3,
-          7
+          4,
+          5,
+          6,
+          7,
+          8,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 550,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第70题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -29031,25 +28958,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
-          5,
-          2,
-          4,
-          7,
           3,
+          2,
           1,
-          6
+          0,
+          8,
+          7,
+          6,
+          5,
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -29159,12 +29087,12 @@
           {
             "id": "zone-a",
             "label": "圆润图形",
-            "emoji": "🟢"
+            "emoji": "⭕"
           },
           {
             "id": "zone-b",
             "label": "有角图形",
-            "emoji": "🟣"
+            "emoji": "🔺"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -29498,7 +29426,7 @@
   {
     "id": 559,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第79题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -29509,32 +29437,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
-          2,
-          5,
-          0,
-          3,
           7,
+          8,
+          0,
+          1,
+          2,
+          3,
           4,
-          1
+          5,
+          6
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 560,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 7 · 第80题",
     "icon": "🧩",
     "color": "#f4b64a",
@@ -29545,25 +29474,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-7-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
-          7,
-          3,
-          1,
-          5,
           0,
-          6
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -29661,12 +29591,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -29978,7 +29908,7 @@
   {
     "id": 569,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第9题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -29989,25 +29919,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          3,
           0,
-          6,
           1,
-          7,
-          4,
           2,
-          5
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -30059,12 +29985,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -30166,12 +30092,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -30483,7 +30409,7 @@
   {
     "id": 579,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第19题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -30494,25 +30420,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
           2,
-          7,
-          0,
-          4,
           1,
-          6,
+          0,
           3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -30564,12 +30486,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -30683,12 +30605,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -31001,7 +30923,7 @@
   {
     "id": 589,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第29题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -31012,25 +30934,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
           3,
-          7,
           0,
-          5,
-          2,
-          4
+          1,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -31094,12 +31012,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -31213,12 +31131,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -31531,7 +31449,7 @@
   {
     "id": 599,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第39题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -31542,25 +31460,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
+          1,
           0,
-          5,
-          2,
-          7,
           3,
-          1
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -31624,12 +31538,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -31743,12 +31657,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -32082,7 +31996,7 @@
   {
     "id": 609,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第49题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -32093,25 +32007,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
           4,
-          1,
-          6,
-          3,
           5,
-          0
+          6,
+          7,
+          8,
+          0,
+          1,
+          2,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -32306,12 +32221,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -32645,7 +32560,7 @@
   {
     "id": 619,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第59题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -32656,25 +32571,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          7,
-          3,
-          1,
           6,
           5,
-          0,
           4,
-          2
+          3,
+          2,
+          1,
+          0,
+          8,
+          7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -32869,12 +32785,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -33208,7 +33124,7 @@
   {
     "id": 629,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第69题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -33219,32 +33135,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
-          5,
           2,
-          0,
-          6,
           3,
-          7
+          4,
+          5,
+          6,
+          7,
+          8,
+          0,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 630,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第70题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -33255,25 +33172,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
-          5,
-          2,
           4,
-          7,
           3,
+          2,
           1,
-          6
+          0,
+          8,
+          7,
+          6,
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -33383,12 +33301,12 @@
           {
             "id": "zone-a",
             "label": "动作",
-            "emoji": "🟢"
+            "emoji": "👏"
           },
           {
             "id": "zone-b",
             "label": "物品",
-            "emoji": "🟣"
+            "emoji": "🍎"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -33722,7 +33640,7 @@
   {
     "id": 639,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第79题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -33733,32 +33651,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
-          2,
-          5,
+          8,
           0,
+          1,
+          2,
           3,
-          7,
           4,
-          1
+          5,
+          6,
+          7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 640,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 8 · 第80题",
     "icon": "🧠",
     "color": "#56b89f",
@@ -33769,25 +33688,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-8-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
-          7,
-          3,
           1,
-          5,
           0,
-          6
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -33890,7 +33810,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -34202,7 +34122,7 @@
   {
     "id": 649,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第9题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -34213,25 +34133,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          3,
-          0,
-          6,
           1,
-          7,
-          4,
           2,
-          5
+          3,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -34288,7 +34204,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -34395,7 +34311,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -34707,7 +34623,7 @@
   {
     "id": 659,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第19题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -34718,25 +34634,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
+          3,
           2,
-          7,
-          0,
-          4,
           1,
-          6,
-          3
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -34793,7 +34705,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -34912,7 +34824,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -35225,7 +35137,7 @@
   {
     "id": 669,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第29题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -35236,25 +35148,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
-          1,
-          6,
-          3,
-          7,
           0,
-          5,
+          1,
           2,
-          4
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -35323,7 +35231,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -35442,7 +35350,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -35755,7 +35663,7 @@
   {
     "id": 679,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第39题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -35766,25 +35674,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
-          0,
-          5,
           2,
-          7,
-          3,
-          1
+          1,
+          0,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -35853,7 +35757,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -35972,7 +35876,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -36306,7 +36210,7 @@
   {
     "id": 689,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第49题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -36317,25 +36221,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
-          1,
-          6,
-          3,
           5,
-          0
+          6,
+          7,
+          8,
+          0,
+          1,
+          2,
+          3,
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -36535,7 +36440,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -36869,7 +36774,7 @@
   {
     "id": 699,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第59题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -36880,25 +36785,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
           7,
-          3,
-          1,
           6,
           5,
-          0,
           4,
-          2
+          3,
+          2,
+          1,
+          0,
+          8
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -37098,7 +37004,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -37432,7 +37338,7 @@
   {
     "id": 709,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第69题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -37443,32 +37349,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          4,
-          1,
-          5,
-          2,
-          0,
-          6,
           3,
-          7
+          4,
+          5,
+          6,
+          7,
+          8,
+          0,
+          1,
+          2
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 710,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第70题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -37479,25 +37386,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
           5,
-          2,
           4,
-          7,
           3,
+          2,
           1,
+          0,
+          8,
+          7,
           6
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -37612,7 +37520,7 @@
           {
             "id": "zone-b",
             "label": "需要停下",
-            "emoji": "🟣"
+            "emoji": "🔴"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -37946,7 +37854,7 @@
   {
     "id": 719,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第79题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -37957,32 +37865,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
-          2,
-          5,
           0,
+          1,
+          2,
           3,
-          7,
           4,
-          1
+          5,
+          6,
+          7,
+          8
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 720,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 9 · 第80题",
     "icon": "🚦",
     "color": "#4ba6d8",
@@ -37993,25 +37902,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-9-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
           2,
-          4,
-          7,
-          3,
           1,
-          5,
           0,
-          6
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -38109,12 +38019,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -38426,7 +38336,7 @@
   {
     "id": 729,
     "week": 3,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第9题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -38437,25 +38347,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-1.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
+          2,
           3,
           0,
-          6,
-          1,
-          7,
-          4,
-          2,
-          5
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -38507,12 +38413,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -38614,12 +38520,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -38931,7 +38837,7 @@
   {
     "id": 739,
     "week": 5,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第19题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -38942,25 +38848,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-2.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          5,
-          2,
-          7,
           0,
-          4,
-          1,
-          6,
-          3
+          3,
+          2,
+          1
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -39012,12 +38914,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -39131,12 +39033,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -39449,7 +39351,7 @@
   {
     "id": 749,
     "week": 8,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第29题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -39460,25 +39362,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-3.webp",
         "rows": 2,
-        "columns": 4,
+        "columns": 2,
         "order": [
           1,
-          6,
-          3,
-          7,
-          0,
-          5,
           2,
-          4
+          3,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -39542,12 +39440,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -39661,12 +39559,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -39979,7 +39877,7 @@
   {
     "id": 759,
     "week": 10,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第39题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -39990,25 +39888,21 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 4",
+        "voicePrompt": "把4块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-1.webp",
-        "rows": 4,
+        "rows": 2,
         "columns": 2,
         "order": [
-          6,
-          4,
-          0,
-          5,
-          2,
-          7,
           3,
-          1
+          2,
+          1,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "4块拼图都回到了正确位置。"
       }
     ]
   },
@@ -40072,12 +39966,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -40191,12 +40085,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -40530,7 +40424,7 @@
   {
     "id": 769,
     "week": 13,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第49题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -40541,25 +40435,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-2.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          7,
-          4,
-          1,
           6,
+          7,
+          8,
+          0,
+          1,
+          2,
           3,
-          5,
-          0
+          4,
+          5
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -40754,12 +40649,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -41093,7 +40988,7 @@
   {
     "id": 779,
     "week": 15,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第59题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -41104,25 +40999,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-3.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
+          8,
           7,
-          3,
-          1,
           6,
           5,
-          0,
           4,
-          2
+          3,
+          2,
+          1,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -41317,12 +41213,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -41656,7 +41552,7 @@
   {
     "id": 789,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第69题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -41667,32 +41563,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-1.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
           4,
-          1,
           5,
-          2,
-          0,
           6,
-          3,
-          7
+          7,
+          8,
+          0,
+          1,
+          2,
+          3
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 790,
     "week": 18,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第70题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -41703,25 +41600,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-2.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          0,
+          6,
           5,
-          2,
           4,
-          7,
           3,
+          2,
           1,
-          6
+          0,
+          8,
+          7
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
@@ -41831,12 +41729,12 @@
           {
             "id": "zone-a",
             "label": "自然伙伴",
-            "emoji": "🟢"
+            "emoji": "🍎"
           },
           {
             "id": "zone-b",
             "label": "探险工具",
-            "emoji": "🟣"
+            "emoji": "🗺️"
           }
         ],
         "hint": "一次拿一张，想清楚它属于哪一边。",
@@ -42170,7 +42068,7 @@
   {
     "id": 799,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第79题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -42181,32 +42079,33 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-3.webp",
-        "rows": 2,
-        "columns": 4,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          6,
+          1,
           2,
-          5,
-          0,
           3,
-          7,
           4,
-          1
+          5,
+          6,
+          7,
+          8,
+          0
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   },
   {
     "id": 800,
     "week": 20,
-    "title": "八块拼图",
+    "title": "图形拼图",
     "subtitle": "能力岛 10 · 第80题",
     "icon": "🧠",
     "color": "#8678d8",
@@ -42217,25 +42116,26 @@
     "activities": [
       {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": "🧩 × 9",
+        "voicePrompt": "把9块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": true,
         "image": "/game-scenes/scene-10-1.webp",
-        "rows": 4,
-        "columns": 2,
+        "rows": 3,
+        "columns": 3,
         "order": [
-          2,
-          4,
-          7,
           3,
+          2,
           1,
-          5,
           0,
-          6
+          8,
+          7,
+          6,
+          5,
+          4
         ],
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。"
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": "9块拼图都回到了正确位置。"
       }
     ]
   }

@@ -111,7 +111,7 @@ def common(category_index: int, question_index: int, game_type: str) -> dict:
     phase = (question_index - 1) // 20 + 1
     type_names = {
         "choice": "图片选择", "dragSort": "分类拖拽", "dragOrder": "规律排列",
-        "match": "配对连线", "path": "路径规划", "jigsaw": "八块拼图",
+        "match": "配对连线", "path": "路径规划", "jigsaw": "图形拼图",
     }
     return {
         "id": category_index * 80 + question_index,
@@ -153,8 +153,16 @@ def choice_activity(category: dict, variant: int, phase: int) -> dict:
 
 def drag_sort_activity(category: dict, variant: int, phase: int) -> dict:
     zones = [
-        {"id": "zone-a", "label": category["groups"][0][0], "emoji": "🟢"},
-        {"id": "zone-b", "label": category["groups"][1][0], "emoji": "🟣"},
+        {
+            "id": "zone-a",
+            "label": category["groups"][0][0],
+            "emoji": category["groups"][0][1][0][1],
+        },
+        {
+            "id": "zone-b",
+            "label": category["groups"][1][0],
+            "emoji": category["groups"][1][1][0][1],
+        },
     ]
     items = []
     for group_index, (_, group_items) in enumerate(category["groups"]):
@@ -267,32 +275,25 @@ def path_activity(category: dict, variant: int, phase: int) -> dict:
 
 def jigsaw_activity(category_index: int, variant: int, phase: int) -> dict:
     scene = variant % 3 + 1
-    rows, columns = ((2, 4) if variant % 2 == 0 else (4, 2))
-    orders = [
-        [3, 0, 6, 1, 7, 4, 2, 5],
-        [5, 2, 7, 0, 4, 1, 6, 3],
-        [1, 6, 3, 7, 0, 5, 2, 4],
-        [6, 4, 0, 5, 2, 7, 3, 1],
-        [2, 7, 4, 1, 6, 3, 5, 0],
-        [7, 3, 1, 6, 5, 0, 4, 2],
-        [4, 1, 5, 2, 0, 6, 3, 7],
-        [0, 5, 2, 4, 7, 3, 1, 6],
-        [6, 2, 5, 0, 3, 7, 4, 1],
-        [2, 4, 7, 3, 1, 5, 0, 6],
-    ]
-    order = orders[variant % len(orders)]
+    rows = columns = 2 if phase <= 2 else 3
+    piece_count = rows * columns
+    order = list(range(piece_count))
+    shift = (variant * 3 + category_index + phase) % piece_count
+    order = order[shift:] + order[:shift]
+    if variant % 2:
+        order.reverse()
     return {
         "type": "jigsaw",
-        "prompt": "🧩 × 8",
-        "voicePrompt": "把八块图片拖回正确位置，拼出完整的思维岛场景。",
+        "prompt": f"🧩 × {piece_count}",
+        "voicePrompt": f"把{piece_count}块图片拖回正确位置，拼出完整的思维岛场景。",
         "instruction": "🖐️",
         "visualOnly": True,
         "image": f"/game-scenes/scene-{category_index + 1}-{scene}.webp",
         "rows": rows,
         "columns": columns,
         "order": order,
-        "hint": "先找四个角，再观察图案能不能接上。",
-        "explain": "八块拼图都回到了正确位置。",
+        "hint": "先看边缘和突起，再观察图案能不能接上。",
+        "explain": f"{piece_count}块拼图都回到了正确位置。",
     }
 
 

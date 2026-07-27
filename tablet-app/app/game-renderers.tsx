@@ -3,6 +3,8 @@
 import {
   CSSProperties,
   PointerEvent as ReactPointerEvent,
+  useId,
+  useLayoutEffect,
   useRef,
   useState,
 } from "react";
@@ -49,6 +51,7 @@ type RendererProps = {
   onChoice: (index: number) => void;
   onComplete: () => void;
   onWrong: () => void;
+  onProgress: () => void;
 };
 
 const visualClass = (emoji = "") => {
@@ -79,7 +82,7 @@ function ChoiceGame({ activity, selected, feedback, disabled, onChoice }: Render
 
 type DragState = { id: string; x: number; y: number } | null;
 
-function DragSortGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
+function DragSortGame({ activity, disabled, onComplete, onWrong, onProgress }: RendererProps) {
   const items = activity.items ?? [];
   const zones = activity.zones ?? [];
   const [placed, setPlaced] = useState<Record<string, string>>({});
@@ -97,6 +100,7 @@ function DragSortGame({ activity, disabled, onComplete, onWrong }: RendererProps
     const next = { ...placed, [itemId]: zoneId };
     setPlaced(next);
     setPicked(null);
+    onProgress();
     if (Object.keys(next).length === items.length) onComplete();
   };
 
@@ -154,7 +158,7 @@ function DragSortGame({ activity, disabled, onComplete, onWrong }: RendererProps
   );
 }
 
-function DragOrderGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
+function DragOrderGame({ activity, disabled, onComplete, onWrong, onProgress }: RendererProps) {
   const items = activity.items ?? [];
   const answerOrder = activity.answerOrder ?? [];
   const [placed, setPlaced] = useState<(string | null)[]>(() => answerOrder.map(() => null));
@@ -163,7 +167,9 @@ function DragOrderGame({ activity, disabled, onComplete, onWrong }: RendererProp
 
   const put = (itemId: string, slot: number) => {
     if (disabled || placed.includes(itemId)) return;
-    if (answerOrder[slot] !== itemId) {
+    const item = items.find((candidate) => candidate.id === itemId);
+    const expected = items.find((candidate) => candidate.id === answerOrder[slot]);
+    if (!item || !expected || item.emoji !== expected.emoji || item.label !== expected.label) {
       onWrong();
       setPicked(null);
       return;
@@ -172,6 +178,7 @@ function DragOrderGame({ activity, disabled, onComplete, onWrong }: RendererProp
     next[slot] = itemId;
     setPlaced(next);
     setPicked(null);
+    onProgress();
     if (next.every(Boolean)) onComplete();
   };
 
@@ -227,14 +234,45 @@ function DragOrderGame({ activity, disabled, onComplete, onWrong }: RendererProp
   );
 }
 
-function MatchGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
+type MatchPoint = { x: number; y: number };
+
+function MatchGame({ activity, disabled, onComplete, onWrong, onProgress }: RendererProps) {
   const left = activity.left ?? [];
   const right = activity.right ?? [];
   const pairs = activity.pairs ?? [];
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [connections, setConnections] = useState<[string, string][]>([]);
   const [active, setActive] = useState<string | null>(null);
-  const [preview, setPreview] = useState<{ x: number; y: number } | null>(null);
+  const [preview, setPreview] = useState<MatchPoint | null>(null);
+  const [points, setPoints] = useState<Record<string, MatchPoint>>({});
+  const [canvasSize, setCanvasSize] = useState({ width: 1, height: 1 });
+
+  const measurePorts = () => {
+    const container = containerRef.current;
+    if (!container) return;
+    const bounds = container.getBoundingClientRect();
+    const next: Record<string, MatchPoint> = {};
+    container.querySelectorAll<HTMLElement>("[data-match-port]").forEach((port) => {
+      const rect = port.getBoundingClientRect();
+      next[port.dataset.matchPort ?? ""] = {
+        x: rect.left + rect.width / 2 - bounds.left,
+        y: rect.top + rect.height / 2 - bounds.top,
+      };
+    });
+    setCanvasSize({ width: bounds.width, height: bounds.height });
+    setPoints(next);
+  };
+
+  useLayoutEffect(() => {
+    measurePorts();
+    const observer = new ResizeObserver(measurePorts);
+    if (containerRef.current) observer.observe(containerRef.current);
+    window.addEventListener("resize", measurePorts);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measurePorts);
+    };
+  }, [activity]);
 
   const link = (leftId: string, rightId: string) => {
     if (disabled || connections.some(([source]) => source === leftId)) return;
@@ -247,6 +285,7 @@ function MatchGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
     const next: [string, string][] = [...connections, [leftId, rightId]];
     setConnections(next);
     setActive(null);
+    onProgress();
     if (next.length === pairs.length) onComplete();
   };
 
@@ -260,18 +299,9 @@ function MatchGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
     const rect = containerRef.current?.getBoundingClientRect();
     if (!rect) return;
     setPreview({
-      x: (event.clientX - rect.left) / rect.width * 100,
-      y: (event.clientY - rect.top) / rect.height * 100,
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
     });
-  };
-
-  const pointFor = (id: string, side: "left" | "right") => {
-    const list = side === "left" ? left : right;
-    const index = list.findIndex((item) => item.id === id);
-    return {
-      x: side === "left" ? 26 : 74,
-      y: (index + 0.5) / Math.max(list.length, 1) * 100,
-    };
   };
 
   return (
@@ -293,6 +323,7 @@ function MatchGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
             onPointerUp={(event) => finish(event, item.id)}
           >
             <span>{item.emoji}</span>
+            <i className="match-port" data-match-port={`left-${item.id}`} />
           </button>
         ))}
       </div>
@@ -306,17 +337,25 @@ function MatchGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
             onClick={() => active && link(active, item.id)}
           >
             <span>{item.emoji}</span>
+            <i className="match-port" data-match-port={`right-${item.id}`} />
           </button>
         ))}
       </div>
-      <svg className="match-lines-canvas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <svg
+        className="match-lines-canvas"
+        viewBox={`0 0 ${canvasSize.width} ${canvasSize.height}`}
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
         {connections.map(([source, target]) => {
-          const from = pointFor(source, "left");
-          const to = pointFor(target, "right");
+          const from = points[`left-${source}`];
+          const to = points[`right-${target}`];
+          if (!from || !to) return null;
           return <line key={`${source}-${target}`} x1={from.x} y1={from.y} x2={to.x} y2={to.y} />;
         })}
         {active && preview && (() => {
-          const from = pointFor(active, "left");
+          const from = points[`left-${active}`];
+          if (!from) return null;
           return <line className="preview" x1={from.x} y1={from.y} x2={preview.x} y2={preview.y} />;
         })()}
       </svg>
@@ -325,7 +364,7 @@ function MatchGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
   );
 }
 
-function PathGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
+function PathGame({ activity, disabled, onComplete, onWrong, onProgress }: RendererProps) {
   const size = activity.size ?? 4;
   const start = activity.start ?? 0;
   const goal = activity.goal ?? size * size - 1;
@@ -354,6 +393,7 @@ function PathGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
     }
     const next = [...path, cell];
     setPath(next);
+    onProgress();
     if (cell === goal) onComplete();
   };
 
@@ -383,22 +423,53 @@ function PathGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
   );
 }
 
+type PuzzleEdge = -1 | 0 | 1;
+
+function puzzlePath(top: PuzzleEdge, right: PuzzleEdge, bottom: PuzzleEdge, left: PuzzleEdge) {
+  const topY = top === 1 ? 1 : top === -1 ? 15 : 4;
+  const rightX = right === 1 ? 99 : right === -1 ? 85 : 96;
+  const bottomY = bottom === 1 ? 99 : bottom === -1 ? 85 : 96;
+  const leftX = left === 1 ? 1 : left === -1 ? 15 : 4;
+  return [
+    "M 4 4",
+    top === 0 ? "L 96 4" : `L 36 4 C 43 4 41 ${topY} 50 ${topY} C 59 ${topY} 57 4 64 4 L 96 4`,
+    right === 0 ? "L 96 96" : `L 96 36 C 96 43 ${rightX} 41 ${rightX} 50 C ${rightX} 59 96 57 96 64 L 96 96`,
+    bottom === 0 ? "L 4 96" : `L 64 96 C 57 96 59 ${bottomY} 50 ${bottomY} C 41 ${bottomY} 43 96 36 96 L 4 96`,
+    left === 0 ? "L 4 4" : `L 4 64 C 4 57 ${leftX} 59 ${leftX} 50 C ${leftX} 41 4 43 4 36 L 4 4`,
+    "Z",
+  ].join(" ");
+}
+
 function JigsawPiece({ source, image, rows, columns }: { source: number; image: string; rows: number; columns: number }) {
   const row = Math.floor(source / columns);
   const column = source % columns;
+  const parity = (row + column) % 2 === 0 ? 1 : -1;
+  const edges: [PuzzleEdge, PuzzleEdge, PuzzleEdge, PuzzleEdge] = [
+    row === 0 ? 0 : parity,
+    column === columns - 1 ? 0 : parity,
+    row === rows - 1 ? 0 : parity,
+    column === 0 ? 0 : parity,
+  ];
+  const clipId = useId().replace(/:/g, "");
+  const path = puzzlePath(...edges);
   return (
-    <span
-      className="jigsaw-image"
-      style={{
-        backgroundImage: `url("${image}")`,
-        backgroundSize: `${columns * 100}% ${rows * 100}%`,
-        backgroundPosition: `${columns === 1 ? 0 : column / (columns - 1) * 100}% ${rows === 1 ? 0 : row / (rows - 1) * 100}%`,
-      }}
-    />
+    <svg className="jigsaw-image" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <defs><clipPath id={clipId}><path d={path} /></clipPath></defs>
+      <image
+        href={image}
+        x={-column * 100}
+        y={-row * 100}
+        width={columns * 100}
+        height={rows * 100}
+        preserveAspectRatio="none"
+        clipPath={`url(#${clipId})`}
+      />
+      <path className="jigsaw-edge" d={path} />
+    </svg>
   );
 }
 
-function JigsawGame({ activity, disabled, onComplete, onWrong }: RendererProps) {
+function JigsawGame({ activity, disabled, onComplete, onWrong, onProgress }: RendererProps) {
   const rows = activity.rows ?? 2;
   const columns = activity.columns ?? 4;
   const image = activity.image ?? "";
@@ -418,6 +489,7 @@ function JigsawGame({ activity, disabled, onComplete, onWrong }: RendererProps) 
     next[slot] = source;
     setPlaced(next);
     setPicked(null);
+    onProgress();
     if (next.every((value) => value !== null)) onComplete();
   };
 
@@ -446,7 +518,10 @@ function JigsawGame({ activity, disabled, onComplete, onWrong }: RendererProps) 
           ))}
         </div>
       </div>
-      <div className="jigsaw-tray">
+      <div
+        className="jigsaw-tray"
+        style={{ "--jigsaw-tray-columns": columns } as CSSProperties}
+      >
         {sources.map((source) => (
           <button
             key={source}

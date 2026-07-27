@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import visualLevels from "./visual-levels.json";
 import { GameActivity, GameRenderer, GameType } from "./game-renderers";
 
-type Screen = "home" | "lesson" | "parent" | "report";
+type Screen = "home" | "lesson" | "challenge" | "parent" | "report";
 type Lesson = {
   id: number;
   week: number;
@@ -247,6 +247,17 @@ const LESSONS: Lesson[] = visualLevels.length
   : BASE_LESSONS;
 
 const initialProgress: Progress = { completed: [], stars: 0, attempts: {} };
+const CHALLENGE_LENGTH = 20;
+
+const randomChallenge = () => {
+  const pool = [...LESSONS];
+  for (let index = pool.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [pool[index], pool[swapIndex]] = [pool[swapIndex], pool[index]];
+  }
+  return pool.slice(0, CHALLENGE_LENGTH);
+};
+
 const getInteractionGuidance = (lesson: Lesson) => {
   const mode = (lesson.activities[0].type ?? "choice") as GameType;
   const guidance: Record<GameType, string> = {
@@ -255,7 +266,7 @@ const getInteractionGuidance = (lesson: Lesson) => {
     dragOrder: "观察规律，把图片拖到对应空位。",
     match: "从左边拖线连接到右边的伙伴。",
     path: "从起点沿着相邻格子走到终点。",
-    jigsaw: "把八块拼图拖回正确位置。",
+    jigsaw: "观察图案和拼图边缘，把每块拖回正确位置。",
   };
   return guidance[mode];
 };
@@ -271,6 +282,10 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [voiceOn, setVoiceOn] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const [challengeLevels, setChallengeLevels] = useState<Lesson[]>([]);
+  const [challengeIndex, setChallengeIndex] = useState(0);
+  const [challengeMistakes, setChallengeMistakes] = useState(0);
+  const [challengeFinished, setChallengeFinished] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const autoAdvanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -282,7 +297,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const curriculumVersion = "800-v2";
+    const curriculumVersion = "800-v3";
     const savedVersion = window.localStorage.getItem("thinking-island-curriculum-version");
     const saved = window.localStorage.getItem("thinking-island-progress");
     if (saved && savedVersion === curriculumVersion) {
@@ -366,6 +381,24 @@ export default function Home() {
     );
   };
 
+  const startChallenge = () => {
+    cancelAutoAdvance();
+    const levels = randomChallenge();
+    setChallengeLevels(levels);
+    setChallengeIndex(0);
+    setChallengeMistakes(0);
+    setChallengeFinished(false);
+    setActiveLesson(levels[0]);
+    setStep(0);
+    setSelected(null);
+    setFeedback(null);
+    setHintOpen(false);
+    setScreen("challenge");
+    window.scrollTo(0, 0);
+    const activity = levels[0].activities[0];
+    speakText(`随机闯关开始。第一题。${activity.voicePrompt ?? activity.prompt}。${getInteractionGuidance(levels[0])}`);
+  };
+
   const resolveResult = (isCorrect: boolean, index: number | null = null) => {
     if (feedback === "correct") return;
     if (index !== null) setSelected(index);
@@ -390,13 +423,38 @@ export default function Home() {
 
   const answer = (index: number) => {
     const expected = activeLesson.activities[step].answer ?? -1;
-    resolveResult(index === expected, index);
+    const isCorrect = index === expected;
+    if (screen === "challenge" && !isCorrect) {
+      setChallengeMistakes((current) => current + 1);
+    }
+    resolveResult(isCorrect, index);
   };
 
   const completeGame = () => resolveResult(true);
   const registerWrong = () => resolveResult(false);
 
   const advance = () => {
+    if (screen === "challenge") {
+      if (challengeIndex >= challengeLevels.length - 1) {
+        setChallengeFinished(true);
+        setFeedback(null);
+        speakText(`二十题随机闯关完成！你坚持到了最后，太棒了！`);
+        window.scrollTo(0, 0);
+        return;
+      }
+      const nextIndex = challengeIndex + 1;
+      const next = challengeLevels[nextIndex];
+      setChallengeIndex(nextIndex);
+      setActiveLesson(next);
+      setStep(0);
+      setSelected(null);
+      setFeedback(null);
+      setHintOpen(false);
+      window.scrollTo(0, 0);
+      const nextActivity = next.activities[0];
+      speakText(`第${nextIndex + 1}题。${nextActivity.voicePrompt ?? nextActivity.prompt}。${getInteractionGuidance(next)}`);
+      return;
+    }
     if (step < activeLesson.activities.length - 1) {
       setStep((current) => current + 1);
       setSelected(null);
@@ -476,6 +534,7 @@ export default function Home() {
           startLesson={startLesson}
           openReport={() => setScreen("report")}
           replayWelcome={() => playFiles(["welcome.mp3"])}
+          startChallenge={startChallenge}
         />
       )}
 
@@ -490,6 +549,7 @@ export default function Home() {
           answer={answer}
           completeGame={completeGame}
           registerWrong={registerWrong}
+          clearWrong={() => feedback === "try" && setFeedback(null)}
           browseLesson={browseLesson}
           canGoPrevious={activeCategoryPosition > 0}
           canGoNext={activeCategoryPosition < activeCategoryLevels.length - 1}
@@ -499,6 +559,46 @@ export default function Home() {
           exit={() => { cancelAutoAdvance(); audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); }}
           voiceOn={voiceOn}
           speakText={speakText}
+        />
+      )}
+
+      {screen === "challenge" && !challengeFinished && (
+        <LessonScreen
+          lesson={activeLesson}
+          step={step}
+          selected={selected}
+          feedback={feedback}
+          hintOpen={hintOpen}
+          setHintOpen={setHintOpen}
+          answer={answer}
+          completeGame={completeGame}
+          registerWrong={() => {
+            setChallengeMistakes((current) => current + 1);
+            registerWrong();
+          }}
+          clearWrong={() => feedback === "try" && setFeedback(null)}
+          browseLesson={() => undefined}
+          canGoPrevious={false}
+          canGoNext={false}
+          categoryLevels={[]}
+          progress={progress}
+          selectLesson={() => undefined}
+          exit={() => {
+            cancelAutoAdvance();
+            window.speechSynthesis?.cancel();
+            setScreen("home");
+          }}
+          voiceOn={voiceOn}
+          speakText={speakText}
+          challenge={{ current: challengeIndex + 1, total: CHALLENGE_LENGTH }}
+        />
+      )}
+
+      {screen === "challenge" && challengeFinished && (
+        <ChallengeResult
+          mistakes={challengeMistakes}
+          restart={startChallenge}
+          goHome={() => setScreen("home")}
         />
       )}
 
@@ -533,7 +633,7 @@ function TopBar({ screen, stars, voiceOn, toggleVoice, menuOpen, setMenuOpen, go
         <button className={`voice-toggle ${voiceOn ? "on" : ""}`} onClick={toggleVoice} aria-label={voiceOn ? "关闭语音引导" : "开启语音引导"}>
           <span>{voiceOn ? "🔊" : "🔇"}</span><b>{voiceOn ? "语音开" : "语音关"}</b>
         </button>
-        {screen !== "lesson" && <div className="star-pill" aria-label={`拥有${stars}颗星`}>★ {stars}</div>}
+        {screen !== "lesson" && screen !== "challenge" && <div className="star-pill" aria-label={`拥有${stars}颗星`}>★ {stars}</div>}
         <button className="avatar-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>
           <span>🧒🏻</span><i />
         </button>
@@ -549,9 +649,10 @@ function TopBar({ screen, stars, voiceOn, toggleVoice, menuOpen, setMenuOpen, go
   );
 }
 
-function HomeScreen({ nextLesson, progress, completion, startLesson, openReport, replayWelcome }: {
+function HomeScreen({ nextLesson, progress, completion, startLesson, openReport, replayWelcome, startChallenge }: {
   nextLesson: Lesson; progress: Progress; completion: number;
   startLesson: (lesson: Lesson) => void; openReport: () => void; replayWelcome: () => void;
+  startChallenge: () => void;
 }) {
   const categorySummaries = Array.from(new Set(LESSONS.map((lesson) => lesson.skill))).map((skill) => {
     const levels = LESSONS.filter((lesson) => lesson.skill === skill);
@@ -603,6 +704,16 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
         <button onClick={openReport}>查看成长 →</button>
       </section>
 
+      <section className="challenge-card">
+        <div className="challenge-orbit" aria-hidden="true"><span>🎲</span><i>20</i></div>
+        <div>
+          <small>每次题目都不同</small>
+          <h2>随机闯关</h2>
+          <p>从800道题中随机抽取20道，六种玩法混合挑战。</p>
+        </div>
+        <button onClick={startChallenge}>开始闯关 <b>→</b></button>
+      </section>
+
       <section className="map-section">
         <div className="section-heading">
           <div><span>逻辑思维课程</span><h2>10个能力类别</h2></div>
@@ -642,17 +753,20 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
 
 function LessonScreen({
   lesson, step, selected, feedback, hintOpen, setHintOpen, answer, completeGame, registerWrong,
-  browseLesson, canGoPrevious, canGoNext, categoryLevels, progress, selectLesson, exit, voiceOn, speakText,
+  clearWrong, browseLesson, canGoPrevious, canGoNext, categoryLevels, progress, selectLesson, exit, voiceOn, speakText,
+  challenge,
 }: {
   lesson: Lesson; step: number; selected: number | null; feedback: "correct" | "try" | null;
   hintOpen: boolean; setHintOpen: (value: boolean) => void; answer: (index: number) => void;
-  completeGame: () => void; registerWrong: () => void;
+  completeGame: () => void; registerWrong: () => void; clearWrong: () => void;
   browseLesson: (offset: -1 | 1) => void; canGoPrevious: boolean; canGoNext: boolean;
   categoryLevels: Lesson[]; progress: Progress; selectLesson: (lesson: Lesson) => void;
   exit: () => void; voiceOn: boolean; speakText: (text: string) => void;
+  challenge?: { current: number; total: number };
 }) {
   const activity = lesson.activities[step];
-  const questionNumber = lesson.questionIndex ?? lesson.id;
+  const questionNumber = challenge?.current ?? lesson.questionIndex ?? lesson.id;
+  const questionTotal = challenge?.total ?? 80;
   const [overviewOpen, setOverviewOpen] = useState(false);
   const typeNames: Record<GameType, string> = {
     choice: "👆 图片选择",
@@ -660,7 +774,7 @@ function LessonScreen({
     dragOrder: "🪄 规律排列",
     match: "〰️ 配对连线",
     path: "🧭 路径规划",
-    jigsaw: "🧩 八块拼图",
+    jigsaw: "🧩 图形拼图",
   };
   const gameType = (activity.type ?? "choice") as GameType;
 
@@ -669,8 +783,8 @@ function LessonScreen({
       <div className="lesson-toolbar">
         <button className="round-button" onClick={exit} aria-label="退出课程">×</button>
         <div className="lesson-progress">
-          <small>{lesson.skill} · 第 {questionNumber} / 80 关</small>
-          <div className="lesson-progress-track"><i style={{ width: `${questionNumber / 80 * 100}%` }} /></div>
+          <small>{challenge ? "随机闯关" : lesson.skill} · 第 {questionNumber} / {questionTotal} 关</small>
+          <div className="lesson-progress-track"><i style={{ width: `${questionNumber / questionTotal * 100}%` }} /></div>
         </div>
         <div className="skill-tag">{lesson.icon} {lesson.skill}</div>
       </div>
@@ -701,6 +815,7 @@ function LessonScreen({
           onChoice={answer}
           onComplete={completeGame}
           onWrong={registerWrong}
+          onProgress={clearWrong}
         />
 
         <div className="activity-footer">
@@ -725,22 +840,30 @@ function LessonScreen({
             <div className="celebration-card">
               <span>🌟</span>
               <h2>恭喜答对了！</h2>
-              <p>{questionNumber < 80 ? "马上进入下一关…" : "这一类全部完成啦！"}</p>
+              <p>{questionNumber < questionTotal ? "马上进入下一关…" : challenge ? "随机闯关完成啦！" : "这一类全部完成啦！"}</p>
               <div><i /></div>
             </div>
           </div>
         )}
       </section>
 
-      <nav className="fixed-level-nav" aria-label="关卡导航">
-        <button disabled={!canGoPrevious} onClick={() => browseLesson(-1)}>← <span>上一关</span></button>
-        <button className="overview-button" onClick={() => setOverviewOpen(true)}>
-          <span>关卡总览</span><strong>{questionNumber} / 80</strong>
-        </button>
-        <button disabled={!canGoNext} onClick={() => browseLesson(1)}><span>下一关</span> →</button>
-      </nav>
+      {challenge ? (
+        <nav className="fixed-level-nav challenge-nav" aria-label="随机闯关进度">
+          <button onClick={exit}>× <span>退出闯关</span></button>
+          <div className="overview-button"><span>🎲 随机闯关</span><strong>{questionNumber} / {questionTotal}</strong></div>
+          <div className="challenge-next">答对后自动进入下一题 →</div>
+        </nav>
+      ) : (
+        <nav className="fixed-level-nav" aria-label="关卡导航">
+          <button disabled={!canGoPrevious} onClick={() => browseLesson(-1)}>← <span>上一关</span></button>
+          <button className="overview-button" onClick={() => setOverviewOpen(true)}>
+            <span>关卡总览</span><strong>{questionNumber} / 80</strong>
+          </button>
+          <button disabled={!canGoNext} onClick={() => browseLesson(1)}><span>下一关</span> →</button>
+        </nav>
+      )}
 
-      {overviewOpen && (
+      {!challenge && overviewOpen && (
         <div className="level-overview-backdrop" role="dialog" aria-modal="true" aria-label="关卡总览">
           <section className="level-overview">
             <header>
@@ -773,6 +896,27 @@ function LessonScreen({
           </section>
         </div>
       )}
+    </div>
+  );
+}
+
+function ChallengeResult({ mistakes, restart, goHome }: {
+  mistakes: number;
+  restart: () => void;
+  goHome: () => void;
+}) {
+  return (
+    <div className="challenge-result">
+      <section>
+        <div className="challenge-trophy">🏆</div>
+        <small>20 / 20</small>
+        <h1>随机闯关完成！</h1>
+        <p>{mistakes === 0 ? "二十题全部一次答对，太厉害了！" : `坚持完成全部题目，途中认真重试了 ${mistakes} 次。`}</p>
+        <div className="challenge-result-actions">
+          <button onClick={restart}>🎲 再随机20题</button>
+          <button onClick={goHome}>返回思维岛</button>
+        </div>
+      </section>
     </div>
   );
 }

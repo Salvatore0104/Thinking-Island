@@ -55,7 +55,7 @@ def build_clips(levels: list[dict]) -> list[Clip]:
             "dragOrder": "观察规律，把图片拖到对应空位。",
             "match": "从左边拖线连接到右边的伙伴。",
             "path": "从起点沿着相邻格子走到终点。",
-            "jigsaw": "把八块拼图拖回正确位置。",
+            "jigsaw": "观察图案和拼图边缘，把每块拼图拖回正确位置。",
         }.get(activity.get("type"), "动手试一试。")
         prefix = f"lesson-{level_id:02d}-step-01"
         clips.extend(
