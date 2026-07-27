@@ -35,7 +35,7 @@ test("server-renders the Thinking Island shell", async () => {
   assert.doesNotMatch(html, /登录|注册|账号|密码/);
 });
 
-test("ships 120 image-first levels and the complete voice library", async () => {
+test("ships ten categories with 80 image-first questions each", async () => {
   const [page, css, levelsText, manifestText, audioFiles] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -45,18 +45,26 @@ test("ships 120 image-first levels and the complete voice library", async () => 
   ]);
 
   const levels = JSON.parse(levelsText);
-  assert.equal(levels.length, 120);
+  assert.equal(levels.length, 800);
   assert.deepEqual(
     levels.map((level) => level.id),
-    Array.from({ length: 120 }, (_, index) => index + 1),
+    Array.from({ length: 800 }, (_, index) => index + 1),
   );
   assert.equal(levels.at(-1).week, 20);
-  assert.match(page, /20周 · 120关/);
+  assert.equal(new Set(levels.map((level) => level.skill)).size, 10);
+  assert.ok(
+    [...new Set(levels.map((level) => level.skill))]
+      .every((skill) => levels.filter((level) => level.skill === skill).length === 80),
+  );
+  assert.match(page, /10个能力类别/);
+  assert.match(page, /category-grid/);
+  assert.match(page, /每类80题/);
   assert.doesNotMatch(page, /signIn|signUp|login|logout/i);
   assert.doesNotMatch(page, /disabled=\{locked\}|继续前进后解锁/);
-  assert.match(page, /const next = LESSONS\[currentIndex \+ 1\]/);
+  assert.match(page, /const next = categoryLevels\[currentIndex \+ 1\]/);
   assert.match(page, /setActiveLesson\(next\)/);
-  assert.match(page, /lesson\.id < LESSONS\.length \? "下一关" : "完成全部"/);
+  assert.match(page, /lesson\.questionIndex \?\? 1\) < 80 \? "下一题" : "完成本类"/);
+  assert.match(page, /window\.speechSynthesis\.speak\(utterance\)/);
   assert.match(css, /grid-template-columns:minmax\(180px,220px\) minmax\(0,1fr\) 132px/);
   assert.ok(
     levels

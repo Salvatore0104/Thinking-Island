@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
+from itertools import permutations
 from pathlib import Path
 
 
@@ -249,7 +251,33 @@ for item in LOGIC_LEVELS:
 
 
 if len(LEVELS) != 120:
-    raise ValueError(f"Expected 120 levels, got {len(LEVELS)}")
+    raise ValueError(f"Expected 120 seed levels, got {len(LEVELS)}")
+
+# Expand each of the ten ability categories from 12 carefully authored seeds
+# to 80 spaced-practice variants. Option positions rotate so the child must
+# solve the relation again instead of memorising a screen position.
+seed_levels = deepcopy(LEVELS)
+LEVELS.clear()
+option_orders = list(permutations(range(4)))
+for module_index in range(10):
+    module_seeds = seed_levels[module_index * 12 : (module_index + 1) * 12]
+    for question_index in range(80):
+        expanded = deepcopy(module_seeds[question_index % len(module_seeds)])
+        activity = expanded["activities"][0]
+        order = option_orders[(question_index * 5 + question_index // 12) % len(option_orders)]
+        original_options = activity["options"]
+        original_answer = activity["answer"]
+        activity["options"] = [original_options[index] for index in order]
+        activity["answer"] = order.index(original_answer)
+        expanded["id"] = module_index * 80 + question_index + 1
+        expanded["week"] = question_index // 4 + 1
+        expanded["categoryIndex"] = module_index + 1
+        expanded["questionIndex"] = question_index + 1
+        expanded["subtitle"] = f"能力岛 {module_index + 1} · 第{question_index + 1}题"
+        LEVELS.append(expanded)
+
+if len(LEVELS) != 800:
+    raise ValueError(f"Expected 800 expanded levels, got {len(LEVELS)}")
 
 output_path = Path(__file__).resolve().parents[1] / "app" / "visual-levels.json"
 output_path.write_text(

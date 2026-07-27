@@ -7,6 +7,8 @@ type Screen = "home" | "lesson" | "parent" | "report";
 type Lesson = {
   id: number;
   week: number;
+  categoryIndex?: number;
+  questionIndex?: number;
   title: string;
   subtitle: string;
   icon: string;
@@ -269,9 +271,14 @@ export default function Home() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    const curriculumVersion = "800-v1";
+    const savedVersion = window.localStorage.getItem("thinking-island-curriculum-version");
     const saved = window.localStorage.getItem("thinking-island-progress");
-    if (saved) {
+    if (saved && savedVersion === curriculumVersion) {
       try { setProgress(JSON.parse(saved)); } catch { /* keep clean state */ }
+    } else {
+      window.localStorage.removeItem("thinking-island-progress");
+      window.localStorage.setItem("thinking-island-curriculum-version", curriculumVersion);
     }
     const savedVoice = window.localStorage.getItem("thinking-island-voice");
     if (savedVoice !== null) setVoiceOn(savedVoice === "on");
@@ -298,12 +305,29 @@ export default function Home() {
     playNext();
   };
 
+  const speakText = (text: string) => {
+    if (!voiceOn || !("speechSynthesis" in window)) return;
+    audioRef.current?.pause();
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    const chineseVoice = window.speechSynthesis
+      .getVoices()
+      .find((voice) => voice.lang.toLowerCase().startsWith("zh"));
+    if (chineseVoice) utterance.voice = chineseVoice;
+    utterance.lang = "zh-CN";
+    utterance.rate = 0.86;
+    utterance.pitch = 1.05;
+    utterance.volume = 0.9;
+    window.speechSynthesis.speak(utterance);
+  };
+
   const toggleVoice = () => {
     const next = !voiceOn;
     setVoiceOn(next);
     window.localStorage.setItem("thinking-island-voice", next ? "on" : "off");
     if (!next) {
       audioRef.current?.pause();
+      window.speechSynthesis?.cancel();
     } else {
       playFiles(["welcome.mp3"], true);
     }
@@ -320,10 +344,10 @@ export default function Home() {
     setHintOpen(false);
     setScreen("lesson");
     window.scrollTo(0, 0);
-    playFiles([
-      `lesson-${String(lesson.id).padStart(2, "0")}-intro.mp3`,
-      `lesson-${String(lesson.id).padStart(2, "0")}-step-01-prompt.mp3`,
-    ]);
+    const activity = lesson.activities[0];
+    speakText(
+      `第${lesson.questionIndex ?? lesson.id}题。${activity.voicePrompt ?? activity.prompt}。想好以后，点一下图片。`
+    );
   };
 
   const answer = (index: number) => {
@@ -331,11 +355,11 @@ export default function Home() {
     setSelected(index);
     const isCorrect = index === activeLesson.activities[step].answer;
     setFeedback(isCorrect ? "correct" : "try");
-    playFiles([
+    speakText(
       isCorrect
-        ? `lesson-${String(activeLesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-correct.mp3`
-        : "try-again.mp3",
-    ]);
+        ? `${activeLesson.activities[step].explain}。你想得很仔细。`
+        : "没关系，先停一下，再听听规则或打开提示。"
+    );
     setProgress((current) => ({
       ...current,
       attempts: { ...current.attempts, [activeLesson.id]: (current.attempts[activeLesson.id] ?? 0) + 1 },
@@ -353,8 +377,9 @@ export default function Home() {
       ]);
       return;
     }
-    const currentIndex = LESSONS.findIndex((lesson) => lesson.id === activeLesson.id);
-    const next = LESSONS[currentIndex + 1];
+    const categoryLevels = LESSONS.filter((lesson) => lesson.skill === activeLesson.skill);
+    const currentIndex = categoryLevels.findIndex((lesson) => lesson.id === activeLesson.id);
+    const next = categoryLevels[currentIndex + 1];
     setProgress((current) => ({
       ...current,
       completed: current.completed.includes(activeLesson.id)
@@ -365,7 +390,7 @@ export default function Home() {
         : current.stars + 1,
     }));
     if (!next) {
-      playFiles(["lesson-complete.mp3"]);
+      speakText(`${activeLesson.skill}的八十道题全部完成，太棒了！`);
       setScreen("home");
       return;
     }
@@ -375,11 +400,10 @@ export default function Home() {
     setFeedback(null);
     setHintOpen(false);
     window.scrollTo(0, 0);
-    playFiles([
-      "lesson-complete.mp3",
-      `lesson-${String(next.id).padStart(2, "0")}-intro.mp3`,
-      `lesson-${String(next.id).padStart(2, "0")}-step-01-prompt.mp3`,
-    ]);
+    const nextActivity = next.activities[0];
+    speakText(
+      `答对了。下一题。${nextActivity.voicePrompt ?? nextActivity.prompt}。想好以后，点一下图片。`
+    );
   };
 
   const resetProgress = () => {
@@ -398,7 +422,7 @@ export default function Home() {
         toggleVoice={toggleVoice}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        goHome={() => { audioRef.current?.pause(); setScreen("home"); setMenuOpen(false); }}
+        goHome={() => { audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); setMenuOpen(false); }}
         goParent={() => { setScreen("parent"); setMenuOpen(false); }}
         goReport={() => { setScreen("report"); setMenuOpen(false); }}
       />
@@ -424,9 +448,9 @@ export default function Home() {
           setHintOpen={setHintOpen}
           answer={answer}
           advance={advance}
-          exit={() => { audioRef.current?.pause(); setScreen("home"); }}
+          exit={() => { audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); }}
           voiceOn={voiceOn}
-          playFiles={playFiles}
+          speakText={speakText}
         />
       )}
 
@@ -481,6 +505,13 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
   nextLesson: Lesson; progress: Progress; completion: number;
   startLesson: (lesson: Lesson) => void; openReport: () => void; replayWelcome: () => void;
 }) {
+  const categorySummaries = Array.from(new Set(LESSONS.map((lesson) => lesson.skill))).map((skill) => {
+    const levels = LESSONS.filter((lesson) => lesson.skill === skill);
+    const completedCount = levels.filter((lesson) => progress.completed.includes(lesson.id)).length;
+    const current = levels.find((lesson) => !progress.completed.includes(lesson.id)) ?? levels[levels.length - 1];
+    return { skill, levels, completedCount, current };
+  });
+
   return (
     <div className="home-screen">
       <section className="hero">
@@ -489,7 +520,7 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
           <h1>嗨，小船长！<br /><em>新的思维任务</em>已经准备好</h1>
           <p>看图、听声音、动脑筋。</p>
           <button className="primary-button" onClick={() => startLesson(nextLesson)}>
-            <span>开始第 {nextLesson.id} 课</span><b>→</b>
+            <span>{nextLesson.skill} · 第 {nextLesson.questionIndex ?? 1} 题</span><b>→</b>
           </button>
           <button className="welcome-audio" onClick={replayWelcome}>🔊 听一听今天的任务</button>
           <div className="time-note">◷ 每关约 2 分钟 · 全程语音引导</div>
@@ -518,7 +549,7 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
           <p><strong>{progress.stars}</strong><small>思考星星</small></p>
         </div>
         <div className="wide-progress">
-          <p><strong>第一阶段 · 观察与关系</strong><small>{completion}% 完成</small></p>
+          <p><strong>10类逻辑能力 · 每类80题</strong><small>{completion}% 完成</small></p>
           <div className="progress-track"><i style={{ width: `${completion}%` }} /></div>
         </div>
         <button onClick={openReport}>查看成长 →</button>
@@ -526,52 +557,45 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
 
       <section className="map-section">
         <div className="section-heading">
-          <div><span>逻辑思维课程地图</span><h2>20周 · 120关</h2></div>
-          <p>全部开放 · 每周建议6关</p>
+          <div><span>逻辑思维课程</span><h2>10个能力类别</h2></div>
+          <p>每类80题 · 只显示当前进度</p>
         </div>
-        {Array.from(new Set(LESSONS.map((lesson) => lesson.skill))).map((skill, moduleIndex) => (
-          <section className="module-block" key={skill}>
-            <div className="module-heading">
-              <span>{LESSONS[moduleIndex * 12]?.icon}</span>
-              <div><small>能力岛 {moduleIndex + 1}</small><h3>{skill}</h3></div>
-              <b>12关</b>
-            </div>
-            <div className="lesson-grid">
-              {LESSONS.filter((lesson) => lesson.skill === skill).map((lesson) => {
-                const done = progress.completed.includes(lesson.id);
-                return (
-                  <button
-                    key={lesson.id}
-                    className={`lesson-card ${done ? "done" : ""} ${lesson.id === nextLesson.id ? "current" : ""}`}
-                    onClick={() => startLesson(lesson)}
-                    style={{ "--lesson-color": lesson.color } as React.CSSProperties}
-                  >
-                    <span className="lesson-number">{done ? "✓" : lesson.id}</span>
-                    <span className="lesson-emoji">{lesson.icon}</span>
-                    <small>第{lesson.week}周 · {((lesson.id - 1) % 6) + 1}</small>
-                    <strong>{lesson.title}</strong>
-                    <i>{done ? "↻" : "▶"}</i>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-        ))}
-      </section>
-
-      <section className="offline-card">
-        <div className="offline-illustration">🥄 <span>·</span> 🥤 <span>·</span> 🥄 <span>·</span> 🥤</div>
-        <div><small>今天的离屏游戏</small><h3>用杯子和勺子摆一个规律</h3><p>让孩子创造规律，家长来猜下一件是什么。</p></div>
-        <div className="offline-time"><strong>5</strong><span>分钟<br />亲子任务</span></div>
+        <div className="category-grid">
+          {categorySummaries.map(({ skill, levels, completedCount, current }, index) => (
+            <button
+              className="category-card"
+              key={skill}
+              onClick={() => startLesson(current)}
+              style={{ "--lesson-color": current.color } as React.CSSProperties}
+            >
+              <span className="category-icon">{current.icon}</span>
+              <small>能力岛 {index + 1}</small>
+              <strong>{skill}</strong>
+              <p>
+                <b>{completedCount}</b>
+                <span>/ {levels.length}</span>
+              </p>
+              <div className="category-progress">
+                <i style={{ width: `${Math.round((completedCount / levels.length) * 100)}%` }} />
+              </div>
+              <em>
+                {completedCount === levels.length
+                  ? "重新练习"
+                  : `继续第 ${current.questionIndex ?? completedCount + 1} 题`}
+                <b>▶</b>
+              </em>
+            </button>
+          ))}
+        </div>
       </section>
     </div>
   );
 }
 
-function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, advance, exit, voiceOn, playFiles }: {
+function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen, answer, advance, exit, voiceOn, speakText }: {
   lesson: Lesson; step: number; selected: number | null; feedback: "correct" | "try" | null;
   hintOpen: boolean; setHintOpen: (value: boolean) => void; answer: (index: number) => void;
-  advance: () => void; exit: () => void; voiceOn: boolean; playFiles: (files: string[]) => void;
+  advance: () => void; exit: () => void; voiceOn: boolean; speakText: (text: string) => void;
 }) {
   const activity = lesson.activities[step];
   return (
@@ -594,9 +618,9 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
             {!activity.visualOnly && <p>{activity.instruction}</p>}
             <button
               className="replay-button"
-              onClick={() => playFiles([
-                `lesson-${String(lesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-prompt.mp3`,
-              ])}
+              onClick={() => speakText(
+                activity.voicePrompt ?? activity.prompt
+              )}
               aria-label="重新播放任务语音"
             >
               {voiceOn ? "🔊 再听一遍" : "🔇 请先开启语音"}
@@ -624,9 +648,7 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
             const opening = !hintOpen;
             setHintOpen(opening);
             if (opening) {
-              playFiles([
-                `lesson-${String(lesson.id).padStart(2, "0")}-step-${String(step + 1).padStart(2, "0")}-hint.mp3`,
-              ]);
+              speakText(activity.hint);
             }
           }}>💡 提示</button>
           <span>听完再点图片</span>
@@ -651,7 +673,7 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
             </div>
             {feedback === "correct" && (
               <button onClick={advance}>
-                {lesson.id < LESSONS.length ? "下一关" : "完成全部"} →
+                {(lesson.questionIndex ?? 1) < 80 ? "下一题" : "完成本类"} →
               </button>
             )}
           </div>
@@ -676,7 +698,7 @@ function ParentScreen({ progress, completion, resetProgress, openReport }: {
       </section>
       <section className="parent-stats">
         <article><small>阶段进度</small><strong>{completion}%</strong><div className="progress-track"><i style={{width:`${completion}%`}} /></div></article>
-        <article><small>已完成关卡</small><strong>{progress.completed.length}<em>/ {LESSONS.length}</em></strong><p>每周建议6关</p></article>
+        <article><small>已完成题目</small><strong>{progress.completed.length}<em>/ {LESSONS.length}</em></strong><p>每天建议3–5题</p></article>
         <article><small>累计思考星</small><strong>{progress.stars} ★</strong><p>只奖励完成和坚持</p></article>
       </section>
       <div className="parent-columns">
@@ -720,10 +742,10 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
       return Math.round(10 + (completed / total) * 80);
     };
     return [
-      { name: "分类与规则", value: completedIn([[1, 24], [97, 108]]), color: "#ff8f70" },
-      { name: "关系与推理", value: completedIn([[25, 48], [109, 120]]), color: "#f4b64a" },
-      { name: "空间与数感", value: completedIn([[49, 72]]), color: "#56b89f" },
-      { name: "图形与记忆", value: completedIn([[73, 96]]), color: "#8678d8" },
+      { name: "分类与规则", value: completedIn([[1, 80], [641, 720]]), color: "#ff8f70" },
+      { name: "关系与推理", value: completedIn([[81, 320], [721, 800]]), color: "#f4b64a" },
+      { name: "空间与数感", value: completedIn([[321, 480]]), color: "#56b89f" },
+      { name: "图形与记忆", value: completedIn([[481, 640]]), color: "#8678d8" },
     ];
   }, [progress.completed.length]);
   return (
@@ -750,7 +772,7 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
       </div>
       <section className="milestone-card">
         <div><small>本阶段里程碑</small><h2>观察与关系岛</h2></div>
-        {[30,60,90,120].map((point) => <div key={point} className={progress.completed.length >= point ? "reached" : ""}><span>{progress.completed.length >= point ? "✓" : point}</span><p><strong>完成 {point} 关</strong><small>{point === 30 ? "分类、规律与类比" : point === 60 ? "排序与空间推理" : point === 90 ? "数量、图形与记忆" : "规则控制与综合逻辑"}</small></p></div>)}
+        {[200,400,600,800].map((point) => <div key={point} className={progress.completed.length >= point ? "reached" : ""}><span>{progress.completed.length >= point ? "✓" : point}</span><p><strong>完成 {point} 题</strong><small>{point === 200 ? "建立分类和规律基础" : point === 400 ? "发展关系与空间推理" : point === 600 ? "强化数感、图形和记忆" : "完成十类综合逻辑训练"}</small></p></div>)}
       </section>
     </div>
   );
