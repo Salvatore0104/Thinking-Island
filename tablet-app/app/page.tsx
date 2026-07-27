@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import advancedLessons from "./advanced-lessons.json";
 
 type Screen = "home" | "lesson" | "parent" | "report";
 type Lesson = {
@@ -27,7 +28,7 @@ type Progress = {
   attempts: Record<number, number>;
 };
 
-const LESSONS: Lesson[] = [
+const BASE_LESSONS: Lesson[] = [
   {
     id: 1, week: 1, title: "分类侦探", subtitle: "找到住在一起的伙伴", icon: "🧺",
     color: "#ff8f70", skill: "分类与表达",
@@ -245,6 +246,11 @@ const LESSONS: Lesson[] = [
     ],
   },
 ];
+
+const LESSONS: Lesson[] = BASE_LESSONS.map((lesson) => {
+  const advanced = advancedLessons.find((item) => item.id === lesson.id);
+  return advanced ? { ...lesson, activities: advanced.activities as Activity[] } : lesson;
+});
 
 const initialProgress: Progress = { completed: [], stars: 0, attempts: {} };
 
@@ -501,26 +507,27 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
       <section className="map-section">
         <div className="section-heading">
           <div><span>阶段课程地图</span><h2>八周，二十四次小探险</h2></div>
-          <p>已完成的课程也可以再次挑战</p>
+          <p>全部关卡已开放 · 第5周起进入进阶挑战</p>
         </div>
         <div className="lesson-grid">
           {LESSONS.map((lesson) => {
             const done = progress.completed.includes(lesson.id);
-            const locked = lesson.id > nextLesson.id + 2 && !done;
             return (
               <button
                 key={lesson.id}
                 className={`lesson-card ${done ? "done" : ""} ${lesson.id === nextLesson.id ? "current" : ""}`}
-                onClick={() => !locked && startLesson(lesson)}
-                disabled={locked}
+                onClick={() => startLesson(lesson)}
                 style={{ "--lesson-color": lesson.color } as React.CSSProperties}
               >
                 <span className="lesson-number">{done ? "✓" : lesson.id}</span>
-                <span className="lesson-emoji">{locked ? "🔒" : lesson.icon}</span>
-                <small>第{lesson.week}周 · 第{((lesson.id - 1) % 3) + 1}课</small>
+                <span className="lesson-emoji">{lesson.icon}</span>
+                <small>
+                  第{lesson.week}周 · 第{((lesson.id - 1) % 3) + 1}课
+                  {lesson.id >= 13 ? " · 进阶" : ""}
+                </small>
                 <strong>{lesson.title}</strong>
                 <em>{lesson.subtitle}</em>
-                <i>{done ? "再玩一次" : locked ? "继续前进后解锁" : "开始探索"} →</i>
+                <i>{done ? "再玩一次" : "开始探索"} →</i>
               </button>
             );
           })}

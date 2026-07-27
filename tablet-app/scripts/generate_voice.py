@@ -96,9 +96,20 @@ def build_clips(lessons: list[tuple[str, str]], activities: list[tuple[str, str,
     return clips
 
 
-async def synthesize(clip: Clip, output_dir: Path, semaphore: asyncio.Semaphore, force: bool) -> None:
+async def synthesize(
+    clip: Clip,
+    output_dir: Path,
+    semaphore: asyncio.Semaphore,
+    force: bool,
+    force_from: int | None,
+) -> None:
     destination = output_dir / clip.file
-    if destination.exists() and not force:
+    should_refresh = force or (
+        force_from is not None
+        and clip.lesson is not None
+        and clip.lesson >= force_from
+    )
+    if destination.exists() and not should_refresh:
         return
     async with semaphore:
         communicate = edge_tts.Communicate(
@@ -112,13 +123,40 @@ async def synthesize(clip: Clip, output_dir: Path, semaphore: asyncio.Semaphore,
         print(f"generated {clip.file}")
 
 
-async def run(source_path: Path, output_dir: Path, force: bool) -> None:
+async def run(
+    source_path: Path,
+    advanced_path: Path,
+    output_dir: Path,
+    force: bool,
+    force_from: int | None,
+) -> None:
     source = source_path.read_text(encoding="utf-8")
     lessons, activities = extract_content(source)
+    advanced_lessons = json.loads(advanced_path.read_text(encoding="utf-8"))
+    for lesson in advanced_lessons:
+        lesson_id = lesson["id"]
+        replacement = [
+            (
+                activity["prompt"],
+                activity["instruction"],
+                activity["hint"],
+                activity["explain"],
+            )
+            for activity in lesson["activities"]
+        ]
+        if len(replacement) != 3:
+            raise ValueError(f"Advanced lesson {lesson_id} must contain three activities")
+        offset = (lesson_id - 1) * 3
+        activities[offset : offset + 3] = replacement
     clips = build_clips(lessons, activities)
     output_dir.mkdir(parents=True, exist_ok=True)
     semaphore = asyncio.Semaphore(6)
-    await asyncio.gather(*(synthesize(clip, output_dir, semaphore, force) for clip in clips))
+    await asyncio.gather(
+        *(
+            synthesize(clip, output_dir, semaphore, force, force_from)
+            for clip in clips
+        )
+    )
     manifest = {
         "generator": "edge-tts",
         "voice": VOICE,
@@ -138,10 +176,18 @@ async def run(source_path: Path, output_dir: Path, force: bool) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=Path("app/page.tsx"))
+    parser.add_argument(
+        "--advanced",
+        type=Path,
+        default=Path("app/advanced-lessons.json"),
+    )
     parser.add_argument("--out", type=Path, default=Path("public/audio"))
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--force-from", type=int)
     args = parser.parse_args()
-    asyncio.run(run(args.source, args.out, args.force))
+    asyncio.run(
+        run(args.source, args.advanced, args.out, args.force, args.force_from)
+    )
 
 
 if __name__ == "__main__":

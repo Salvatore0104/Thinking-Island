@@ -35,9 +35,10 @@ test("server-renders the Thinking Island shell", async () => {
   assert.doesNotMatch(html, /登录|注册|账号|密码/);
 });
 
-test("ships eight weeks of lessons and the complete voice library", async () => {
-  const [page, manifestText, audioFiles] = await Promise.all([
+test("ships eight unlocked weeks, advanced challenges, and the complete voice library", async () => {
+  const [page, advancedText, manifestText, audioFiles] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/advanced-lessons.json", import.meta.url), "utf8"),
     readFile(new URL("../public/audio/manifest.json", import.meta.url), "utf8"),
     readdir(new URL("../public/audio/", import.meta.url)),
   ]);
@@ -54,6 +55,30 @@ test("ships eight weeks of lessons and the complete voice library", async () => 
   );
   assert.match(page, /八周，二十四次小探险/);
   assert.doesNotMatch(page, /signIn|signUp|login|logout/i);
+  assert.doesNotMatch(page, /disabled=\{locked\}|继续前进后解锁/);
+
+  const advancedLessons = JSON.parse(advancedText);
+  assert.equal(advancedLessons.length, 12);
+  assert.deepEqual(
+    advancedLessons.map((lesson) => lesson.id),
+    Array.from({ length: 12 }, (_, index) => index + 13),
+  );
+  assert.ok(advancedLessons.every((lesson) => lesson.activities.length === 3));
+  assert.ok(
+    advancedLessons
+      .flatMap((lesson) => lesson.activities)
+      .every((activity) => activity.options.length >= 4),
+  );
+  assert.ok(
+    advancedLessons
+      .flatMap((lesson) => lesson.activities)
+      .every(
+        (activity) =>
+          Number.isInteger(activity.answer) &&
+          activity.answer >= 0 &&
+          activity.answer < activity.options.length,
+      ),
+  );
 
   const manifest = JSON.parse(manifestText);
   const mp3Files = audioFiles.filter((file) => file.endsWith(".mp3"));
