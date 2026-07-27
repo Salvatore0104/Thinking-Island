@@ -12,9 +12,9 @@ import edge_tts
 
 
 VOICE = "zh-CN-XiaoxiaoNeural"
-RATE = "-10%"
-VOLUME = "-5%"
-PITCH = "-2Hz"
+RATE = "-3%"
+VOLUME = "+0%"
+PITCH = "+2Hz"
 
 
 @dataclass
@@ -44,6 +44,9 @@ def build_clips(levels: list[dict]) -> list[Clip]:
             "global",
         ),
         Clip("hint-open.mp3", "我们来听一个小提示。", "global"),
+        Clip("correct.mp3", "答对啦！你的办法真不错，我们继续出发吧。", "global"),
+        Clip("challenge-start.mp3", "随机闯关开始！准备好了吗？我们来挑战二十道题。", "global"),
+        Clip("challenge-complete.mp3", "二十道题全部完成！你一直认真思考，真的很棒！", "global"),
     ]
 
     for level in levels:
@@ -57,18 +60,12 @@ def build_clips(levels: list[dict]) -> list[Clip]:
             "path": "从起点沿着相邻格子走到终点。",
             "jigsaw": "观察图案和拼图边缘，把每块拼图拖回正确位置。",
         }.get(activity.get("type"), "动手试一试。")
-        prefix = f"lesson-{level_id:02d}-step-01"
+        prefix = f"lesson-{level_id:03d}-step-01"
         clips.extend(
             [
                 Clip(
-                    f"lesson-{level_id:02d}-intro.mp3",
-                    f"第{level_id}关，{level['title']}。准备好了吗？",
-                    "intro",
-                    level_id,
-                ),
-                Clip(
                     f"{prefix}-prompt.mp3",
-                    f"{activity.get('voicePrompt', activity['prompt'])} {guidance}",
+                    f"{activity.get('voicePrompt', activity['prompt'])}。{guidance}",
                     "prompt",
                     level_id,
                     1,
@@ -77,13 +74,6 @@ def build_clips(levels: list[dict]) -> list[Clip]:
                     f"{prefix}-hint.mp3",
                     f"小提示。{activity['hint']}",
                     "hint",
-                    level_id,
-                    1,
-                ),
-                Clip(
-                    f"{prefix}-correct.mp3",
-                    f"{activity['explain']} 你想得很仔细。",
-                    "correct",
                     level_id,
                     1,
                 ),
@@ -100,23 +90,34 @@ async def synthesize(
     force_from: int | None,
 ) -> None:
     destination = output_dir / clip.file
+    temporary = destination.with_suffix(".part")
     should_refresh = force or (
         force_from is not None
         and clip.lesson is not None
         and clip.lesson >= force_from
     )
-    if destination.exists() and not should_refresh:
+    if destination.exists() and destination.stat().st_size > 0 and not should_refresh:
         return
     async with semaphore:
-        communicate = edge_tts.Communicate(
-            clip.text,
-            VOICE,
-            rate=RATE,
-            volume=VOLUME,
-            pitch=PITCH,
-        )
-        await communicate.save(str(destination))
-        print(f"generated {clip.file}")
+        for attempt in range(1, 6):
+            try:
+                communicate = edge_tts.Communicate(
+                    clip.text,
+                    VOICE,
+                    rate=RATE,
+                    volume=VOLUME,
+                    pitch=PITCH,
+                )
+                temporary.unlink(missing_ok=True)
+                await communicate.save(str(temporary))
+                temporary.replace(destination)
+                print(f"generated {clip.file}")
+                return
+            except Exception:
+                temporary.unlink(missing_ok=True)
+                if attempt == 5:
+                    raise
+                await asyncio.sleep(attempt * 1.5)
 
 
 async def run(
@@ -124,6 +125,7 @@ async def run(
     output_dir: Path,
     force: bool,
     force_from: int | None,
+    prune: bool,
 ) -> None:
     levels = json.loads(curriculum_path.read_text(encoding="utf-8"))
     if len(levels) < 120:
@@ -133,7 +135,12 @@ async def run(
 
     clips = build_clips(levels)
     output_dir.mkdir(parents=True, exist_ok=True)
-    semaphore = asyncio.Semaphore(8)
+    if prune:
+        expected = {clip.file for clip in clips}
+        for stale in output_dir.glob("*.mp3"):
+            if stale.name not in expected:
+                stale.unlink()
+    semaphore = asyncio.Semaphore(6)
     await asyncio.gather(
         *(
             synthesize(clip, output_dir, semaphore, force, force_from)
@@ -166,8 +173,9 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("public/audio"))
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--force-from", type=int)
+    parser.add_argument("--prune", action="store_true")
     args = parser.parse_args()
-    asyncio.run(run(args.curriculum, args.out, args.force, args.force_from))
+    asyncio.run(run(args.curriculum, args.out, args.force, args.force_from, args.prune))
 
 
 if __name__ == "__main__":

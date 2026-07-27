@@ -3,6 +3,7 @@
 import {
   CSSProperties,
   PointerEvent as ReactPointerEvent,
+  useEffect,
   useId,
   useLayoutEffect,
   useRef,
@@ -370,19 +371,28 @@ function PathGame({ activity, disabled, onComplete, onWrong, onProgress }: Rende
   const goal = activity.goal ?? size * size - 1;
   const blocked = activity.blocked ?? [];
   const [path, setPath] = useState<number[]>([start]);
-  const [drawing, setDrawing] = useState(false);
+  const pathRef = useRef<number[]>([start]);
+  const drawingRef = useRef(false);
+  const rejectedRef = useRef<number | null>(null);
 
   const visit = (cell: number) => {
-    if (disabled || blocked.includes(cell)) {
-      if (blocked.includes(cell)) onWrong();
+    if (disabled) return;
+    if (blocked.includes(cell)) {
+      if (rejectedRef.current !== cell) onWrong();
+      rejectedRef.current = cell;
       return;
     }
-    const current = path[path.length - 1];
-    if (cell === path[path.length - 2]) {
-      setPath(path.slice(0, -1));
+    rejectedRef.current = null;
+    const currentPath = pathRef.current;
+    const current = currentPath[currentPath.length - 1];
+    if (cell === current) return;
+    if (cell === currentPath[currentPath.length - 2]) {
+      const next = currentPath.slice(0, -1);
+      pathRef.current = next;
+      setPath(next);
       return;
     }
-    if (path.includes(cell)) return;
+    if (currentPath.includes(cell)) return;
     const row = Math.floor(current / size);
     const column = current % size;
     const nextRow = Math.floor(cell / size);
@@ -391,163 +401,166 @@ function PathGame({ activity, disabled, onComplete, onWrong, onProgress }: Rende
       onWrong();
       return;
     }
-    const next = [...path, cell];
+    const next = [...currentPath, cell];
+    pathRef.current = next;
     setPath(next);
     onProgress();
     if (cell === goal) onComplete();
   };
 
+  const cellFromPointer = (event: ReactPointerEvent<HTMLElement>) => {
+    const target = document.elementFromPoint(event.clientX, event.clientY)
+      ?.closest<HTMLElement>("[data-path-cell]");
+    if (target?.dataset.pathCell) visit(Number(target.dataset.pathCell));
+  };
+
+  const reset = () => {
+    pathRef.current = [start];
+    setPath([start]);
+    drawingRef.current = false;
+    rejectedRef.current = null;
+    onProgress();
+  };
+
+  const pathPoints = path.map((cell) => {
+    const row = Math.floor(cell / size);
+    const column = cell % size;
+    return `${column + 0.5},${row + 0.5}`;
+  }).join(" ");
+
   return (
     <div className="path-game">
+      <div className="path-status"><span>🐭</span><i /><b>{path.length - 1} 步</b><i /><span>🧀</span></div>
       <div
         className="path-grid"
         style={{ "--path-size": size } as CSSProperties}
-        onPointerLeave={() => setDrawing(false)}
-        onPointerUp={() => setDrawing(false)}
+        onPointerDown={(event) => {
+          event.currentTarget.setPointerCapture(event.pointerId);
+          drawingRef.current = true;
+          cellFromPointer(event);
+        }}
+        onPointerMove={(event) => drawingRef.current && cellFromPointer(event)}
+        onPointerUp={(event) => {
+          cellFromPointer(event);
+          drawingRef.current = false;
+          event.currentTarget.releasePointerCapture(event.pointerId);
+        }}
+        onPointerCancel={() => { drawingRef.current = false; }}
       >
+        <svg className="path-trail" viewBox={`0 0 ${size} ${size}`} preserveAspectRatio="none" aria-hidden="true">
+          <polyline points={pathPoints} />
+        </svg>
         {Array.from({ length: size * size }, (_, cell) => (
           <button
             key={cell}
+            data-path-cell={cell}
             aria-label={cell === start ? "路径起点" : cell === goal ? "路径终点" : blocked.includes(cell) ? `障碍格${cell + 1}` : `路径格${cell + 1}`}
             className={`path-cell ${blocked.includes(cell) ? "blocked" : ""} ${path.includes(cell) ? "visited" : ""} ${cell === start ? "start" : ""} ${cell === goal ? "goal" : ""}`}
             onClick={() => visit(cell)}
-            onPointerDown={() => { setDrawing(true); visit(cell); }}
-            onPointerEnter={() => drawing && visit(cell)}
           >
-            {cell === start ? "🐭" : cell === goal ? "🧀" : blocked.includes(cell) ? "🪨" : path.includes(cell) ? "•" : ""}
+            {cell === start ? "🐭" : cell === goal ? "🧀" : blocked.includes(cell) ? "🪨" : path.includes(cell) ? <i>{path.indexOf(cell)}</i> : <span />}
           </button>
         ))}
       </div>
-      <button className="path-reset" onClick={() => setPath([start])}>↻ 重新走</button>
+      <button className="path-reset" onClick={reset}>↻ 重新走</button>
+      <p className="touch-help">从小老鼠开始，手指不要离开小路</p>
     </div>
   );
 }
 
-type PuzzleEdge = -1 | 0 | 1;
+type HeadbreakerCanvas = {
+  autogenerate: (options: { horizontalPiecesCount: number; verticalPiecesCount: number }) => void;
+  adjustImagesToPuzzleWidth: () => void;
+  attachSolvedValidator: () => void;
+  onConnect: (listener: () => void) => void;
+  onValid: (listener: () => void) => void;
+  shuffleGrid: (farness?: number) => void;
+  draw: () => void;
+  __konvaLayer__?: { getStage: () => { destroy: () => void } };
+};
 
-function puzzlePath(top: PuzzleEdge, right: PuzzleEdge, bottom: PuzzleEdge, left: PuzzleEdge) {
-  const topY = top === 1 ? 1 : top === -1 ? 15 : 4;
-  const rightX = right === 1 ? 99 : right === -1 ? 85 : 96;
-  const bottomY = bottom === 1 ? 99 : bottom === -1 ? 85 : 96;
-  const leftX = left === 1 ? 1 : left === -1 ? 15 : 4;
-  return [
-    "M 4 4",
-    top === 0 ? "L 96 4" : `L 36 4 C 43 4 41 ${topY} 50 ${topY} C 59 ${topY} 57 4 64 4 L 96 4`,
-    right === 0 ? "L 96 96" : `L 96 36 C 96 43 ${rightX} 41 ${rightX} 50 C ${rightX} 59 96 57 96 64 L 96 96`,
-    bottom === 0 ? "L 4 96" : `L 64 96 C 57 96 59 ${bottomY} 50 ${bottomY} C 41 ${bottomY} 43 96 36 96 L 4 96`,
-    left === 0 ? "L 4 4" : `L 4 64 C 4 57 ${leftX} 59 ${leftX} 50 C ${leftX} 41 4 43 4 36 L 4 4`,
-    "Z",
-  ].join(" ");
-}
-
-function JigsawPiece({ source, image, rows, columns }: { source: number; image: string; rows: number; columns: number }) {
-  const row = Math.floor(source / columns);
-  const column = source % columns;
-  const parity = (row + column) % 2 === 0 ? 1 : -1;
-  const edges: [PuzzleEdge, PuzzleEdge, PuzzleEdge, PuzzleEdge] = [
-    row === 0 ? 0 : parity,
-    column === columns - 1 ? 0 : parity,
-    row === rows - 1 ? 0 : parity,
-    column === 0 ? 0 : parity,
-  ];
-  const clipId = useId().replace(/:/g, "");
-  const path = puzzlePath(...edges);
-  return (
-    <svg className="jigsaw-image" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      <defs><clipPath id={clipId}><path d={path} /></clipPath></defs>
-      <image
-        href={image}
-        x={-column * 100}
-        y={-row * 100}
-        width={columns * 100}
-        height={rows * 100}
-        preserveAspectRatio="none"
-        clipPath={`url(#${clipId})`}
-      />
-      <path className="jigsaw-edge" d={path} />
-    </svg>
-  );
-}
-
-function JigsawGame({ activity, disabled, onComplete, onWrong, onProgress }: RendererProps) {
+function JigsawGame({ activity, disabled, onComplete, onProgress }: RendererProps) {
   const rows = activity.rows ?? 2;
-  const columns = activity.columns ?? 4;
+  const columns = activity.columns ?? 2;
   const image = activity.image ?? "";
-  const sources = activity.order ?? Array.from({ length: rows * columns }, (_, index) => index);
-  const [placed, setPlaced] = useState<(number | null)[]>(() => sources.map(() => null));
-  const [picked, setPicked] = useState<number | null>(null);
-  const [drag, setDrag] = useState<{ source: number; x: number; y: number } | null>(null);
+  const hostRef = useRef<HTMLDivElement | null>(null);
+  const completeRef = useRef(onComplete);
+  const progressRef = useRef(onProgress);
+  const canvasId = `headbreaker-${useId().replace(/:/g, "")}`;
+  const [canvasHeight, setCanvasHeight] = useState(500);
+  const [loading, setLoading] = useState(true);
 
-  const place = (source: number, slot: number) => {
-    if (disabled || placed.includes(source)) return;
-    if (source !== slot) {
-      onWrong();
-      setPicked(null);
-      return;
-    }
-    const next = [...placed];
-    next[slot] = source;
-    setPlaced(next);
-    setPicked(null);
-    onProgress();
-    if (next.every((value) => value !== null)) onComplete();
-  };
+  useEffect(() => {
+    completeRef.current = onComplete;
+    progressRef.current = onProgress;
+  }, [onComplete, onProgress]);
 
-  const finishDrag = (event: ReactPointerEvent) => {
-    if (!drag) return;
-    const target = document.elementFromPoint(event.clientX, event.clientY)?.closest<HTMLElement>("[data-jigsaw-slot]");
-    if (target?.dataset.jigsawSlot) place(drag.source, Number(target.dataset.jigsawSlot));
-    setDrag(null);
-  };
+  useEffect(() => {
+    if (disabled || !hostRef.current) return;
+    let disposed = false;
+    let puzzleCanvas: HeadbreakerCanvas | null = null;
+    const host = hostRef.current;
+    const source = new Image();
+
+    source.onload = async () => {
+      const headbreaker = await import("headbreaker") as unknown as {
+        Canvas: new (id: string, options: Record<string, unknown>) => HeadbreakerCanvas;
+        painters: { Konva: new () => unknown };
+      };
+      if (disposed) return;
+      const width = Math.max(320, Math.min(820, host.clientWidth || 820));
+      const height = Math.round(Math.max(430, Math.min(560, width * 0.7)));
+      const pieceWidth = Math.min(columns === 2 ? 148 : 116, width / (columns + 2.4));
+      const pieceHeight = pieceWidth * 0.75;
+      setCanvasHeight(height);
+
+      puzzleCanvas = new headbreaker.Canvas(canvasId, {
+        width,
+        height,
+        pieceSize: { x: pieceWidth, y: pieceHeight },
+        proximity: Math.max(22, pieceWidth * 0.2),
+        borderFill: { x: pieceWidth * 0.19, y: pieceHeight * 0.22 },
+        strokeWidth: 3,
+        strokeColor: "rgba(255,255,255,.96)",
+        lineSoftness: 0.16,
+        preventOffstageDrag: true,
+        fixed: true,
+        image: source,
+        painter: new headbreaker.painters.Konva(),
+      });
+      puzzleCanvas.autogenerate({
+        horizontalPiecesCount: columns,
+        verticalPiecesCount: rows,
+      });
+      puzzleCanvas.adjustImagesToPuzzleWidth();
+      puzzleCanvas.attachSolvedValidator();
+      puzzleCanvas.onConnect(() => progressRef.current());
+      puzzleCanvas.onValid(() => completeRef.current());
+      puzzleCanvas.shuffleGrid(0.92);
+      puzzleCanvas.draw();
+      setLoading(false);
+    };
+    source.src = image;
+
+    return () => {
+      disposed = true;
+      puzzleCanvas?.__konvaLayer__?.getStage().destroy();
+      puzzleCanvas = null;
+    };
+  }, [canvasId, columns, disabled, image, rows]);
 
   return (
-    <div className="jigsaw-game">
-      <div className="jigsaw-board-wrap">
-        <div className="jigsaw-reference" style={{ backgroundImage: `url("${image}")` }} />
-        <div className="jigsaw-board" style={{ "--jigsaw-columns": columns, "--jigsaw-rows": rows } as CSSProperties}>
-          {placed.map((source, slot) => (
-            <button
-              key={slot}
-              data-jigsaw-slot={slot}
-              className={`jigsaw-slot ${source !== null ? "filled" : ""} ${picked !== null ? "ready" : ""}`}
-              onClick={() => picked !== null && place(picked, slot)}
-              aria-label={`拼图位置${slot + 1}`}
-            >
-              {source !== null && <JigsawPiece source={source} image={image} rows={rows} columns={columns} />}
-            </button>
-          ))}
-        </div>
+    <div className="jigsaw-game headbreaker-game" data-puzzle-engine="headbreaker">
+      <header className="jigsaw-game-header">
+        <div className="jigsaw-reference-thumb" role="img" aria-label="完整拼图参考" style={{ backgroundImage: `url("${image}")` }} />
+        <div><strong>{rows * columns} 块</strong><span>拖动拼片，靠近正确伙伴会自动吸附</span></div>
+        <i>开源引擎</i>
+      </header>
+      <div className="headbreaker-stage-shell" style={{ height: canvasHeight }}>
+        {loading && <div className="jigsaw-loading">正在打乱拼图…</div>}
+        <div id={canvasId} ref={hostRef} className="headbreaker-stage" />
       </div>
-      <div
-        className="jigsaw-tray"
-        style={{ "--jigsaw-tray-columns": columns } as CSSProperties}
-      >
-        {sources.map((source) => (
-          <button
-            key={source}
-            disabled={disabled || placed.includes(source)}
-            aria-label={`拿起拼图第${source + 1}块`}
-            className={`jigsaw-piece ${picked === source ? "picked" : ""} ${placed.includes(source) ? "placed" : ""}`}
-            onClick={() => setPicked(source)}
-            onPointerDown={(event) => {
-              if (disabled || placed.includes(source)) return;
-              event.currentTarget.setPointerCapture(event.pointerId);
-              setPicked(source);
-              setDrag({ source, x: event.clientX, y: event.clientY });
-            }}
-            onPointerMove={(event) => drag?.source === source && setDrag({ source, x: event.clientX, y: event.clientY })}
-            onPointerUp={finishDrag}
-          >
-            <JigsawPiece source={source} image={image} rows={rows} columns={columns} />
-          </button>
-        ))}
-      </div>
-      {drag && (
-        <div className="drag-ghost jigsaw" style={{ left: drag.x, top: drag.y }}>
-          <JigsawPiece source={drag.source} image={image} rows={rows} columns={columns} />
-        </div>
-      )}
-      <p className="touch-help">先找四个角，也可以先点拼图再点空位</p>
+      <p className="touch-help">先找四个角，再把相邻的图案轻轻靠在一起</p>
     </div>
   );
 }

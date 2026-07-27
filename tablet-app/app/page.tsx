@@ -258,19 +258,6 @@ const randomChallenge = () => {
   return pool.slice(0, CHALLENGE_LENGTH);
 };
 
-const getInteractionGuidance = (lesson: Lesson) => {
-  const mode = (lesson.activities[0].type ?? "choice") as GameType;
-  const guidance: Record<GameType, string> = {
-    choice: "想好以后，点一下正确图片。",
-    dragSort: "把每张图片拖进正确的篮子，也可以先点图片再点篮子。",
-    dragOrder: "观察规律，把图片拖到对应空位。",
-    match: "从左边拖线连接到右边的伙伴。",
-    path: "从起点沿着相邻格子走到终点。",
-    jigsaw: "观察图案和拼图边缘，把每块拖回正确位置。",
-  };
-  return guidance[mode];
-};
-
 export default function Home() {
   const [screen, setScreen] = useState<Screen>("home");
   const [progress, setProgress] = useState<Progress>(initialProgress);
@@ -335,21 +322,8 @@ export default function Home() {
     playNext();
   };
 
-  const speakText = (text: string) => {
-    if (!voiceOn || !("speechSynthesis" in window)) return;
-    audioRef.current?.pause();
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    const chineseVoice = window.speechSynthesis
-      .getVoices()
-      .find((voice) => voice.lang.toLowerCase().startsWith("zh"));
-    if (chineseVoice) utterance.voice = chineseVoice;
-    utterance.lang = "zh-CN";
-    utterance.rate = 0.86;
-    utterance.pitch = 1.05;
-    utterance.volume = 0.9;
-    window.speechSynthesis.speak(utterance);
-  };
+  const lessonAudio = (lesson: Lesson, kind: "prompt" | "hint") =>
+    `lesson-${String(lesson.id).padStart(3, "0")}-step-01-${kind}.mp3`;
 
   const toggleVoice = () => {
     const next = !voiceOn;
@@ -375,10 +349,7 @@ export default function Home() {
     setHintOpen(false);
     setScreen("lesson");
     window.scrollTo(0, 0);
-    const activity = lesson.activities[0];
-    speakText(
-      `第${lesson.questionIndex ?? lesson.id}题。${activity.voicePrompt ?? activity.prompt}。${getInteractionGuidance(lesson)}`
-    );
+    playFiles([lessonAudio(lesson, "prompt")]);
   };
 
   const startChallenge = () => {
@@ -395,19 +366,14 @@ export default function Home() {
     setHintOpen(false);
     setScreen("challenge");
     window.scrollTo(0, 0);
-    const activity = levels[0].activities[0];
-    speakText(`随机闯关开始。第一题。${activity.voicePrompt ?? activity.prompt}。${getInteractionGuidance(levels[0])}`);
+    playFiles(["challenge-start.mp3", lessonAudio(levels[0], "prompt")]);
   };
 
   const resolveResult = (isCorrect: boolean, index: number | null = null) => {
     if (feedback === "correct") return;
     if (index !== null) setSelected(index);
     setFeedback(isCorrect ? "correct" : "try");
-    speakText(
-      isCorrect
-        ? `恭喜答对了！${activeLesson.activities[step].explain}。马上进入下一关。`
-        : "没关系，先停一下，再听听规则或打开提示。"
-    );
+    playFiles([isCorrect ? "correct.mp3" : "try-again.mp3"]);
     setProgress((current) => ({
       ...current,
       attempts: { ...current.attempts, [activeLesson.id]: (current.attempts[activeLesson.id] ?? 0) + 1 },
@@ -438,7 +404,7 @@ export default function Home() {
       if (challengeIndex >= challengeLevels.length - 1) {
         setChallengeFinished(true);
         setFeedback(null);
-        speakText(`二十题随机闯关完成！你坚持到了最后，太棒了！`);
+        playFiles(["challenge-complete.mp3"]);
         window.scrollTo(0, 0);
         return;
       }
@@ -451,8 +417,7 @@ export default function Home() {
       setFeedback(null);
       setHintOpen(false);
       window.scrollTo(0, 0);
-      const nextActivity = next.activities[0];
-      speakText(`第${nextIndex + 1}题。${nextActivity.voicePrompt ?? nextActivity.prompt}。${getInteractionGuidance(next)}`);
+      playFiles([lessonAudio(next, "prompt")]);
       return;
     }
     if (step < activeLesson.activities.length - 1) {
@@ -460,9 +425,7 @@ export default function Home() {
       setSelected(null);
       setFeedback(null);
       setHintOpen(false);
-      playFiles([
-        `lesson-${String(activeLesson.id).padStart(2, "0")}-step-${String(step + 2).padStart(2, "0")}-prompt.mp3`,
-      ]);
+      playFiles([lessonAudio(activeLesson, "prompt")]);
       return;
     }
     const categoryLevels = LESSONS.filter((lesson) => lesson.skill === activeLesson.skill);
@@ -478,7 +441,7 @@ export default function Home() {
         : current.stars + 1,
     }));
     if (!next) {
-      speakText(`${activeLesson.skill}的八十道题全部完成，太棒了！`);
+      playFiles(["lesson-complete.mp3"]);
       setScreen("home");
       return;
     }
@@ -488,10 +451,7 @@ export default function Home() {
     setFeedback(null);
     setHintOpen(false);
     window.scrollTo(0, 0);
-    const nextActivity = next.activities[0];
-    speakText(
-      `下一题。${nextActivity.voicePrompt ?? nextActivity.prompt}。${getInteractionGuidance(next)}`
-    );
+    playFiles([lessonAudio(next, "prompt")]);
   };
 
   const resetProgress = () => {
@@ -558,7 +518,8 @@ export default function Home() {
           selectLesson={startLesson}
           exit={() => { cancelAutoAdvance(); audioRef.current?.pause(); window.speechSynthesis?.cancel(); setScreen("home"); }}
           voiceOn={voiceOn}
-          speakText={speakText}
+          playPrompt={() => playFiles([lessonAudio(activeLesson, "prompt")])}
+          playHint={() => playFiles([lessonAudio(activeLesson, "hint")])}
         />
       )}
 
@@ -589,7 +550,8 @@ export default function Home() {
             setScreen("home");
           }}
           voiceOn={voiceOn}
-          speakText={speakText}
+          playPrompt={() => playFiles([lessonAudio(activeLesson, "prompt")])}
+          playHint={() => playFiles([lessonAudio(activeLesson, "hint")])}
           challenge={{ current: challengeIndex + 1, total: CHALLENGE_LENGTH }}
         />
       )}
@@ -753,15 +715,16 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
 
 function LessonScreen({
   lesson, step, selected, feedback, hintOpen, setHintOpen, answer, completeGame, registerWrong,
-  clearWrong, browseLesson, canGoPrevious, canGoNext, categoryLevels, progress, selectLesson, exit, voiceOn, speakText,
-  challenge,
+  clearWrong, browseLesson, canGoPrevious, canGoNext, categoryLevels, progress, selectLesson, exit, voiceOn,
+  playPrompt, playHint, challenge,
 }: {
   lesson: Lesson; step: number; selected: number | null; feedback: "correct" | "try" | null;
   hintOpen: boolean; setHintOpen: (value: boolean) => void; answer: (index: number) => void;
   completeGame: () => void; registerWrong: () => void; clearWrong: () => void;
   browseLesson: (offset: -1 | 1) => void; canGoPrevious: boolean; canGoNext: boolean;
   categoryLevels: Lesson[]; progress: Progress; selectLesson: (lesson: Lesson) => void;
-  exit: () => void; voiceOn: boolean; speakText: (text: string) => void;
+  exit: () => void; voiceOn: boolean;
+  playPrompt: () => void; playHint: () => void;
   challenge?: { current: number; total: number };
 }) {
   const activity = lesson.activities[step];
@@ -797,7 +760,7 @@ function LessonScreen({
             <h2>{activity.prompt}</h2>
             <button
               className="replay-button"
-              onClick={() => speakText(`${activity.voicePrompt ?? activity.prompt}。${getInteractionGuidance(lesson)}`)}
+              onClick={playPrompt}
               aria-label="重新播放任务语音"
             >
               {voiceOn ? "🔊 再听一遍" : "🔇 请先开启语音"}
@@ -822,7 +785,7 @@ function LessonScreen({
           <button className="hint-button" onClick={() => {
             const opening = !hintOpen;
             setHintOpen(opening);
-            if (opening) speakText(activity.hint);
+            if (opening) playHint();
           }}>💡 提示</button>
           <span>先听任务，再动手试一试</span>
         </div>

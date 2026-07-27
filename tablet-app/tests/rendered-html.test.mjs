@@ -36,12 +36,13 @@ test("server-renders the Thinking Island shell", async () => {
 });
 
 test("ships ten categories with 80 image-first questions each", async () => {
-  const [page, games, css, levelsText, manifestText, audioFiles, sceneFiles] = await Promise.all([
+  const [page, games, css, levelsText, manifestText, packageText, audioFiles, sceneFiles] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/game-renderers.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/visual-levels.json", import.meta.url), "utf8"),
     readFile(new URL("../public/audio/manifest.json", import.meta.url), "utf8"),
+    readFile(new URL("../package.json", import.meta.url), "utf8"),
     readdir(new URL("../public/audio/", import.meta.url)),
     readdir(new URL("../public/game-scenes/", import.meta.url)),
   ]);
@@ -75,7 +76,8 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.match(page, /randomChallenge/);
   assert.match(page, /随机闯关/);
   assert.match(page, /<GameRenderer/);
-  assert.match(page, /window\.speechSynthesis\.speak\(utterance\)/);
+  assert.match(page, /lessonAudio/);
+  assert.doesNotMatch(page, /SpeechSynthesisUtterance|speechSynthesis\.speak/);
   assert.match(games, /type GameType = "choice" \| "dragSort" \| "dragOrder" \| "match" \| "path" \| "jigsaw"/);
   assert.match(games, /onPointerDown/);
   assert.match(games, /setPointerCapture/);
@@ -83,10 +85,13 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.match(games, /function MatchGame/);
   assert.match(games, /item\.emoji !== expected\.emoji/);
   assert.match(games, /ResizeObserver/);
-  assert.match(games, /puzzlePath/);
+  assert.match(games, /data-puzzle-engine="headbreaker"/);
+  assert.match(games, /attachSolvedValidator/);
+  assert.match(games, /path-trail/);
   assert.match(css, /celebration-backdrop/);
   assert.match(css, /fixed-level-nav/);
   assert.match(css, /jigsaw-board/);
+  assert.match(css, /headbreaker-stage-shell/);
   assert.match(css, /match-lines-canvas/);
   assert.match(css, /option-visual\.compact/);
   assert.ok(
@@ -142,10 +147,15 @@ test("ships ten categories with 80 image-first questions each", async () => {
   assert.equal(sceneFiles.filter((file) => /^scene-\d+-\d+\.webp$/.test(file)).length, 30);
 
   const manifest = JSON.parse(manifestText);
+  const packageJson = JSON.parse(packageText);
   const mp3Files = audioFiles.filter((file) => file.endsWith(".mp3"));
-  assert.equal(manifest.clip_count, 484);
-  assert.equal(manifest.clips.length, 484);
-  assert.equal(mp3Files.length, 484);
-  assert.ok(audioFiles.includes("lesson-120-intro.mp3"));
-  assert.ok(audioFiles.includes("lesson-120-step-01-prompt.mp3"));
+  assert.equal(packageJson.dependencies.headbreaker, "3.0.0");
+  assert.equal(packageJson.dependencies.konva, "6.0.0");
+  assert.equal(manifest.generator, "edge-tts");
+  assert.equal(manifest.voice, "zh-CN-XiaoxiaoNeural");
+  assert.equal(manifest.clip_count, 1607);
+  assert.equal(manifest.clips.length, 1607);
+  assert.equal(mp3Files.length, 1607);
+  assert.ok(audioFiles.includes("lesson-001-step-01-prompt.mp3"));
+  assert.ok(audioFiles.includes("lesson-800-step-01-hint.mp3"));
 });

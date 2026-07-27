@@ -17,6 +17,8 @@
 - 学习进度只保存在当前浏览器的 `localStorage`
 - 30张原创场景插图用于4片/9片拼图与主题场景
 - 随机闯关模式每次从800道题中重新抽取20道混合题
+- 拼图采用ISC许可证的开源 `headbreaker` 引擎，支持真实异形拼片、触控拖动、自动吸附和完成校验
+- 寻路采用连续触控轨迹，显示路线、步数、回退和障碍反馈
 
 ## 本地运行
 
@@ -53,10 +55,10 @@ python -m venv .voice-venv
 重新生成全部音频：
 
 ```powershell
-.\.voice-venv\Scripts\python.exe scripts\generate_voice.py --force
+.\.voice-venv\Scripts\python.exe scripts\generate_voice.py --force --prune
 ```
 
-生成脚本会读取 `app/visual-levels.json`，为六种玩法生成对应的任务语音。当前网页使用设备自带的中文语音朗读800关动态内容，欢迎语等公共提示仍可使用本地静态MP3；整个过程不需要登录或云端账号。
+生成脚本会读取 `app/visual-levels.json`，使用自然中文神经音色为全部800关生成任务和提示MP3。网页只播放这些本地文件，不再调用设备自带的机械朗读；平板运行时无需联网。
 
 ## 构建检查
 
