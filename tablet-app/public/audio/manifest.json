@@ -1,0 +1,878 @@
+{
+  "generator": "edge-tts",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "rate": "-10%",
+  "volume": "-5%",
+  "pitch": "-2Hz",
+  "clip_count": 124,
+  "clips": [
+    {
+      "file": "welcome.mp3",
+      "text": "嗨，小船长！新的思维任务已经准备好。每天想一点，办法多一点。",
+      "kind": "global",
+      "lesson": null,
+      "step": null
+    },
+    {
+      "file": "try-again.mp3",
+      "text": "没关系，好办法还藏着呢。再看一看线索，或者打开提示试试。",
+      "kind": "global",
+      "lesson": null,
+      "step": null
+    },
+    {
+      "file": "lesson-complete.mp3",
+      "text": "太棒了，今天的思维探险完成！现在让眼睛休息一下吧。",
+      "kind": "global",
+      "lesson": null,
+      "step": null
+    },
+    {
+      "file": "hint-open.mp3",
+      "text": "我们来听一个小提示。",
+      "kind": "global",
+      "lesson": null,
+      "step": null
+    },
+    {
+      "file": "lesson-01-intro.mp3",
+      "text": "欢迎来到第1课，分类侦探。找到住在一起的伙伴。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 1,
+      "step": null
+    },
+    {
+      "file": "lesson-01-step-01-prompt.mp3",
+      "text": "第1关。谁应该住进红色小屋？。仔细看颜色，点一下你的答案。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 1,
+      "step": 1
+    },
+    {
+      "file": "lesson-01-step-01-hint.mp3",
+      "text": "小提示。先不看它是什么，只看颜色。",
+      "kind": "hint",
+      "lesson": 1,
+      "step": 1
+    },
+    {
+      "file": "lesson-01-step-01-correct.mp3",
+      "text": "苹果是红色的，所以它住进红色小屋。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 1,
+      "step": 1
+    },
+    {
+      "file": "lesson-01-step-02-prompt.mp3",
+      "text": "第2关。谁和另外三个不是一组？。找出唯一不同的一个。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 1,
+      "step": 2
+    },
+    {
+      "file": "lesson-01-step-02-hint.mp3",
+      "text": "小提示。看看外面的轮廓：圆圆的，还是有角？",
+      "kind": "hint",
+      "lesson": 1,
+      "step": 2
+    },
+    {
+      "file": "lesson-01-step-02-correct.mp3",
+      "text": "礼物盒有四个角，另外三个看起来都是圆的。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 1,
+      "step": 2
+    },
+    {
+      "file": "lesson-01-step-03-prompt.mp3",
+      "text": "第3关。换一种规则，谁能和香蕉一组？。这一次按“能吃”来分。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 1,
+      "step": 3
+    },
+    {
+      "file": "lesson-01-step-03-hint.mp3",
+      "text": "小提示。想一想：哪一个也可以放进嘴巴吃？",
+      "kind": "hint",
+      "lesson": 1,
+      "step": 3
+    },
+    {
+      "file": "lesson-01-step-03-correct.mp3",
+      "text": "香蕉和草莓都是食物。同一批东西可以用不同规则分类。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 1,
+      "step": 3
+    },
+    {
+      "file": "lesson-02-intro.mp3",
+      "text": "欢迎来到第2课，换副眼镜。规则变了，分法也变。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 2,
+      "step": null
+    },
+    {
+      "file": "lesson-02-step-01-prompt.mp3",
+      "text": "第1关。戴上颜色眼镜：选出蓝色的。现在只看颜色。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 2,
+      "step": 1
+    },
+    {
+      "file": "lesson-02-step-01-hint.mp3",
+      "text": "小提示。规则卡上画的是蓝色。",
+      "kind": "hint",
+      "lesson": 2,
+      "step": 1
+    },
+    {
+      "file": "lesson-02-step-01-correct.mp3",
+      "text": "蓝圆形符合颜色规则。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 2,
+      "step": 1
+    },
+    {
+      "file": "lesson-02-step-02-prompt.mp3",
+      "text": "第2关。眼镜换了：选出圆形的。颜色不重要，现在只看形状。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 2,
+      "step": 2
+    },
+    {
+      "file": "lesson-02-step-02-hint.mp3",
+      "text": "小提示。别被刚才的蓝色规则骗到。找圆圆的。",
+      "kind": "hint",
+      "lesson": 2,
+      "step": 2
+    },
+    {
+      "file": "lesson-02-step-02-correct.mp3",
+      "text": "规则已经从颜色换成形状，所以红圆形正确。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 2,
+      "step": 2
+    },
+    {
+      "file": "lesson-02-step-03-prompt.mp3",
+      "text": "第3关。同时满足两个条件的是谁？。它既要是红色，又要是圆形。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 2,
+      "step": 3
+    },
+    {
+      "file": "lesson-02-step-03-hint.mp3",
+      "text": "小提示。先找红色，再在红色里面找圆形。",
+      "kind": "hint",
+      "lesson": 2,
+      "step": 3
+    },
+    {
+      "file": "lesson-02-step-03-correct.mp3",
+      "text": "红圆形同时满足两条线索。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 2,
+      "step": 3
+    },
+    {
+      "file": "lesson-03-intro.mp3",
+      "text": "欢迎来到第3课，谁走错了。找出不属于的一位。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 3,
+      "step": null
+    },
+    {
+      "file": "lesson-03-step-01-prompt.mp3",
+      "text": "第1关。动物队伍里混进了谁？。找出不是动物的一个。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 3,
+      "step": 1
+    },
+    {
+      "file": "lesson-03-step-01-hint.mp3",
+      "text": "小提示。哪一个不会吃东西、也不会自己长大？",
+      "kind": "hint",
+      "lesson": 3,
+      "step": 1
+    },
+    {
+      "file": "lesson-03-step-01-correct.mp3",
+      "text": "火车不是动物。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 3,
+      "step": 1
+    },
+    {
+      "file": "lesson-03-step-02-prompt.mp3",
+      "text": "第2关。会飞的队伍里谁走错了？。想一想它们平常怎样移动。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 3,
+      "step": 2
+    },
+    {
+      "file": "lesson-03-step-02-hint.mp3",
+      "text": "小提示。谁住在水里，用鳍游泳？",
+      "kind": "hint",
+      "lesson": 3,
+      "step": 2
+    },
+    {
+      "file": "lesson-03-step-02-correct.mp3",
+      "text": "小鱼会游泳，另外三个都会飞。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 3,
+      "step": 2
+    },
+    {
+      "file": "lesson-03-step-03-prompt.mp3",
+      "text": "第3关。哪一个理由最完整？。为“鱼不属于飞行队”选择理由。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 3,
+      "step": 3
+    },
+    {
+      "file": "lesson-03-step-03-hint.mp3",
+      "text": "小提示。好理由要说出能观察和验证的特点。",
+      "kind": "hint",
+      "lesson": 3,
+      "step": 3
+    },
+    {
+      "file": "lesson-03-step-03-correct.mp3",
+      "text": "分类理由要与规则有关，也要能被别人检查。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 3,
+      "step": 3
+    },
+    {
+      "file": "lesson-04-intro.mp3",
+      "text": "欢迎来到第4课，规律火车。发现一直重复的小秘密。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 4,
+      "step": null
+    },
+    {
+      "file": "lesson-04-step-01-prompt.mp3",
+      "text": "第1关。红、蓝、红、蓝，下一节是什么？。找到一直重复的两个一组。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 4,
+      "step": 1
+    },
+    {
+      "file": "lesson-04-step-01-hint.mp3",
+      "text": "小提示。把它们两个两个圈起来：红蓝｜红蓝｜？",
+      "kind": "hint",
+      "lesson": 4,
+      "step": 1
+    },
+    {
+      "file": "lesson-04-step-01-correct.mp3",
+      "text": "重复的小单元是“红、蓝”，所以下一个从红开始。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 4,
+      "step": 1
+    },
+    {
+      "file": "lesson-04-step-02-prompt.mp3",
+      "text": "第2关。大、小、小、大、小、小，接下来呢？。这次重复单元有三个位置。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 4,
+      "step": 2
+    },
+    {
+      "file": "lesson-04-step-02-hint.mp3",
+      "text": "小提示。试着分组：大、小、小｜大、小、小｜？",
+      "kind": "hint",
+      "lesson": 4,
+      "step": 2
+    },
+    {
+      "file": "lesson-04-step-02-correct.mp3",
+      "text": "重复单元是“大、小、小”，接下来又是大。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 4,
+      "step": 2
+    },
+    {
+      "file": "lesson-04-step-03-prompt.mp3",
+      "text": "第3关。哪一列和“拍手、跺脚”规律一样？。材料变了，但规律可以相同。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 4,
+      "step": 3
+    },
+    {
+      "file": "lesson-04-step-03-hint.mp3",
+      "text": "小提示。寻找两个动作轮流出现的结构。",
+      "kind": "hint",
+      "lesson": 4,
+      "step": 3
+    },
+    {
+      "file": "lesson-04-step-03-correct.mp3",
+      "text": "“圆、方”与“拍手、跺脚”都是AB交替规律。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 4,
+      "step": 3
+    },
+    {
+      "file": "lesson-05-intro.mp3",
+      "text": "欢迎来到第5课，规律修理师。找错、修好、再创造。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 5,
+      "step": null
+    },
+    {
+      "file": "lesson-05-step-01-prompt.mp3",
+      "text": "第1关。红、红、蓝｜红、蓝、蓝，哪里坏了？。规律应该是“红、红、蓝”一直重复。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 5,
+      "step": 1
+    },
+    {
+      "file": "lesson-05-step-01-hint.mp3",
+      "text": "小提示。正确分组应该是：红红蓝｜红红蓝。",
+      "kind": "hint",
+      "lesson": 5,
+      "step": 1
+    },
+    {
+      "file": "lesson-05-step-01-correct.mp3",
+      "text": "第5个本来应该是红色。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 5,
+      "step": 1
+    },
+    {
+      "file": "lesson-05-step-02-prompt.mp3",
+      "text": "第2关。星、月、月｜星、月、月｜下一组从谁开始？。先说出重复单元。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 5,
+      "step": 2
+    },
+    {
+      "file": "lesson-05-step-02-hint.mp3",
+      "text": "小提示。每一组都是“星、月、月”。",
+      "kind": "hint",
+      "lesson": 5,
+      "step": 2
+    },
+    {
+      "file": "lesson-05-step-02-correct.mp3",
+      "text": "新的一组从星星开始。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 5,
+      "step": 2
+    },
+    {
+      "file": "lesson-05-step-03-prompt.mp3",
+      "text": "第3关。哪一个是真正的重复规律？。至少要让同一个小单元出现两次。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 5,
+      "step": 3
+    },
+    {
+      "file": "lesson-05-step-03-hint.mp3",
+      "text": "小提示。竖线两边应该完全一样。",
+      "kind": "hint",
+      "lesson": 5,
+      "step": 3
+    },
+    {
+      "file": "lesson-05-step-03-correct.mp3",
+      "text": "“红蓝”完整重复了两次。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 5,
+      "step": 3
+    },
+    {
+      "file": "lesson-06-intro.mp3",
+      "text": "欢迎来到第6课，规律设计师。把同一规律换种材料。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 6,
+      "step": null
+    },
+    {
+      "file": "lesson-06-step-01-prompt.mp3",
+      "text": "第1关。用声音表示“红、蓝、红、蓝”。选出结构完全一样的节奏。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 6,
+      "step": 1
+    },
+    {
+      "file": "lesson-06-step-01-hint.mp3",
+      "text": "小提示。红和拍手对应，蓝和跺脚对应。",
+      "kind": "hint",
+      "lesson": 6,
+      "step": 1
+    },
+    {
+      "file": "lesson-06-step-01-correct.mp3",
+      "text": "颜色规律可以迁移成动作规律。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 6,
+      "step": 1
+    },
+    {
+      "file": "lesson-06-step-02-prompt.mp3",
+      "text": "第2关。哪个是“一个大、两个小”的重复？。寻找ABB结构。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 6,
+      "step": 2
+    },
+    {
+      "file": "lesson-06-step-02-hint.mp3",
+      "text": "小提示。每组应该先大，再小、小。",
+      "kind": "hint",
+      "lesson": 6,
+      "step": 2
+    },
+    {
+      "file": "lesson-06-step-02-correct.mp3",
+      "text": "第一项完整重复了“大、小、小”。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 6,
+      "step": 2
+    },
+    {
+      "file": "lesson-06-step-03-prompt.mp3",
+      "text": "第3关。规则够清楚吗？。选一个别人最容易接下去的设计。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 6,
+      "step": 3
+    },
+    {
+      "file": "lesson-06-step-03-hint.mp3",
+      "text": "小提示。好规律要能找到重复的小单元。",
+      "kind": "hint",
+      "lesson": 6,
+      "step": 3
+    },
+    {
+      "file": "lesson-06-step-03-correct.mp3",
+      "text": "第一个设计的重复单元清楚，别人能预测下一步。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 6,
+      "step": 3
+    },
+    {
+      "file": "lesson-07-intro.mp3",
+      "text": "欢迎来到第7课，一样多吗。给每一位找到伙伴。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 7,
+      "step": null
+    },
+    {
+      "file": "lesson-07-step-01-prompt.mp3",
+      "text": "第1关。3只兔子需要几根胡萝卜？。每只兔子一根，不能重复。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 7,
+      "step": 1
+    },
+    {
+      "file": "lesson-07-step-01-hint.mp3",
+      "text": "小提示。从第一只兔子开始，一只配一根。",
+      "kind": "hint",
+      "lesson": 7,
+      "step": 1
+    },
+    {
+      "file": "lesson-07-step-01-correct.mp3",
+      "text": "3只兔子和3根胡萝卜一一配对，刚好一样多。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 7,
+      "step": 1
+    },
+    {
+      "file": "lesson-07-step-02-prompt.mp3",
+      "text": "第2关。哪一组杯子和4把勺一样多？。不要只看排得长不长。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 7,
+      "step": 2
+    },
+    {
+      "file": "lesson-07-step-02-hint.mp3",
+      "text": "小提示。给每把勺找一个杯子。",
+      "kind": "hint",
+      "lesson": 7,
+      "step": 2
+    },
+    {
+      "file": "lesson-07-step-02-correct.mp3",
+      "text": "数量都是4，所以一样多。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 7,
+      "step": 2
+    },
+    {
+      "file": "lesson-07-step-03-prompt.mp3",
+      "text": "第3关。5辆车只有4个车位，会怎样？。一辆车停一个位置。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 7,
+      "step": 3
+    },
+    {
+      "file": "lesson-07-step-03-hint.mp3",
+      "text": "小提示。先让4辆车停进4个车位。",
+      "kind": "hint",
+      "lesson": 7,
+      "step": 3
+    },
+    {
+      "file": "lesson-07-step-03-correct.mp3",
+      "text": "配完以后还有1辆车，所以车更多。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 7,
+      "step": 3
+    },
+    {
+      "file": "lesson-08-intro.mp3",
+      "text": "欢迎来到第8课，数量变了吗。排法改变，数量不一定变。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 8,
+      "step": null
+    },
+    {
+      "file": "lesson-08-step-01-prompt.mp3",
+      "text": "第1关。5颗星排得更开，还是几颗？。位置变了，没有增加也没有拿走。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 8,
+      "step": 1
+    },
+    {
+      "file": "lesson-08-step-01-hint.mp3",
+      "text": "小提示。想想有没有星星加入或离开。",
+      "kind": "hint",
+      "lesson": 8,
+      "step": 1
+    },
+    {
+      "file": "lesson-08-step-01-correct.mp3",
+      "text": "只是位置改变，数量仍然是5。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 8,
+      "step": 1
+    },
+    {
+      "file": "lesson-08-step-02-prompt.mp3",
+      "text": "第2关。两排各有6个点，一排更长，谁更多？。可以在脑中一一连线。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 8,
+      "step": 2
+    },
+    {
+      "file": "lesson-08-step-02-hint.mp3",
+      "text": "小提示。排得更开会显得更长，但点没有变多。",
+      "kind": "hint",
+      "lesson": 8,
+      "step": 2
+    },
+    {
+      "file": "lesson-08-step-02-correct.mp3",
+      "text": "两排都是6个，所以一样多。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 8,
+      "step": 2
+    },
+    {
+      "file": "lesson-08-step-03-prompt.mp3",
+      "text": "第3关。什么情况下数量真的会变？。找出有东西加入或离开的情况。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 8,
+      "step": 3
+    },
+    {
+      "file": "lesson-08-step-03-hint.mp3",
+      "text": "小提示。哪一个动作让小球不在原来的集合里了？",
+      "kind": "hint",
+      "lesson": 8,
+      "step": 3
+    },
+    {
+      "file": "lesson-08-step-03-correct.mp3",
+      "text": "拿走一个才会让数量减少。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 8,
+      "step": 3
+    },
+    {
+      "file": "lesson-09-intro.mp3",
+      "text": "欢迎来到第9课，估一估。先猜，再用办法检查。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 9,
+      "step": null
+    },
+    {
+      "file": "lesson-09-step-01-prompt.mp3",
+      "text": "第1关。●●● ●●，大约有几个？。先看成3个和2个，不必逐个点。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 9,
+      "step": 1
+    },
+    {
+      "file": "lesson-09-step-01-hint.mp3",
+      "text": "小提示。左边3个，右边2个，合起来呢？",
+      "kind": "hint",
+      "lesson": 9,
+      "step": 1
+    },
+    {
+      "file": "lesson-09-step-01-correct.mp3",
+      "text": "3和2合起来是5。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 9,
+      "step": 1
+    },
+    {
+      "file": "lesson-09-step-02-prompt.mp3",
+      "text": "第2关。怎样摆8颗豆子，最容易一眼看清？。选择有结构的摆法。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 9,
+      "step": 2
+    },
+    {
+      "file": "lesson-09-step-02-hint.mp3",
+      "text": "小提示。整齐分组能帮助眼睛快速看清数量。",
+      "kind": "hint",
+      "lesson": 9,
+      "step": 2
+    },
+    {
+      "file": "lesson-09-step-02-correct.mp3",
+      "text": "4和4的结构比散乱排列更容易识别。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 9,
+      "step": 2
+    },
+    {
+      "file": "lesson-09-step-03-prompt.mp3",
+      "text": "第3关。估完以后，怎样知道自己对不对？。选择可靠的检查办法。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 9,
+      "step": 3
+    },
+    {
+      "file": "lesson-09-step-03-hint.mp3",
+      "text": "小提示。好办法要能得到证据。",
+      "kind": "hint",
+      "lesson": 9,
+      "step": 3
+    },
+    {
+      "file": "lesson-09-step-03-correct.mp3",
+      "text": "估测后用点数、配对或分组检查。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 9,
+      "step": 3
+    },
+    {
+      "file": "lesson-10-intro.mp3",
+      "text": "欢迎来到第10课，红灯绿灯。听清规则再行动。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 10,
+      "step": null
+    },
+    {
+      "file": "lesson-10-step-01-prompt.mp3",
+      "text": "第1关。普通规则：看到绿灯应该？。先在心里说一遍规则。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 10,
+      "step": 1
+    },
+    {
+      "file": "lesson-10-step-01-hint.mp3",
+      "text": "小提示。绿灯表示可以通行。",
+      "kind": "hint",
+      "lesson": 10,
+      "step": 1
+    },
+    {
+      "file": "lesson-10-step-01-correct.mp3",
+      "text": "普通规则下，绿灯前进。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 10,
+      "step": 1
+    },
+    {
+      "file": "lesson-10-step-02-prompt.mp3",
+      "text": "第2关。现在是相反日：红灯应该？。规则已经交换，别急着按。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 10,
+      "step": 2
+    },
+    {
+      "file": "lesson-10-step-02-hint.mp3",
+      "text": "小提示。相反日里，红灯和绿灯的意思交换。",
+      "kind": "hint",
+      "lesson": 10,
+      "step": 2
+    },
+    {
+      "file": "lesson-10-step-02-correct.mp3",
+      "text": "新规则下，红灯反而表示前进。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 10,
+      "step": 2
+    },
+    {
+      "file": "lesson-10-step-03-prompt.mp3",
+      "text": "第3关。怎样帮助自己不被旧规则骗到？。选择一个可用的自我控制方法。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 10,
+      "step": 3
+    },
+    {
+      "file": "lesson-10-step-03-hint.mp3",
+      "text": "小提示。给大脑一点停下来检查的时间。",
+      "kind": "hint",
+      "lesson": 10,
+      "step": 3
+    },
+    {
+      "file": "lesson-10-step-03-correct.mp3",
+      "text": "先复述规则再行动，能减少冲动错误。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 10,
+      "step": 3
+    },
+    {
+      "file": "lesson-11-intro.mp3",
+      "text": "欢迎来到第11课，线索小屋。两条线索一起想。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 11,
+      "step": null
+    },
+    {
+      "file": "lesson-11-step-01-prompt.mp3",
+      "text": "第1关。它是红色的，而且能吃。是谁？。答案要同时满足两条线索。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 11,
+      "step": 1
+    },
+    {
+      "file": "lesson-11-step-01-hint.mp3",
+      "text": "小提示。先找红色，再检查能不能吃。",
+      "kind": "hint",
+      "lesson": 11,
+      "step": 1
+    },
+    {
+      "file": "lesson-11-step-01-correct.mp3",
+      "text": "苹果既是红色，又能吃。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 11,
+      "step": 1
+    },
+    {
+      "file": "lesson-11-step-02-prompt.mp3",
+      "text": "第2关。它会飞，但不是动物。是谁？。用第二条线索排除动物。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 11,
+      "step": 2
+    },
+    {
+      "file": "lesson-11-step-02-hint.mp3",
+      "text": "小提示。三者都会飞，哪一个不是动物？",
+      "kind": "hint",
+      "lesson": 11,
+      "step": 2
+    },
+    {
+      "file": "lesson-11-step-02-correct.mp3",
+      "text": "飞机会飞，而且不是动物。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 11,
+      "step": 2
+    },
+    {
+      "file": "lesson-11-step-03-prompt.mp3",
+      "text": "第3关。只说“它是圆的”，能猜出唯一答案吗？。判断信息够不够。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 11,
+      "step": 3
+    },
+    {
+      "file": "lesson-11-step-03-hint.mp3",
+      "text": "小提示。生活中圆的东西是不是有很多？",
+      "kind": "hint",
+      "lesson": 11,
+      "step": 3
+    },
+    {
+      "file": "lesson-11-step-03-correct.mp3",
+      "text": "一条宽泛线索可能对应很多答案，需要更多信息。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 11,
+      "step": 3
+    },
+    {
+      "file": "lesson-12-intro.mp3",
+      "text": "欢迎来到第12课，思维岛庆典。把四种办法连起来。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 12,
+      "step": null
+    },
+    {
+      "file": "lesson-12-step-01-prompt.mp3",
+      "text": "第1关。先按“能飞”分类，谁能上天空船？。记住当前规则。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 12,
+      "step": 1
+    },
+    {
+      "file": "lesson-12-step-01-hint.mp3",
+      "text": "小提示。谁可以离开地面，在天空移动？",
+      "kind": "hint",
+      "lesson": 12,
+      "step": 1
+    },
+    {
+      "file": "lesson-12-step-01-correct.mp3",
+      "text": "飞机符合“能飞”的分类规则。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 12,
+      "step": 1
+    },
+    {
+      "file": "lesson-12-step-02-prompt.mp3",
+      "text": "第2关。船帆规律：星、月、星、月，下一块？。找出重复单元。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 12,
+      "step": 2
+    },
+    {
+      "file": "lesson-12-step-02-hint.mp3",
+      "text": "小提示。两个一组：星月｜星月｜？",
+      "kind": "hint",
+      "lesson": 12,
+      "step": 2
+    },
+    {
+      "file": "lesson-12-step-02-correct.mp3",
+      "text": "AB规律再次从星星开始。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 12,
+      "step": 2
+    },
+    {
+      "file": "lesson-12-step-03-prompt.mp3",
+      "text": "第3关。4位船员有4份点心，分配结果怎样？。每人一份。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 12,
+      "step": 3
+    },
+    {
+      "file": "lesson-12-step-03-hint.mp3",
+      "text": "小提示。把每位船员和一份点心连起来。",
+      "kind": "hint",
+      "lesson": 12,
+      "step": 3
+    },
+    {
+      "file": "lesson-12-step-03-correct.mp3",
+      "text": "4和4可以一一配对，刚好一样多。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 12,
+      "step": 3
+    }
+  ]
+}
