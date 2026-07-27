@@ -4,7 +4,7 @@
   "rate": "-10%",
   "volume": "-5%",
   "pitch": "-2Hz",
-  "clip_count": 124,
+  "clip_count": 244,
   "clips": [
     {
       "file": "welcome.mp3",
@@ -872,6 +872,846 @@
       "text": "4和4可以一一配对，刚好一样多。。你观察得很仔细。",
       "kind": "correct",
       "lesson": 12,
+      "step": 3
+    },
+    {
+      "file": "lesson-13-intro.mp3",
+      "text": "欢迎来到第13课，长短排队。从最短一直排到最长。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 13,
+      "step": null
+    },
+    {
+      "file": "lesson-13-step-01-prompt.mp3",
+      "text": "第1关。哪一支铅笔最长？。把它们的一端对齐，再比较另一端。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 13,
+      "step": 1
+    },
+    {
+      "file": "lesson-13-step-01-hint.mp3",
+      "text": "小提示。起点一样时，伸得最远的最长。",
+      "kind": "hint",
+      "lesson": 13,
+      "step": 1
+    },
+    {
+      "file": "lesson-13-step-01-correct.mp3",
+      "text": "第二支铅笔伸得最远，所以它最长。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 13,
+      "step": 1
+    },
+    {
+      "file": "lesson-13-step-02-prompt.mp3",
+      "text": "第2关。哪一个顺序是从短到长？。先找最短的，再找最长的。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 13,
+      "step": 2
+    },
+    {
+      "file": "lesson-13-step-02-hint.mp3",
+      "text": "小提示。像上楼梯一样，一步比一步长。",
+      "kind": "hint",
+      "lesson": 13,
+      "step": 2
+    },
+    {
+      "file": "lesson-13-step-02-correct.mp3",
+      "text": "短、中、长的顺序每次都增加一点。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 13,
+      "step": 2
+    },
+    {
+      "file": "lesson-13-step-03-prompt.mp3",
+      "text": "第3关。小、中、空、超长，空位放谁？。让长度变化保持顺序。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 13,
+      "step": 3
+    },
+    {
+      "file": "lesson-13-step-03-hint.mp3",
+      "text": "小提示。空位前面是中，后面是超长。",
+      "kind": "hint",
+      "lesson": 13,
+      "step": 3
+    },
+    {
+      "file": "lesson-13-step-03-correct.mp3",
+      "text": "空位需要一个介于中和超长之间的长度。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 13,
+      "step": 3
+    },
+    {
+      "file": "lesson-14-intro.mp3",
+      "text": "欢迎来到第14课，谁站中间。在有顺序的队伍里插空。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 14,
+      "step": null
+    },
+    {
+      "file": "lesson-14-step-01-prompt.mp3",
+      "text": "第1关。矮树和高树中间放哪棵？。让三棵树从矮到高排好。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 14,
+      "step": 1
+    },
+    {
+      "file": "lesson-14-step-01-hint.mp3",
+      "text": "小提示。中间的树要比矮树高，又比高树矮。",
+      "kind": "hint",
+      "lesson": 14,
+      "step": 1
+    },
+    {
+      "file": "lesson-14-step-01-correct.mp3",
+      "text": "中等高的树同时满足前后两个条件。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 14,
+      "step": 1
+    },
+    {
+      "file": "lesson-14-step-02-prompt.mp3",
+      "text": "第2关。轻、中、重的箱子，谁最后搬？。队伍按从轻到重排列。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 14,
+      "step": 2
+    },
+    {
+      "file": "lesson-14-step-02-hint.mp3",
+      "text": "小提示。最后一个应该是最重的。",
+      "kind": "hint",
+      "lesson": 14,
+      "step": 2
+    },
+    {
+      "file": "lesson-14-step-02-correct.mp3",
+      "text": "从轻到重排列时，重箱子在最后。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 14,
+      "step": 2
+    },
+    {
+      "file": "lesson-14-step-03-prompt.mp3",
+      "text": "第3关。哪个序列少了一步？。观察每次都增加一个圆点。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 14,
+      "step": 3
+    },
+    {
+      "file": "lesson-14-step-03-hint.mp3",
+      "text": "小提示。数量应该是一、二、三。",
+      "kind": "hint",
+      "lesson": 14,
+      "step": 3
+    },
+    {
+      "file": "lesson-14-step-03-correct.mp3",
+      "text": "第一列每次增加一个圆点，顺序完整。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 14,
+      "step": 3
+    },
+    {
+      "file": "lesson-15-intro.mp3",
+      "text": "欢迎来到第15课，标准选择师。先说清楚按什么来排。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 15,
+      "step": null
+    },
+    {
+      "file": "lesson-15-step-01-prompt.mp3",
+      "text": "第1关。大羽毛和小石头，谁更重？。大小和重量不是同一件事。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 15,
+      "step": 1
+    },
+    {
+      "file": "lesson-15-step-01-hint.mp3",
+      "text": "小提示。不要只看谁占的地方大，想想拿在手里的感觉。",
+      "kind": "hint",
+      "lesson": 15,
+      "step": 1
+    },
+    {
+      "file": "lesson-15-step-01-correct.mp3",
+      "text": "物体大不一定重，小石头可以比大羽毛更重。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 15,
+      "step": 1
+    },
+    {
+      "file": "lesson-15-step-02-prompt.mp3",
+      "text": "第2关。要选最高的积木塔，应该看什么？。只选择和高度有关的标准。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 15,
+      "step": 2
+    },
+    {
+      "file": "lesson-15-step-02-hint.mp3",
+      "text": "小提示。从桌面到塔顶的距离表示高度。",
+      "kind": "hint",
+      "lesson": 15,
+      "step": 2
+    },
+    {
+      "file": "lesson-15-step-02-correct.mp3",
+      "text": "比较高度要看塔顶离同一起点有多远。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 15,
+      "step": 2
+    },
+    {
+      "file": "lesson-15-step-03-prompt.mp3",
+      "text": "第3关。红色短绳和蓝色长绳，按颜色分会怎样？。这次不要按长短。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 15,
+      "step": 3
+    },
+    {
+      "file": "lesson-15-step-03-hint.mp3",
+      "text": "小提示。当前标准是颜色。",
+      "kind": "hint",
+      "lesson": 15,
+      "step": 3
+    },
+    {
+      "file": "lesson-15-step-03-correct.mp3",
+      "text": "分类和排序前先明确标准，当前只看颜色。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 15,
+      "step": 3
+    },
+    {
+      "file": "lesson-16-intro.mp3",
+      "text": "欢迎来到第16课，图形名片。用边和角介绍图形。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 16,
+      "step": null
+    },
+    {
+      "file": "lesson-16-step-01-prompt.mp3",
+      "text": "第1关。哪个图形有三条边、三个角？。用手指沿着边走一圈。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 16,
+      "step": 1
+    },
+    {
+      "file": "lesson-16-step-01-hint.mp3",
+      "text": "小提示。数一数尖尖的角有几个。",
+      "kind": "hint",
+      "lesson": 16,
+      "step": 1
+    },
+    {
+      "file": "lesson-16-step-01-correct.mp3",
+      "text": "三角形有三条边和三个角。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 16,
+      "step": 1
+    },
+    {
+      "file": "lesson-16-step-02-prompt.mp3",
+      "text": "第2关。正方形转个方向，还是正方形吗？。方向变了，边和角没有变。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 16,
+      "step": 2
+    },
+    {
+      "file": "lesson-16-step-02-hint.mp3",
+      "text": "小提示。数一数，仍然有四条一样长的边。",
+      "kind": "hint",
+      "lesson": 16,
+      "step": 2
+    },
+    {
+      "file": "lesson-16-step-02-correct.mp3",
+      "text": "旋转只改变方向，不改变图形的属性。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 16,
+      "step": 2
+    },
+    {
+      "file": "lesson-16-step-03-prompt.mp3",
+      "text": "第3关。哪个图形没有直直的边，也没有角？。观察轮廓。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 16,
+      "step": 3
+    },
+    {
+      "file": "lesson-16-step-03-hint.mp3",
+      "text": "小提示。哪一个可以顺顺地滚动？",
+      "kind": "hint",
+      "lesson": 16,
+      "step": 3
+    },
+    {
+      "file": "lesson-16-step-03-correct.mp3",
+      "text": "圆形的轮廓是弯曲的，没有角。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 16,
+      "step": 3
+    },
+    {
+      "file": "lesson-17-intro.mp3",
+      "text": "欢迎来到第17课，拼图工坊。小图形可以组成大图形。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 17,
+      "step": null
+    },
+    {
+      "file": "lesson-17-step-01-prompt.mp3",
+      "text": "第1关。两个一样的半圆可以拼成什么？。把两条直边靠在一起。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 17,
+      "step": 1
+    },
+    {
+      "file": "lesson-17-step-01-hint.mp3",
+      "text": "小提示。想象把切开的橙子重新合起来。",
+      "kind": "hint",
+      "lesson": 17,
+      "step": 1
+    },
+    {
+      "file": "lesson-17-step-01-correct.mp3",
+      "text": "两个匹配的半圆可以合成一个完整的圆。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 17,
+      "step": 1
+    },
+    {
+      "file": "lesson-17-step-02-prompt.mp3",
+      "text": "第2关。两个一样的小正方形并排，像什么？。观察拼好后的外轮廓。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 17,
+      "step": 2
+    },
+    {
+      "file": "lesson-17-step-02-hint.mp3",
+      "text": "小提示。拼好后有四个角，两条边更长。",
+      "kind": "hint",
+      "lesson": 17,
+      "step": 2
+    },
+    {
+      "file": "lesson-17-step-02-correct.mp3",
+      "text": "两个小正方形并排可以组成一个长方形。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 17,
+      "step": 2
+    },
+    {
+      "file": "lesson-17-step-03-prompt.mp3",
+      "text": "第3关。两个直角三角形怎样拼成正方形？。让最长的斜边贴在一起。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 17,
+      "step": 3
+    },
+    {
+      "file": "lesson-17-step-03-hint.mp3",
+      "text": "小提示。找到两条一样长的斜边。",
+      "kind": "hint",
+      "lesson": 17,
+      "step": 3
+    },
+    {
+      "file": "lesson-17-step-03-correct.mp3",
+      "text": "沿斜边拼合，外轮廓可以成为正方形。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 17,
+      "step": 3
+    },
+    {
+      "file": "lesson-18-intro.mp3",
+      "text": "欢迎来到第18课，一图多拼。同一个目标不止一种办法。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 18,
+      "step": null
+    },
+    {
+      "file": "lesson-18-step-01-prompt.mp3",
+      "text": "第1关。拼一座房子，哪组图形最合适？。屋顶需要尖角，房身需要四条边。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 18,
+      "step": 1
+    },
+    {
+      "file": "lesson-18-step-01-hint.mp3",
+      "text": "小提示。想一想常见房子的外轮廓。",
+      "kind": "hint",
+      "lesson": 18,
+      "step": 1
+    },
+    {
+      "file": "lesson-18-step-01-correct.mp3",
+      "text": "三角形可以做屋顶，正方形可以做房身。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 18,
+      "step": 1
+    },
+    {
+      "file": "lesson-18-step-02-prompt.mp3",
+      "text": "第2关。想拼出长方形，哪种办法也可以？。寻找不同于两个正方形的拼法。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 18,
+      "step": 2
+    },
+    {
+      "file": "lesson-18-step-02-hint.mp3",
+      "text": "小提示。三角形沿合适的边拼起来，也能得到四边形。",
+      "kind": "hint",
+      "lesson": 18,
+      "step": 2
+    },
+    {
+      "file": "lesson-18-step-02-correct.mp3",
+      "text": "同一目标可以有不同的图形组合方法。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 18,
+      "step": 2
+    },
+    {
+      "file": "lesson-18-step-03-prompt.mp3",
+      "text": "第3关。怎样确认拼图真的完成了？。选择可靠的检查方法。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 18,
+      "step": 3
+    },
+    {
+      "file": "lesson-18-step-03-hint.mp3",
+      "text": "小提示。检查有没有空洞，也有没有压在一起。",
+      "kind": "hint",
+      "lesson": 18,
+      "step": 3
+    },
+    {
+      "file": "lesson-18-step-03-correct.mp3",
+      "text": "完整拼图应填满轮廓，不留空也不重叠。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 18,
+      "step": 3
+    },
+    {
+      "file": "lesson-19-intro.mp3",
+      "text": "欢迎来到第19课，一眼看几。不逐个数也能看出小数量。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 19,
+      "step": null
+    },
+    {
+      "file": "lesson-19-step-01-prompt.mp3",
+      "text": "第1关。骰子上四个角都有点，一共有几个？。把它看成一个熟悉的图案。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 19,
+      "step": 1
+    },
+    {
+      "file": "lesson-19-step-01-hint.mp3",
+      "text": "小提示。左上、右上、左下、右下各一个。",
+      "kind": "hint",
+      "lesson": 19,
+      "step": 1
+    },
+    {
+      "file": "lesson-19-step-01-correct.mp3",
+      "text": "四个角各有一点，一眼可以看出是四。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 19,
+      "step": 1
+    },
+    {
+      "file": "lesson-19-step-02-prompt.mp3",
+      "text": "第2关。上面两个点，下面三个点，合起来几个？。先分组看，再合起来。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 19,
+      "step": 2
+    },
+    {
+      "file": "lesson-19-step-02-hint.mp3",
+      "text": "小提示。两个和三个合起来。",
+      "kind": "hint",
+      "lesson": 19,
+      "step": 2
+    },
+    {
+      "file": "lesson-19-step-02-correct.mp3",
+      "text": "二和三合起来是五。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 19,
+      "step": 2
+    },
+    {
+      "file": "lesson-19-step-03-prompt.mp3",
+      "text": "第3关。哪种摆法最容易一眼看出六？。寻找整齐、熟悉的结构。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 19,
+      "step": 3
+    },
+    {
+      "file": "lesson-19-step-03-hint.mp3",
+      "text": "小提示。整齐分成两组更容易看清。",
+      "kind": "hint",
+      "lesson": 19,
+      "step": 3
+    },
+    {
+      "file": "lesson-19-step-03-correct.mp3",
+      "text": "三和三的结构能帮助我们快速识别六。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 19,
+      "step": 3
+    },
+    {
+      "file": "lesson-20-intro.mp3",
+      "text": "欢迎来到第20课，数字找朋友。把数字符号和数量配起来。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 20,
+      "step": null
+    },
+    {
+      "file": "lesson-20-step-01-prompt.mp3",
+      "text": "第1关。数字5应该和哪一组做朋友？。数量必须刚好是五。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 20,
+      "step": 1
+    },
+    {
+      "file": "lesson-20-step-01-hint.mp3",
+      "text": "小提示。可以把星星分成二和三。",
+      "kind": "hint",
+      "lesson": 20,
+      "step": 1
+    },
+    {
+      "file": "lesson-20-step-01-correct.mp3",
+      "text": "五颗星与数字五表示同一个数量。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 20,
+      "step": 1
+    },
+    {
+      "file": "lesson-20-step-02-prompt.mp3",
+      "text": "第2关。四辆车应该找到哪张数字卡？。每辆车对应一个数。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 20,
+      "step": 2
+    },
+    {
+      "file": "lesson-20-step-02-hint.mp3",
+      "text": "小提示。一辆一辆点数，最后说到几？",
+      "kind": "hint",
+      "lesson": 20,
+      "step": 2
+    },
+    {
+      "file": "lesson-20-step-02-correct.mp3",
+      "text": "四辆车对应数字四。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 20,
+      "step": 2
+    },
+    {
+      "file": "lesson-20-step-03-prompt.mp3",
+      "text": "第3关。数字0表示什么？。想象盘子里的饼干全部拿走。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 20,
+      "step": 3
+    },
+    {
+      "file": "lesson-20-step-03-hint.mp3",
+      "text": "小提示。空盘子里还剩几个？",
+      "kind": "hint",
+      "lesson": 20,
+      "step": 3
+    },
+    {
+      "file": "lesson-20-step-03-correct.mp3",
+      "text": "零表示集合里一个也没有。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 20,
+      "step": 3
+    },
+    {
+      "file": "lesson-21-intro.mp3",
+      "text": "欢迎来到第21课，数量变装秀。同一个数可以有很多样子。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 21,
+      "step": null
+    },
+    {
+      "file": "lesson-21-step-01-prompt.mp3",
+      "text": "第1关。三只猫、三声鼓、三个点，有什么相同？。材料不同，关注数量。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 21,
+      "step": 1
+    },
+    {
+      "file": "lesson-21-step-01-hint.mp3",
+      "text": "小提示。分别数一数有几个。",
+      "kind": "hint",
+      "lesson": 21,
+      "step": 1
+    },
+    {
+      "file": "lesson-21-step-01-correct.mp3",
+      "text": "东西、声音和点虽然不同，都可以表示数量三。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 21,
+      "step": 1
+    },
+    {
+      "file": "lesson-21-step-02-prompt.mp3",
+      "text": "第2关。哪一种也能表示五？。寻找不同的五个一组。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 21,
+      "step": 2
+    },
+    {
+      "file": "lesson-21-step-02-hint.mp3",
+      "text": "小提示。最后要刚好数到五。",
+      "kind": "hint",
+      "lesson": 21,
+      "step": 2
+    },
+    {
+      "file": "lesson-21-step-02-correct.mp3",
+      "text": "五根手指也是数量五的一种表示。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 21,
+      "step": 2
+    },
+    {
+      "file": "lesson-21-step-03-prompt.mp3",
+      "text": "第3关。把五个点排成一圈，数量会怎样？。只改变位置，不增加也不拿走。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 21,
+      "step": 3
+    },
+    {
+      "file": "lesson-21-step-03-hint.mp3",
+      "text": "小提示。有没有新的点加入？",
+      "kind": "hint",
+      "lesson": 21,
+      "step": 3
+    },
+    {
+      "file": "lesson-21-step-03-correct.mp3",
+      "text": "排列方式改变，数量仍然是五。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 21,
+      "step": 3
+    },
+    {
+      "file": "lesson-22-intro.mp3",
+      "text": "欢迎来到第22课，记忆快递。记住两步再行动。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 22,
+      "step": null
+    },
+    {
+      "file": "lesson-22-step-01-prompt.mp3",
+      "text": "第1关。先拿苹果，再拿香蕉。第一个是什么？。在心里把两步按顺序说一遍。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 22,
+      "step": 1
+    },
+    {
+      "file": "lesson-22-step-01-hint.mp3",
+      "text": "小提示。指令开头说的是哪种水果？",
+      "kind": "hint",
+      "lesson": 22,
+      "step": 1
+    },
+    {
+      "file": "lesson-22-step-01-correct.mp3",
+      "text": "第一步拿苹果，第二步才拿香蕉。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 22,
+      "step": 1
+    },
+    {
+      "file": "lesson-22-step-02-prompt.mp3",
+      "text": "第2关。把球放进盒子，再关上盖子。最后一步是什么？。想象动作连续发生。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 22,
+      "step": 2
+    },
+    {
+      "file": "lesson-22-step-02-hint.mp3",
+      "text": "小提示。球已经放好，接下来要做什么？",
+      "kind": "hint",
+      "lesson": 22,
+      "step": 2
+    },
+    {
+      "file": "lesson-22-step-02-correct.mp3",
+      "text": "两步指令的最后一步是关上盖子。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 22,
+      "step": 2
+    },
+    {
+      "file": "lesson-22-step-03-prompt.mp3",
+      "text": "第3关。拍手、摸头、再拍手，中间动作是什么？。记住三个动作的位置。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 22,
+      "step": 3
+    },
+    {
+      "file": "lesson-22-step-03-hint.mp3",
+      "text": "小提示。第一个和最后一个相同，中间不同。",
+      "kind": "hint",
+      "lesson": 22,
+      "step": 3
+    },
+    {
+      "file": "lesson-22-step-03-correct.mp3",
+      "text": "三个动作中，摸头排在中间。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 22,
+      "step": 3
+    },
+    {
+      "file": "lesson-23-intro.mp3",
+      "text": "欢迎来到第23课，藏在哪里。记住位置和移动。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 23,
+      "step": null
+    },
+    {
+      "file": "lesson-23-step-01-prompt.mp3",
+      "text": "第1关。礼物藏在左边杯子下面，应该选哪边？。先记住位置词，再行动。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 23,
+      "step": 1
+    },
+    {
+      "file": "lesson-23-step-01-hint.mp3",
+      "text": "小提示。伸出左手帮自己确认。",
+      "kind": "hint",
+      "lesson": 23,
+      "step": 1
+    },
+    {
+      "file": "lesson-23-step-01-correct.mp3",
+      "text": "指令说礼物在左边杯子下面。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 23,
+      "step": 1
+    },
+    {
+      "file": "lesson-23-step-02-prompt.mp3",
+      "text": "第2关。小球从中间移到右边，现在在哪里？。追踪移动后的新位置。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 23,
+      "step": 2
+    },
+    {
+      "file": "lesson-23-step-02-hint.mp3",
+      "text": "小提示。不要回答开始的位置，要回答移动以后。",
+      "kind": "hint",
+      "lesson": 23,
+      "step": 2
+    },
+    {
+      "file": "lesson-23-step-02-correct.mp3",
+      "text": "小球最后移动到右边。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 23,
+      "step": 2
+    },
+    {
+      "file": "lesson-23-step-03-prompt.mp3",
+      "text": "第3关。星星原来在上面，向下移动一格，会到哪里？。在脑中跟着它移动。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 23,
+      "step": 3
+    },
+    {
+      "file": "lesson-23-step-03-hint.mp3",
+      "text": "小提示。方向是向下。",
+      "kind": "hint",
+      "lesson": 23,
+      "step": 3
+    },
+    {
+      "file": "lesson-23-step-03-correct.mp3",
+      "text": "从上面向下移动，会到较下面的位置。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 23,
+      "step": 3
+    },
+    {
+      "file": "lesson-24-intro.mp3",
+      "text": "欢迎来到第24课，记忆规则站。一边记住，一边换规则。准备好了吗？我们开始吧。",
+      "kind": "intro",
+      "lesson": 24,
+      "step": null
+    },
+    {
+      "file": "lesson-24-step-01-prompt.mp3",
+      "text": "第1关。记住规则：看到水果拍手。苹果出现时应该？。先复述规则，再选择动作。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 24,
+      "step": 1
+    },
+    {
+      "file": "lesson-24-step-01-hint.mp3",
+      "text": "小提示。苹果属于水果。",
+      "kind": "hint",
+      "lesson": 24,
+      "step": 1
+    },
+    {
+      "file": "lesson-24-step-01-correct.mp3",
+      "text": "苹果符合水果规则，所以应该拍手。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 24,
+      "step": 1
+    },
+    {
+      "file": "lesson-24-step-02-prompt.mp3",
+      "text": "第2关。新规则：看到红色跺脚。蓝色圆形出现时应该？。旧规则已经不用了。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 24,
+      "step": 2
+    },
+    {
+      "file": "lesson-24-step-02-hint.mp3",
+      "text": "小提示。现在只看颜色，它是不是红色？",
+      "kind": "hint",
+      "lesson": 24,
+      "step": 2
+    },
+    {
+      "file": "lesson-24-step-02-correct.mp3",
+      "text": "当前规则是看到红色才跺脚，蓝色不符合。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 24,
+      "step": 2
+    },
+    {
+      "file": "lesson-24-step-03-prompt.mp3",
+      "text": "第3关。先摸头，再看到圆形拍手。应该按什么顺序？。同时记住动作顺序和条件。想好以后，轻轻点一下答案。",
+      "kind": "prompt",
+      "lesson": 24,
+      "step": 3
+    },
+    {
+      "file": "lesson-24-step-03-hint.mp3",
+      "text": "小提示。先完成固定动作，再执行圆形规则。",
+      "kind": "hint",
+      "lesson": 24,
+      "step": 3
+    },
+    {
+      "file": "lesson-24-step-03-correct.mp3",
+      "text": "正确顺序是先摸头，看到圆形后再拍手。。你观察得很仔细。",
+      "kind": "correct",
+      "lesson": 24,
       "step": 3
     }
   ]

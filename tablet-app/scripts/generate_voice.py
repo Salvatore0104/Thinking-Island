@@ -42,8 +42,10 @@ def extract_content(source: str) -> tuple[list[tuple[str, str]], list[tuple[str,
         source,
         re.DOTALL,
     )
-    if len(lessons) != 12 or len(activities) != 36:
-        raise ValueError(f"Expected 12 lessons and 36 activities, got {len(lessons)} and {len(activities)}")
+    if not lessons or len(activities) != len(lessons) * 3:
+        raise ValueError(
+            f"Expected three activities per lesson, got {len(lessons)} lessons and {len(activities)} activities"
+        )
     return lessons, activities
 
 

@@ -136,6 +136,114 @@ const LESSONS: Lesson[] = [
       { prompt: "4位船员有4份点心，分配结果怎样？", instruction: "每人一份", options: [{label:"刚好一样多"},{label:"多一份点心"},{label:"少一份点心"}], answer: 0, hint: "把每位船员和一份点心连起来。", explain: "4和4可以一一配对，刚好一样多。" },
     ],
   },
+  {
+    id: 13, week: 5, title: "长短排队", subtitle: "从最短一直排到最长", icon: "📏",
+    color: "#56b89f", skill: "比较与排序",
+    activities: [
+      { prompt: "哪一支铅笔最长？", instruction: "把它们的一端对齐，再比较另一端", options: [{label:"短铅笔",emoji:"▰"},{label:"长铅笔",emoji:"▰▰▰"},{label:"中铅笔",emoji:"▰▰"}], answer: 1, hint: "起点一样时，伸得最远的最长。", explain: "第二支铅笔伸得最远，所以它最长。" },
+      { prompt: "哪一个顺序是从短到长？", instruction: "先找最短的，再找最长的", options: [{label:"短、中、长"},{label:"长、中、短"},{label:"中、短、长"}], answer: 0, hint: "像上楼梯一样，一步比一步长。", explain: "短、中、长的顺序每次都增加一点。" },
+      { prompt: "小、中、空、超长，空位放谁？", instruction: "让长度变化保持顺序", options: [{label:"比中更短"},{label:"比中长、比超长短"},{label:"和小的一样长"}], answer: 1, hint: "空位前面是中，后面是超长。", explain: "空位需要一个介于中和超长之间的长度。" },
+    ],
+  },
+  {
+    id: 14, week: 5, title: "谁站中间", subtitle: "在有顺序的队伍里插空", icon: "🪜",
+    color: "#f4b64a", skill: "序列与插空",
+    activities: [
+      { prompt: "矮树和高树中间放哪棵？", instruction: "让三棵树从矮到高排好", options: [{label:"更矮的树"},{label:"中等高的树"},{label:"最高的树"}], answer: 1, hint: "中间的树要比矮树高，又比高树矮。", explain: "中等高的树同时满足前后两个条件。" },
+      { prompt: "轻、中、重的箱子，谁最后搬？", instruction: "队伍按从轻到重排列", options: [{label:"轻箱子"},{label:"中箱子"},{label:"重箱子"}], answer: 2, hint: "最后一个应该是最重的。", explain: "从轻到重排列时，重箱子在最后。" },
+      { prompt: "哪个序列少了一步？", instruction: "观察每次都增加一个圆点", options: [{label:"●｜●●｜●●●"},{label:"●｜●●●｜●●"},{label:"●●｜●｜●●●"}], answer: 0, hint: "数量应该是一、二、三。", explain: "第一列每次增加一个圆点，顺序完整。" },
+    ],
+  },
+  {
+    id: 15, week: 5, title: "标准选择师", subtitle: "先说清楚按什么来排", icon: "⚖️",
+    color: "#8678d8", skill: "多属性比较",
+    activities: [
+      { prompt: "大羽毛和小石头，谁更重？", instruction: "大小和重量不是同一件事", options: [{label:"大羽毛"},{label:"小石头"},{label:"一定一样重"}], answer: 1, hint: "不要只看谁占的地方大，想想拿在手里的感觉。", explain: "物体大不一定重，小石头可以比大羽毛更重。" },
+      { prompt: "要选最高的积木塔，应该看什么？", instruction: "只选择和高度有关的标准", options: [{label:"颜色"},{label:"顶端离桌面多高"},{label:"用了什么形状"}], answer: 1, hint: "从桌面到塔顶的距离表示高度。", explain: "比较高度要看塔顶离同一起点有多远。" },
+      { prompt: "红色短绳和蓝色长绳，按颜色分会怎样？", instruction: "这次不要按长短", options: [{label:"红绳进红色组"},{label:"长绳一定在第一组"},{label:"两条都不能分"}], answer: 0, hint: "当前标准是颜色。", explain: "分类和排序前先明确标准，当前只看颜色。" },
+    ],
+  },
+  {
+    id: 16, week: 6, title: "图形名片", subtitle: "用边和角介绍图形", icon: "🔷",
+    color: "#4ba6d8", skill: "图形属性",
+    activities: [
+      { prompt: "哪个图形有三条边、三个角？", instruction: "用手指沿着边走一圈", options: [{label:"三角形",emoji:"🔺"},{label:"正方形",emoji:"🟦"},{label:"圆形",emoji:"🔵"}], answer: 0, hint: "数一数尖尖的角有几个。", explain: "三角形有三条边和三个角。" },
+      { prompt: "正方形转个方向，还是正方形吗？", instruction: "方向变了，边和角没有变", options: [{label:"还是正方形"},{label:"变成三角形"},{label:"变成圆形"}], answer: 0, hint: "数一数，仍然有四条一样长的边。", explain: "旋转只改变方向，不改变图形的属性。" },
+      { prompt: "哪个图形没有直直的边，也没有角？", instruction: "观察轮廓", options: [{label:"圆形",emoji:"🔵"},{label:"三角形",emoji:"🔺"},{label:"正方形",emoji:"🟩"}], answer: 0, hint: "哪一个可以顺顺地滚动？", explain: "圆形的轮廓是弯曲的，没有角。" },
+    ],
+  },
+  {
+    id: 17, week: 6, title: "拼图工坊", subtitle: "小图形可以组成大图形", icon: "🧩",
+    color: "#ff8f70", skill: "图形组合",
+    activities: [
+      { prompt: "两个一样的半圆可以拼成什么？", instruction: "把两条直边靠在一起", options: [{label:"一个圆"},{label:"一个三角形"},{label:"一条线"}], answer: 0, hint: "想象把切开的橙子重新合起来。", explain: "两个匹配的半圆可以合成一个完整的圆。" },
+      { prompt: "两个一样的小正方形并排，像什么？", instruction: "观察拼好后的外轮廓", options: [{label:"长方形"},{label:"圆形"},{label:"三角形"}], answer: 0, hint: "拼好后有四个角，两条边更长。", explain: "两个小正方形并排可以组成一个长方形。" },
+      { prompt: "两个直角三角形怎样拼成正方形？", instruction: "让最长的斜边贴在一起", options: [{label:"斜边相贴"},{label:"只碰一个角"},{label:"完全分开"}], answer: 0, hint: "找到两条一样长的斜边。", explain: "沿斜边拼合，外轮廓可以成为正方形。" },
+    ],
+  },
+  {
+    id: 18, week: 6, title: "一图多拼", subtitle: "同一个目标不止一种办法", icon: "🏗️",
+    color: "#56b89f", skill: "空间创造",
+    activities: [
+      { prompt: "拼一座房子，哪组图形最合适？", instruction: "屋顶需要尖角，房身需要四条边", options: [{label:"三角形和正方形"},{label:"两个圆形"},{label:"一条直线"}], answer: 0, hint: "想一想常见房子的外轮廓。", explain: "三角形可以做屋顶，正方形可以做房身。" },
+      { prompt: "想拼出长方形，哪种办法也可以？", instruction: "寻找不同于两个正方形的拼法", options: [{label:"两个匹配的三角形"},{label:"一个圆和一个星星"},{label:"三个分开的点"}], answer: 0, hint: "三角形沿合适的边拼起来，也能得到四边形。", explain: "同一目标可以有不同的图形组合方法。" },
+      { prompt: "怎样确认拼图真的完成了？", instruction: "选择可靠的检查方法", options: [{label:"看外轮廓是否填满且不重叠"},{label:"只看颜色好不好看"},{label:"随便放进去"}], answer: 0, hint: "检查有没有空洞，也有没有压在一起。", explain: "完整拼图应填满轮廓，不留空也不重叠。" },
+    ],
+  },
+  {
+    id: 19, week: 7, title: "一眼看几", subtitle: "不逐个数也能看出小数量", icon: "🎲",
+    color: "#f4b64a", skill: "小数量识别",
+    activities: [
+      { prompt: "骰子上四个角都有点，一共有几个？", instruction: "把它看成一个熟悉的图案", options: [{label:"3"},{label:"4"},{label:"5"}], answer: 1, hint: "左上、右上、左下、右下各一个。", explain: "四个角各有一点，一眼可以看出是四。" },
+      { prompt: "上面两个点，下面三个点，合起来几个？", instruction: "先分组看，再合起来", options: [{label:"4"},{label:"5"},{label:"6"}], answer: 1, hint: "两个和三个合起来。", explain: "二和三合起来是五。" },
+      { prompt: "哪种摆法最容易一眼看出六？", instruction: "寻找整齐、熟悉的结构", options: [{label:"三和三排成两行"},{label:"六个点挤成一团"},{label:"六个点随便散开"}], answer: 0, hint: "整齐分成两组更容易看清。", explain: "三和三的结构能帮助我们快速识别六。" },
+    ],
+  },
+  {
+    id: 20, week: 7, title: "数字找朋友", subtitle: "把数字符号和数量配起来", icon: "🔢",
+    color: "#8678d8", skill: "数符号对应",
+    activities: [
+      { prompt: "数字5应该和哪一组做朋友？", instruction: "数量必须刚好是五", options: [{label:"⭐⭐⭐⭐⭐"},{label:"⭐⭐⭐⭐"},{label:"⭐⭐⭐⭐⭐⭐"}], answer: 0, hint: "可以把星星分成二和三。", explain: "五颗星与数字五表示同一个数量。" },
+      { prompt: "四辆车应该找到哪张数字卡？", instruction: "每辆车对应一个数", options: [{label:"3"},{label:"4"},{label:"5"}], answer: 1, hint: "一辆一辆点数，最后说到几？", explain: "四辆车对应数字四。" },
+      { prompt: "数字0表示什么？", instruction: "想象盘子里的饼干全部拿走", options: [{label:"一个也没有"},{label:"还有一个"},{label:"有十个"}], answer: 0, hint: "空盘子里还剩几个？", explain: "零表示集合里一个也没有。" },
+    ],
+  },
+  {
+    id: 21, week: 7, title: "数量变装秀", subtitle: "同一个数可以有很多样子", icon: "🎭",
+    color: "#4ba6d8", skill: "数量多表征",
+    activities: [
+      { prompt: "三只猫、三声鼓、三个点，有什么相同？", instruction: "材料不同，关注数量", options: [{label:"数量都是3"},{label:"声音都相同"},{label:"颜色都相同"}], answer: 0, hint: "分别数一数有几个。", explain: "东西、声音和点虽然不同，都可以表示数量三。" },
+      { prompt: "哪一种也能表示五？", instruction: "寻找不同的五个一组", options: [{label:"两只手举出五根手指"},{label:"四块积木"},{label:"六下拍手"}], answer: 0, hint: "最后要刚好数到五。", explain: "五根手指也是数量五的一种表示。" },
+      { prompt: "把五个点排成一圈，数量会怎样？", instruction: "只改变位置，不增加也不拿走", options: [{label:"仍然是5"},{label:"变成6"},{label:"变成4"}], answer: 0, hint: "有没有新的点加入？", explain: "排列方式改变，数量仍然是五。" },
+    ],
+  },
+  {
+    id: 22, week: 8, title: "记忆快递", subtitle: "记住两步再行动", icon: "📦",
+    color: "#ff8f70", skill: "工作记忆",
+    activities: [
+      { prompt: "先拿苹果，再拿香蕉。第一个是什么？", instruction: "在心里把两步按顺序说一遍", options: [{label:"苹果",emoji:"🍎"},{label:"香蕉",emoji:"🍌"},{label:"橙子",emoji:"🍊"}], answer: 0, hint: "指令开头说的是哪种水果？", explain: "第一步拿苹果，第二步才拿香蕉。" },
+      { prompt: "把球放进盒子，再关上盖子。最后一步是什么？", instruction: "想象动作连续发生", options: [{label:"关上盖子"},{label:"拿出球"},{label:"打开盒子"}], answer: 0, hint: "球已经放好，接下来要做什么？", explain: "两步指令的最后一步是关上盖子。" },
+      { prompt: "拍手、摸头、再拍手，中间动作是什么？", instruction: "记住三个动作的位置", options: [{label:"拍手"},{label:"摸头"},{label:"跺脚"}], answer: 1, hint: "第一个和最后一个相同，中间不同。", explain: "三个动作中，摸头排在中间。" },
+    ],
+  },
+  {
+    id: 23, week: 8, title: "藏在哪里", subtitle: "记住位置和移动", icon: "🎁",
+    color: "#56b89f", skill: "空间工作记忆",
+    activities: [
+      { prompt: "礼物藏在左边杯子下面，应该选哪边？", instruction: "先记住位置词，再行动", options: [{label:"左边"},{label:"右边"},{label:"中间"}], answer: 0, hint: "伸出左手帮自己确认。", explain: "指令说礼物在左边杯子下面。" },
+      { prompt: "小球从中间移到右边，现在在哪里？", instruction: "追踪移动后的新位置", options: [{label:"左边"},{label:"中间"},{label:"右边"}], answer: 2, hint: "不要回答开始的位置，要回答移动以后。", explain: "小球最后移动到右边。" },
+      { prompt: "星星原来在上面，向下移动一格，会到哪里？", instruction: "在脑中跟着它移动", options: [{label:"下面"},{label:"更上面"},{label:"左边"}], answer: 0, hint: "方向是向下。", explain: "从上面向下移动，会到较下面的位置。" },
+    ],
+  },
+  {
+    id: 24, week: 8, title: "记忆规则站", subtitle: "一边记住，一边换规则", icon: "🧠",
+    color: "#8678d8", skill: "记忆与规则整合",
+    activities: [
+      { prompt: "记住规则：看到水果拍手。苹果出现时应该？", instruction: "先复述规则，再选择动作", options: [{label:"拍手"},{label:"跺脚"},{label:"不动"}], answer: 0, hint: "苹果属于水果。", explain: "苹果符合水果规则，所以应该拍手。" },
+      { prompt: "新规则：看到红色跺脚。蓝色圆形出现时应该？", instruction: "旧规则已经不用了", options: [{label:"跺脚"},{label:"不跺脚"},{label:"拍两次手"}], answer: 1, hint: "现在只看颜色，它是不是红色？", explain: "当前规则是看到红色才跺脚，蓝色不符合。" },
+      { prompt: "先摸头，再看到圆形拍手。应该按什么顺序？", instruction: "同时记住动作顺序和条件", options: [{label:"摸头，再拍手"},{label:"拍手，再摸头"},{label:"只拍手"}], answer: 0, hint: "先完成固定动作，再执行圆形规则。", explain: "正确顺序是先摸头，看到圆形后再拍手。" },
+    ],
+  },
 ];
 
 const initialProgress: Progress = { completed: [], stars: 0, attempts: {} };
@@ -194,7 +302,7 @@ export default function Home() {
     }
   };
 
-  const nextLesson = LESSONS.find((lesson) => !progress.completed.includes(lesson.id)) ?? LESSONS[11];
+  const nextLesson = LESSONS.find((lesson) => !progress.completed.includes(lesson.id)) ?? LESSONS[LESSONS.length - 1];
   const completion = Math.round((progress.completed.length / LESSONS.length) * 100);
 
   const startLesson = (lesson: Lesson) => {
@@ -384,7 +492,7 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
           <p><strong>{progress.stars}</strong><small>思考星星</small></p>
         </div>
         <div className="wide-progress">
-          <p><strong>第一座思维岛</strong><small>{completion}% 完成</small></p>
+          <p><strong>第一阶段 · 观察与关系</strong><small>{completion}% 完成</small></p>
           <div className="progress-track"><i style={{ width: `${completion}%` }} /></div>
         </div>
         <button onClick={openReport}>查看成长 →</button>
@@ -392,7 +500,7 @@ function HomeScreen({ nextLesson, progress, completion, startLesson, openReport,
 
       <section className="map-section">
         <div className="section-heading">
-          <div><span>首月课程地图</span><h2>四周，十二次小探险</h2></div>
+          <div><span>阶段课程地图</span><h2>八周，二十四次小探险</h2></div>
           <p>已完成的课程也可以再次挑战</p>
         </div>
         <div className="lesson-grid">
@@ -511,7 +619,9 @@ function ParentScreen({ progress, completion, resetProgress, openReport }: {
   progress: Progress; completion: number; resetProgress: () => void; openReport: () => void;
 }) {
   const [showReset, setShowReset] = useState(false);
-  const completedLesson = progress.completed.length ? LESSONS[progress.completed.length - 1] : null;
+  const completedLesson = progress.completed.length
+    ? LESSONS.find((lesson) => lesson.id === Math.max(...progress.completed)) ?? null
+    : null;
   return (
     <div className="parent-screen">
       <section className="parent-hero">
@@ -519,8 +629,8 @@ function ParentScreen({ progress, completion, resetProgress, openReport }: {
         <button className="outline-button" onClick={openReport}>查看完整报告 →</button>
       </section>
       <section className="parent-stats">
-        <article><small>首月进度</small><strong>{completion}%</strong><div className="progress-track"><i style={{width:`${completion}%`}} /></div></article>
-        <article><small>已完成课程</small><strong>{progress.completed.length}<em>/ 12</em></strong><p>每周建议3节</p></article>
+        <article><small>阶段进度</small><strong>{completion}%</strong><div className="progress-track"><i style={{width:`${completion}%`}} /></div></article>
+        <article><small>已完成课程</small><strong>{progress.completed.length}<em>/ {LESSONS.length}</em></strong><p>每周建议3节</p></article>
         <article><small>累计思考星</small><strong>{progress.stars} ★</strong><p>只奖励完成和坚持</p></article>
       </section>
       <div className="parent-columns">
@@ -568,7 +678,7 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
     <div className="report-screen">
       <button className="back-link" onClick={back}>← 返回家长中心</button>
       <section className="report-header">
-        <div><span>首月成长记录</span><h1>小船长的思考证据</h1><p>下面显示的是本课程中的学习表现，不是智力测评或同龄排名。</p></div>
+        <div><span>阶段成长记录</span><h1>小船长的思考证据</h1><p>下面显示的是本课程中的学习表现，不是智力测评或同龄排名。</p></div>
         <div className="report-badge"><strong>{progress.completed.length}</strong><span>完成课程</span></div>
       </section>
       <div className="report-layout">
@@ -587,8 +697,8 @@ function ReportScreen({ progress, back }: { progress: Progress; back: () => void
         </section>
       </div>
       <section className="milestone-card">
-        <div><small>本阶段里程碑</small><h2>第一座思维岛</h2></div>
-        {[3,6,9,12].map((point) => <div key={point} className={progress.completed.length >= point ? "reached" : ""}><span>{progress.completed.length >= point ? "✓" : point}</span><p><strong>完成 {point} 课</strong><small>{point === 3 ? "分类与解释" : point === 6 ? "发现与创造模式" : point === 9 ? "数量比较与验证" : "规则切换与综合迁移"}</small></p></div>)}
+        <div><small>本阶段里程碑</small><h2>观察与关系岛</h2></div>
+        {[6,12,18,24].map((point) => <div key={point} className={progress.completed.length >= point ? "reached" : ""}><span>{progress.completed.length >= point ? "✓" : point}</span><p><strong>完成 {point} 课</strong><small>{point === 6 ? "分类与模式" : point === 12 ? "数量与规则切换" : point === 18 ? "排序与图形组合" : "数感与工作记忆"}</small></p></div>)}
       </section>
     </div>
   );
