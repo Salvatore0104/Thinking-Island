@@ -353,14 +353,33 @@ export default function Home() {
       ]);
       return;
     }
-    const firstCompletion = !progress.completed.includes(activeLesson.id);
+    const currentIndex = LESSONS.findIndex((lesson) => lesson.id === activeLesson.id);
+    const next = LESSONS[currentIndex + 1];
     setProgress((current) => ({
       ...current,
-      completed: firstCompletion ? [...current.completed, activeLesson.id] : current.completed,
-      stars: firstCompletion ? current.stars + 1 : current.stars,
+      completed: current.completed.includes(activeLesson.id)
+        ? current.completed
+        : [...current.completed, activeLesson.id],
+      stars: current.completed.includes(activeLesson.id)
+        ? current.stars
+        : current.stars + 1,
     }));
-    playFiles(["lesson-complete.mp3"]);
-    setScreen("home");
+    if (!next) {
+      playFiles(["lesson-complete.mp3"]);
+      setScreen("home");
+      return;
+    }
+    setActiveLesson(next);
+    setStep(0);
+    setSelected(null);
+    setFeedback(null);
+    setHintOpen(false);
+    window.scrollTo(0, 0);
+    playFiles([
+      "lesson-complete.mp3",
+      `lesson-${String(next.id).padStart(2, "0")}-intro.mp3`,
+      `lesson-${String(next.id).padStart(2, "0")}-step-01-prompt.mp3`,
+    ]);
   };
 
   const resetProgress = () => {
@@ -630,7 +649,11 @@ function LessonScreen({ lesson, step, selected, feedback, hintOpen, setHintOpen,
                   : feedback === "correct" ? activity.explain : "再看一看线索，或者打开提示试试。"}
               </strong>
             </div>
-            {feedback === "correct" && <button onClick={advance}>{step === lesson.activities.length - 1 ? "完成" : "下一关"} →</button>}
+            {feedback === "correct" && (
+              <button onClick={advance}>
+                {lesson.id < LESSONS.length ? "下一关" : "完成全部"} →
+              </button>
+            )}
           </div>
         )}
       </section>

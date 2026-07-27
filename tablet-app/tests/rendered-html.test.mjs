@@ -36,8 +36,9 @@ test("server-renders the Thinking Island shell", async () => {
 });
 
 test("ships 120 image-first levels and the complete voice library", async () => {
-  const [page, levelsText, manifestText, audioFiles] = await Promise.all([
+  const [page, css, levelsText, manifestText, audioFiles] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/visual-levels.json", import.meta.url), "utf8"),
     readFile(new URL("../public/audio/manifest.json", import.meta.url), "utf8"),
     readdir(new URL("../public/audio/", import.meta.url)),
@@ -53,6 +54,10 @@ test("ships 120 image-first levels and the complete voice library", async () => 
   assert.match(page, /20周 · 120关/);
   assert.doesNotMatch(page, /signIn|signUp|login|logout/i);
   assert.doesNotMatch(page, /disabled=\{locked\}|继续前进后解锁/);
+  assert.match(page, /const next = LESSONS\[currentIndex \+ 1\]/);
+  assert.match(page, /setActiveLesson\(next\)/);
+  assert.match(page, /lesson\.id < LESSONS\.length \? "下一关" : "完成全部"/);
+  assert.match(css, /grid-template-columns:minmax\(180px,220px\) minmax\(0,1fr\) 132px/);
   assert.ok(
     levels
       .flatMap((level) => level.activities)
